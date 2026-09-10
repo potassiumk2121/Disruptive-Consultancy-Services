@@ -3,63 +3,65 @@ var simplemaps_worldmap_mapdata = {
 	main_settings:{
 		//General settings
 		width: 'responsive', //or 'responsive'
-		background_color: '#FFFFFF',	
+		background_color: 'transparent',	
 		background_transparent: 'yes',
-		border_color: '#ffffff',
-		popups: 'detect', //on_click, on_hover, or detect
+		border_color: '#cbd5e1',
+		popups: 'on_hover', //on_click, on_hover, or detect
 	
 		//State defaults
-		state_description:   'State description',
-		state_color: '#88A4BC',
-		state_hover_color: '#3B729F',
-		border_size: 1.5,		
+		state_description:   '',
+		state_color: '#e2e8f0',
+		state_hover_color: '#cbd5e1',
+		border_size: 0.8,		
 		all_states_inactive: 'no',
-		all_states_zoomable: 'no',		
+		all_states_zoomable: 'yes',		
 		
 		//Location defaults
 		location_description:  '',
-		location_color: '#FF0000',
-		location_opacity: .8,
+		location_color: '#1e3a5f',
+		location_opacity: 1,
 		location_hover_opacity: 1,
-		location_size: 35,
-		location_type: 'image', // circle, square, image
+		location_size: 14,
+		location_type: 'circle', // circle, square, image
 		location_image_source: "location.png",
-		location_border_color: '#000000',
+		location_border_color: '#d4af37',
 		location_border: 2,
-		location_hover_border: 2.5,
+		location_hover_border: 3,
 		
 		//Labels
-		label_color: '#d5ddec',	
-		label_hover_color: '#d5ddec',		
-		label_size: 22,
+		label_color: '#64748b',	
+		label_hover_color: '#1e3a5f',		
+		label_size: 14,
 		label_font: 'Arial',
 		hide_labels: 'no',
 		
 		//Zoom settings
 		zoom: 'yes', //use default regions
+		can_zoom: 'yes',
+		show_zoom_controls: 'yes',
 		back_image: 'no', //Use image instead of arrow for back zoom				
 		initial_back: 'no', //Show back button when zoomed out and do this JavaScript upon click		
 		initial_zoom: -1,  //-1 is zoomed out, 0 is for the first continent etc	
 		initial_zoom_solo: 'no', //hide adjacent states when starting map zoomed in
 		region_opacity: 1,
-		region_hover_opacity: .6,
+		region_hover_opacity: .8,
 		zoom_out_incrementally: 'yes',  // if no, map will zoom all the way out on click
-		zoom_percentage: .99,
+		zoom_percentage: .9,
 		zoom_time: .5, //time to zoom between regions in seconds
 		
 		//Popup settings
-		popup_color: 'white',
-		popup_opacity: .9,
+		popup_color: '#ffffff',
+		popup_opacity: .95,
 		popup_shadow: 1,
-		popup_corners: 5,
-		popup_font: '12px/1.5 Verdana, Arial, Helvetica, sans-serif',
+		popup_corners: 12,
+		popup_font: '14px/1.6 Atkinson, Arial, sans-serif',
 		popup_nocss: 'no', //use your own css	
 		
 		//Advanced settings
 		div: 'map',
 		auto_load: 'yes',		
 		url_new_tab: 'no', 
-		images_directory: 'default', //e.g. 'map_images/'
+		images_directory: 'map_images/', //e.g. 'map_images/'
 		fade_time:  .1, //time to fade out		
 		link_text: 'View Website'  //Text mobile browsers will see for links	
 	},
@@ -67,10 +69,10 @@ var simplemaps_worldmap_mapdata = {
 	state_specific: {
 		"AF":{
 			name: "Afghanistan",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "Afghanistan",
+			color: "#1e3a5f",
+			hover_color: "#2d5a87",
+			url: "/projects/locations/afghanistan"
 		},
 		"AO":{
 			name: "Angola",
@@ -158,10 +160,10 @@ var simplemaps_worldmap_mapdata = {
 		},
 		"BD":{
 			name: "Bangladesh",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "Bangladesh",
+			color: "#2d5a87",
+			hover_color: "#3d7ab5",
+			url: "#"
 		},
 		"BG":{
 			name: "Bulgaria",
@@ -326,10 +328,10 @@ var simplemaps_worldmap_mapdata = {
 		},
 		"DE":{
 			name: "Germany",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "Germany",
+			color: "#2c5282",
+			hover_color: "#4299e1",
+			url: "#"
 		},
 		"DJ":{
 			name: "Djibouti",
@@ -529,10 +531,10 @@ var simplemaps_worldmap_mapdata = {
 		},
 		"IN":{
 			name: "India",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "India",
+			color: "#3d7ab5",
+			hover_color: "#5a9bd4",
+			url: "/projects/locations/india"
 		},
 		"IE":{
 			name: "Ireland",
@@ -844,10 +846,10 @@ var simplemaps_worldmap_mapdata = {
 		},
 		"NP":{
 			name: "Nepal",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "Nepal",
+			color: "#1a4d6e",
+			hover_color: "#2d6d8f",
+			url: "/projects/locations/nepal"
 		},
 		"NZ":{
 			name: "New Zealand",
@@ -1152,10 +1154,10 @@ var simplemaps_worldmap_mapdata = {
 		},
 		"US":{
 			name: "United States",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "United States (Washington)",
+			color: "#2b4c7e",
+			hover_color: "#3e6ba8",
+			url: "/projects/locations/washington"
 		},
 		"UZ":{
 			name: "Uzbekistan",
@@ -1187,10 +1189,10 @@ var simplemaps_worldmap_mapdata = {
 		},
 		"YE":{
 			name: "Yemen",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "Yemen",
+			color: "#4a6fa5",
+			hover_color: "#6a8fc5",
+			url: "/projects/locations/yemen"
 		},
 		"ZA":{
 			name: "South Africa",
@@ -1569,44 +1571,50 @@ var simplemaps_worldmap_mapdata = {
 	locations:{ 
 		Afghanistan: { 
 			name: 'Afghanistan',
+			description: 'Afghanistan',
 			lat: '37.67525308303592',
 			lng: '67.85366589993262',
-			color: 'default',
+			color: '#d4af37',
 			url: '/projects/locations/afghanistan',
 		},
 		Yemen: { 
 			name: 'Yemen',
+			description: 'Yemen',
 			lat: '20.0910008278988',
 			lng: '48.32986220719421',
-			color: 'default',
+			color: '#d4af37',
 			url: '/projects/locations/yemen'
 		},
 		India: { 
 			name: 'India',
+			description: 'India',
 			lat: '31.100476485143847',
 			lng: '77.17970831502998',
-			color: 'default',
+			color: '#d4af37',
 			url: '/projects/locations/india'
 		},
 		Nepal: { 
 			name: 'Nepal',
+			description: 'Nepal',
 			lat: '32.2756396280572',
 			lng: '85.56383794456042',
-			color: 'default',
+			color: '#d4af37',
 			url: '/projects/locations/nepal'
 		},
 		Germany: { 
 			name: 'Germany',
+			description: 'Germany',
 			lat: '55.81335729116941',
 			lng: '10.298985841893973',
-			color: 'default',
+			color: '#d4af37',
 			url: '#'
 		},
 		Washington: {
-			name: 'Washington',
+			name: 'Washington, USA',
+			description: 'United States',
 			lat: '39.77092422510255',
 			lng: '-79.43788900276091',
-			color: 'default',
+			color: '#d4af37',
 			url: '/projects/locations/washington'
 		},
 	}

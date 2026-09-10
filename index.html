@@ -1,4 +1,196 @@
-<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/DM_logo.png"><meta name="generator" content="Astro v4.16.18"><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://astro-sphere-demo.vercel.app/"><!-- Primary Meta Tags --><title>Home | Disruptive Consultancy Services</title><meta name="title" content="Home | Disruptive Consultancy Services"><meta name="description" content="Welcome to Disruptive Consultancy Services."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-sphere-demo.vercel.app/"><meta property="og:title" content="Home | Disruptive Consultancy Services"><meta property="og:description" content="Welcome to Disruptive Consultancy Services."><meta property="og:image" content="https://astro-sphere-demo.vercel.app/open-graph.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-sphere-demo.vercel.app/"><meta property="twitter:title" content="Home | Disruptive Consultancy Services"><meta property="twitter:description" content="Welcome to Disruptive Consultancy Services."><meta property="twitter:image" content="https://astro-sphere-demo.vercel.app/open-graph.jpg"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="Home | Disruptive Consultancy Services" href="https://astro-sphere-demo.vercel.app/rss.xml"><!-- Global Scripts --><script src="/js/theme.js"></script><script src="/js/scroll.js"></script><script src="/js/animate.js"></script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><link rel="stylesheet" href="/_astro/index.BY_4qGpV.css"><script type="module" src="/_astro/hoisted.3XYbzAIX.js"></script></head> <body> <header id="header" class="fixed top-0 w-full h-16 z-50 " data-astro-cid-3ef6ksr2> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="relative h-full w-full" data-astro-cid-3ef6ksr2> <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2> <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" data-astro-cid-3ef6ksr2> <!-- LOGO HERE --> <img src="/DM_logo.png" alt="DM" class="width-5" data-astro-cid-3ef6ksr2> <!-- <svg class="size-6 fill-current">
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/DM_logo.png"><meta name="generator" content="Astro v4.16.18"><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://astro-sphere-demo.vercel.app/"><!-- Primary Meta Tags --><title>Home | Disruptive Consultancy Services</title><meta name="title" content="Home | Disruptive Consultancy Services"><meta name="description" content="Welcome to Disruptive Consultancy Services."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-sphere-demo.vercel.app/"><meta property="og:title" content="Home | Disruptive Consultancy Services"><meta property="og:description" content="Welcome to Disruptive Consultancy Services."><meta property="og:image" content="https://astro-sphere-demo.vercel.app/open-graph.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-sphere-demo.vercel.app/"><meta property="twitter:title" content="Home | Disruptive Consultancy Services"><meta property="twitter:description" content="Welcome to Disruptive Consultancy Services."><meta property="twitter:image" content="https://astro-sphere-demo.vercel.app/open-graph.jpg"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="Home | Disruptive Consultancy Services" href="https://astro-sphere-demo.vercel.app/rss.xml"><!-- Global Scripts --><script src="/js/theme.js"></script><script src="/js/scroll.js"></script><script src="/js/animate.js"></script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><style>
+.hero-world-map {
+  background-size: 48% !important;
+  background-position: center 195% !important;
+  background-repeat: no-repeat !important;
+}
+.hero-heading {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.service-card-wrapper {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+}
+.service-card-wrapper * {
+  pointer-events: none;
+}
+.service-card-wrapper:hover .round-10rem {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+.service-card-wrapper .blur-container:before {
+  transition: none !important;
+  filter: none !important;
+}
+.service-card-wrapper:hover .blur-container:before {
+  filter: none !important;
+  opacity: 100% !important;
+}
+.service-card-wrapper .overlay {
+  display: none !important;
+}
+.where-we-worked-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  padding: 3rem 1.5rem;
+  border-radius: 24px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+}
+html:is(.dark *) .where-we-worked-section,
+body:is(.dark *) .where-we-worked-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+.where-we-worked-title {
+  color: #1e3a5f !important;
+  -webkit-text-fill-color: #1e3a5f !important;
+}
+html:is(.dark *) .where-we-worked-title,
+body:is(.dark *) .where-we-worked-title {
+  color: #e2e8f0 !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+}
+#map {
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+.simplemaps-map-tooltip {
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.1) !important;
+  font-weight: 500 !important;
+  color: #1e3a5f !important;
+}
+html:is(.dark *) .simplemaps-map-tooltip,
+body:is(.dark *) .simplemaps-map-tooltip {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+.who-we-are-text p,
+.who-we-are-text,
+section.margin-top-0.animate article p,
+section.margin-top-0.animate article,
+.animate article p {
+  color: #000000 !important;
+}
+html:is(.dark *) .who-we-are-text p,
+html:is(.dark *) .who-we-are-text,
+html:is(.dark *) section.margin-top-0.animate article p,
+html:is(.dark *) section.margin-top-0.animate article,
+html:is(.dark *) .animate article p,
+body:is(.dark *) .who-we-are-text p,
+body:is(.dark *) .who-we-are-text,
+body:is(.dark *) section.margin-top-0.animate article p,
+body:is(.dark *) section.margin-top-0.animate article,
+body:is(.dark *) .animate article p {
+  color: #e2e8f0 !important;
+}
+.partners-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+  padding: 3rem 1.5rem;
+  border-radius: 24px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+}
+html:is(.dark *) .partners-section,
+body:is(.dark *) .partners-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+.partner-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .partner-row {
+    grid-template-columns: 1fr;
+  }
+}
+.partner-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+html:is(.dark *) .partner-card,
+body:is(.dark *) .partner-card {
+  background: #1e293b;
+  border-color: rgba(212, 175, 55, 0.35);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+.partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+.partner-logo {
+  width: 84px;
+  height: 84px;
+  min-width: 84px;
+  border-radius: 16px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f8fafc;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+html:is(.dark *) .partner-logo,
+body:is(.dark *) .partner-logo {
+  background-color: #0f172a;
+  border-color: rgba(212, 175, 55, 0.3);
+}
+.partner-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.partner-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a5f;
+  letter-spacing: 0.01em;
+}
+html:is(.dark *) .partner-name,
+body:is(.dark *) .partner-name {
+  color: #e2e8f0;
+}
+.partner-sub {
+  font-size: 0.9rem;
+  color: #475569;
+}
+html:is(.dark *) .partner-sub,
+body:is(.dark *) .partner-sub {
+  color: #94a3b8;
+}
+.partner-arrow {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4af37;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+</style><link rel="stylesheet" href="/_astro/index.BY_4qGpV.css"><script type="module" src="/_astro/hoisted.3XYbzAIX.js"></script></head> <body> <header id="header" class="fixed top-0 w-full h-16 z-50 " data-astro-cid-3ef6ksr2> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="relative h-full w-full" data-astro-cid-3ef6ksr2> <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2> <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" data-astro-cid-3ef6ksr2> <!-- LOGO HERE --> <img src="/DM_logo.png" alt="DM" class="width-5" data-astro-cid-3ef6ksr2> <!-- <svg class="size-6 fill-current">
             <use href="/brand.svg#brand"></use>
           </svg> --> <div data-astro-cid-3ef6ksr2> Disruptive Consultancy Services </div> </a> </div> <div class="absolute left-1/2 top-1/2 -translate-x -translate-y-1/2" data-astro-cid-3ef6ksr2> <nav class="hidden md:flex items-center justify-center text-sm gap-1" data-astro-cid-3ef6ksr2> <a href="/" class="h-8 w-max rounded-full px-3 flex items-center justify-center transition-colors duration-300 ease-in-out bg-black dark:bg-white text-white dark:text-black" data-astro-cid-3ef6ksr2> Home </a><a href="/about-us" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Who We Are </a><a href="/services" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> What we Offer </a><a href="/projects" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Projects </a><a href="/locations" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Where We&#39;ve Worked </a><a href="/contact" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Contact Us </a> </nav> </div> <!-- <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
        <svg class="size-full block dark:hidden">
@@ -22,19 +214,13 @@
 
   document.addEventListener("astro:after-swap", initializeDrawerButton)
   initializeDrawerButton()
-</script> <div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out" data-astro-cid-hxtyo74s> <nav class="flex flex-col items-center space-y-2" data-astro-cid-hxtyo74s> <a href="/" class="flex items-center justify-center px-3 py-1 rounded-full hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out pointer-events-none bg-black dark:bg-white text-white dark:text-black" data-astro-cid-hxtyo74s> Home </a><a href="/about-us" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Who We Are </a><a href="/services" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> What we Offer </a><a href="/projects" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Projects </a><a href="/locations" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Where We&#39;ve Worked </a><a href="/contact" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Contact Us </a> </nav> <div class="flex gap-1 mt-5" data-astro-cid-hxtyo74s> <a href="/search" aria-label="Search blog posts and projects on Disruptive Consultancy Services" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#search" data-astro-cid-hxtyo74s></use> </svg> </a> <a href="/rss.xml" target="_blank" aria-label="Rss feed for Disruptive Consultancy Services" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#rss" data-astro-cid-hxtyo74s></use> </svg> </a> <button id="drawer-theme-button" aria-label="Toggle light and dark theme" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="block dark:hidden size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#sun" data-astro-cid-hxtyo74s></use> </svg> <svg class="hidden dark:block size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#moon" data-astro-cid-hxtyo74s></use> </svg> </button> </div> </div>  <main>        <script src="/js/bg.js"></script> <script src="/js/mapdata.js"></script> <script src="/js/worldmap.js"></script>    <section class="relative h-screen w-full flex flex-col items-center justify-center"> <div class="absolute inset-0 world_map opacity-20 z-0"></div> <!-- Welcome Text --> <div class="relative z-10 text-center"> <p class="animated text-lg md:text-xl lg:text-2xl font-semibold opacity-75 text-black dark:text-white">
-Welcome to
-</p> </div> <!-- Background Image --> <!-- <div class="relative w-full h-64 md:h-80 lg:h-96 mt-4">
-      <div
-        class="bg-image w-full h-full absolute top-0 left-0 bg-cover bg-center z-0 bg-image"
-      ></div>
-    </div> --> <!-- Name and Tagline --> <div class="relative z-10 text-center mt-8"> <p class="animated text-2xl md:text-3xl lg:text-3xl font-bold uppercase text-black dark:text-white">
+</script> <div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out" data-astro-cid-hxtyo74s> <nav class="flex flex-col items-center space-y-2" data-astro-cid-hxtyo74s> <a href="/" class="flex items-center justify-center px-3 py-1 rounded-full hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out pointer-events-none bg-black dark:bg-white text-white dark:text-black" data-astro-cid-hxtyo74s> Home </a><a href="/about-us" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Who We Are </a><a href="/services" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> What we Offer </a><a href="/projects" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Projects </a><a href="/locations" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Where We&#39;ve Worked </a><a href="/contact" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Contact Us </a> </nav> <div class="flex gap-1 mt-5" data-astro-cid-hxtyo74s> <a href="/search" aria-label="Search blog posts and projects on Disruptive Consultancy Services" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#search" data-astro-cid-hxtyo74s></use> </svg> </a> <a href="/rss.xml" target="_blank" aria-label="Rss feed for Disruptive Consultancy Services" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#rss" data-astro-cid-hxtyo74s></use> </svg> </a> <button id="drawer-theme-button" aria-label="Toggle light and dark theme" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="block dark:hidden size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#sun" data-astro-cid-hxtyo74s></use> </svg> <svg class="hidden dark:block size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#moon" data-astro-cid-hxtyo74s></use> </svg> </button> </div> </div>  <main>        <script src="/js/bg.js"></script> <script src="/js/mapdata.js"></script> <script src="/js/worldmap.js"></script>    <section class="relative h-screen w-full flex flex-col items-center justify-start pt-32"> <div class="absolute inset-0 world_map opacity-30 z-0 hero-world-map"></div> <!-- Name and Tagline --> <div class="relative z-10 text-center hero-heading"> <p class="animated text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-black dark:text-white tracking-wider">
 Disruptive Consultancy Services
-</p> <p class="animated text-sm md:text-base lg:text-lg opacity-95 text-black dark:text-white mt-0">
+</p> <p class="animated text-base md:text-lg lg:text-xl opacity-95 text-black dark:text-white mt-4 italic">
 "Transforming Ideas into Impact"
 </p> </div> </section> <div class="relative dark:bg-black"> <div class="mx-auto max-w-6xl p-5 space-y-24 pb-16"> <!-- About Section Divider --> <section class="relative flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
 WHO WE ARE
-</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- About Section --> <section class="margin-top-0 animate"> <article> <p>
+</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- About Section --> <section class="margin-top-0 animate"> <article class="who-we-are-text"> <p>
 Disruptive Consultancy Services Pvt. Ltd (DCSPL) was established in 2022 in Delhi, India by a highly qualified and experienced economist, project manager, financial analyst and social scientist, Mr. Umesh Narwadeshwar Tiwari.
 </p> <p>
 Mr. Umesh Tiwari has over 30 years of experience leading multi-million dollar rural and urban development monitoring and verification programs in Afghanistan, Bangladesh, India, Nepal, Yemen and supported by large international and national teams for the World Bank, KfW, US Agency for International Development (USAID), European Commission, World Health Organization (WHO), UNICEF, Bill and Melinda Gates Foundation, Michael and Susan Dell Foundation, and other donors across a wide range of activities and sectors, including (i) infrastructure and non- infrastructure project monitoring and asset verification, (ii) market assessment and value chain analysis, (iii) agricultural value chain analysis, (iv) watershed management, (v) economic impact analysis of water resource projects, (vi) survey design and data collection, (vii) monitoring and evaluation, (viii) cost benefit analysis for infrastructure projects, (ix) solid waste management (SWM), (x) environmental and social safeguard (ESS) management, (xi) stakeholder consultation, (xii) grant management, (xiii) logistics and operation management, (xiv) administration of disposition funds, (xv) financial management systems, (xvi) capacity building, (xvii) community-based intervention, (xviii) institutional development, (xix) Disaster Risk management,  (xx) greivance redressal mechanisms and, (xxi) development of software for asset mapping and verification.
@@ -47,27 +233,11 @@ DCSPL has the technical and operation capability to implement medium and large s
             limited resources can achieve impactful results.
           </p> --> </article> </section> <!-- WHAT WE DO Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
 WHAT WE DO
-</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Solutions we offer Section --> <section class="margin-top-0 animate"> <article> <div class="flex justify-center flex-wrap dblock-470"> <div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Monitoring And Evaluation </span> <br>  </p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Watershed Management </span> <br>  </p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Disaster Risk Management And Early Warning Systems </span> <br>  </p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Solid Waste Management And General Assessment </span> <br>  </p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Market Assessment And Value Chain Analaysis </span> <br>  </p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Development Of Toolkit </span> <br>  </p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Agricultural Sector Assessment </span> <br>  </p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> <a href="/services"> <p class="text-lg font-bold text-gray-800 dark:text-gray-200 overlay">
-See more
-</p> </a> </div> <p class="mt-2 text-center mx-8"> <span class="font-semibold"> Institutional Development </span> <br>  </p> </div> </div> </article> </section> <!-- Where we've worked Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
+</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Solutions we offer Section --> <section class="margin-top-0 animate"> <article> <div class="flex justify-center flex-wrap dblock-470"> <a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Monitoring And Evaluation </span> <br>  </p> </a><a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Watershed Management </span> <br>  </p> </a><a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Disaster Risk Management And Early Warning Systems </span> <br>  </p> </a><a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Solid Waste Management And General Assessment </span> <br>  </p> </a><a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Market Assessment And Value Chain Analaysis </span> <br>  </p> </a><a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Development Of Toolkit </span> <br>  </p> </a><a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Agricultural Sector Assessment </span> <br>  </p> </a><a href="/projects" class="service-card-wrapper flex items-center justify-center flex-col mb-8 no-underline"> <div class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300" style="background-image:url(/ico/Services/assessment.png);background-size:100%;opacity:90%;background-position:center center;background-repeat:no-repeat"> </div> <p class="mt-2 text-center mx-8 text-black dark:text-white"> <span class="font-semibold"> Institutional Development </span> <br>  </p> </a> </div> </article> </section> <!-- Where we've worked Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4 where-we-worked-title">
 WHERE WE'VE WORKED
-</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- WHERE WE'VE worked Section --> <section class="margin-top-0 animate"> <article> <div class="flex justify-center flex-wrap dblock-470"> <div id="map"></div> </div> </article> </section> <!-- Partners and Portfolio Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
+</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- WHERE WE'VE worked Section --> <section class="margin-top-0 animate"> <article> <div class="where-we-worked-section"> <div class="flex justify-center flex-wrap dblock-470"> <div id="map"></div> </div> </div> </article> </section> <!-- Partners and Portfolio Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
 PARTNERS
-</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Partners and Testimonials Section --> <section class="margin-top-0 animate"> <article> <div class="flex justify-center flex-wrap dblock-470"> <div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem flex items-center justify-center" style="background-image:url(/ico/Partners/world-bank.png);background-size:95%;background-position:center center;background-repeat:no-repeat"></div> <p class="mt-2 text-center mx-8">The World Bank</p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem flex items-center justify-center" style="background-image:url(/ico/Partners/yatharth.png);background-size:95%;background-position:center center;background-repeat:no-repeat"></div> <p class="mt-2 text-center mx-8">Yatharth Foundation</p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem flex items-center justify-center" style="background-image:url(/ico/Partners/UHRC.jpg);background-size:95%;background-position:center center;background-repeat:no-repeat"></div> <p class="mt-2 text-center mx-8">Urban Health Resource center(UHRC)</p> </div><div class="flex items-center justify-center flex-col mb-8"> <div class="round-10rem flex items-center justify-center" style="background-image:url(/ico/Partners/KFW.png);background-size:95%;background-position:center center;background-repeat:no-repeat"></div> <p class="mt-2 text-center mx-8">KFW (BORDA)</p> </div> </div> </article> </section> <!-- Contect us Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
+</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Partners and Testimonials Section --> <section class="margin-top-0 animate"> <article> <div class="partners-section"> <div class="partner-row"> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/world-bank.png)"></div> <div class="partner-info"> <div class="partner-name">The World Bank</div> <div class="partner-sub">International Financial Institution · Global Development Projects</div> </div> <div class="partner-arrow">→</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/yatharth.png)"></div> <div class="partner-info"> <div class="partner-name">Yatharth Foundation</div> <div class="partner-sub">Social Impact Organization · Community Development</div> </div> <div class="partner-arrow">→</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/UHRC.jpg)"></div> <div class="partner-info"> <div class="partner-name">Urban Health Resource Centre (UHRC)</div> <div class="partner-sub">Health Systems Strengthening · Urban Public Health</div> </div> <div class="partner-arrow">→</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/KFW.png)"></div> <div class="partner-info"> <div class="partner-name">KFW (BORDA)</div> <div class="partner-sub">German Development Bank · Infrastructure &amp; Sustainability</div> </div> <div class="partner-arrow">→</div> </a> </div> </div> </article> </section> <!-- Contect us Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
 CONTACT US
 </h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Partners and Testimonials Section --> <section class="margin-top-0 animate"> <article> <h2 class="text-center font-semibold tracking-tight text-black dark:text-white mx-4"> We Would Like To Hear From You </h2> <div class="contact-us-wrapper"> <a href="mailto:#" target="_blank" aria-label="Disruptive Consultancy Services on Email" class="hover:bg-black/5 dark:hover:bg-white/20  blend"> <svg class="size-16 fill-current group-hover:fill-black group-hover:dark:fill-white blend"> <use href="/social.svg#email"></use> </svg> </a><a href="#" target="_blank" aria-label="Disruptive Consultancy Services on LinkedIn" class="hover:bg-black/5 dark:hover:bg-white/20  blend"> <svg class="size-16 fill-current group-hover:fill-black group-hover:dark:fill-white blend"> <use href="/social.svg#linkedin"></use> </svg> </a> </div> </article> </section> </div> </div>  </main> <footer class="relative bg-white dark:bg-black"> <div class="animate"> <section class="py-5"> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="flex items-center justify-center sm:justify-end"> <button id="back-to-top" aria-label="Back to top of page" class="group flex w-fit p-1.5 gap-1.5 text-sm items-center border rounded hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white rotate-90"> <line x1="19" y1="12" x2="5" y2="12" class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 ease-in-out"></line> <polyline points="12 19 5 12 12 5" class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"></polyline> </svg> <div class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">
 Back to top
