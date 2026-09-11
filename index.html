@@ -91,104 +91,49 @@ body:is(.dark *) .animate article p {
   color: #000000 !important;
 }
 .partners-section {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
-  padding: 3rem 1.5rem;
-  border-radius: 24px;
+  background: #ffffff;
+  padding: 4rem 2rem;
   margin: 2rem 0;
-  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
-}
-html:is(.dark *) .partners-section,
-body:is(.dark *) .partners-section {
-  background: linear-gradient(135deg, #a1b2d9 0%, #657ea5 50%, #677c99 100%);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 .partner-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
-@media (max-width: 767px) {
-  .partner-row {
-    grid-template-columns: 1fr;
-  }
-}
 .partner-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1.25rem 1.5rem;
+  justify-content: center;
+  padding: 2rem;
   background: #ffffff;
-  border-radius: 18px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   transition: all 0.3s ease;
   text-decoration: none;
 }
-html:is(.dark *) .partner-card,
-body:is(.dark *) .partner-card {
-  background: #1e293b;
-  border-color: rgba(212, 175, 55, 0.35);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-}
 .partner-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.12);
-  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: #d4af37;
 }
 .partner-logo {
-  width: 84px;
-  height: 84px;
-  min-width: 84px;
-  border-radius: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f8fafc;
-  border: 1px solid rgba(212, 175, 55, 0.2);
-}
-html:is(.dark *) .partner-logo,
-body:is(.dark *) .partner-logo {
-  background-color: #0f172a;
-  border-color: rgba(212, 175, 55, 0.3);
-}
-.partner-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  margin-bottom: 1rem;
 }
 .partner-name {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #1e3a5f;
-  letter-spacing: 0.01em;
-}
-html:is(.dark *) .partner-name,
-body:is(.dark *) .partner-name {
-  color: #e2e8f0;
-}
-.partner-sub {
-  font-size: 0.9rem;
-  color: #475569;
-}
-html:is(.dark *) .partner-sub,
-body:is(.dark *) .partner-sub {
-  color: #94a3b8;
-}
-.partner-arrow {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #d4af37;
-  font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
 }
 </style><link rel="stylesheet" href="/_astro/index.BY_4qGpV.css"><script type="module" src="/_astro/hoisted.3XYbzAIX.js"></script></head> <body> <header id="header" class="fixed top-0 w-full h-16 z-50 " data-astro-cid-3ef6ksr2> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="relative h-full w-full" data-astro-cid-3ef6ksr2> <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2> <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" data-astro-cid-3ef6ksr2> <!-- LOGO HERE --> <img src="/DM_logo.png" alt="DM" class="width-5" data-astro-cid-3ef6ksr2> <!-- <svg class="size-6 fill-current">
             <use href="/brand.svg#brand"></use>
@@ -237,7 +182,7 @@ WHAT WE DO
 WHERE WE'VE WORKED
 </h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- WHERE WE'VE worked Section --> <section class="margin-top-0 animate"> <article> <div class="where-we-worked-section"> <div class="flex justify-center flex-wrap dblock-470"> <div id="map"></div> </div> </div> </article> </section> <!-- Partners and Portfolio Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
 PARTNERS
-</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Partners and Testimonials Section --> <section class="margin-top-0 animate"> <article> <div class="partners-section"> <div class="partner-row"> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/world-bank.png)"></div> <div class="partner-info"> <div class="partner-name">The World Bank</div> <div class="partner-sub">International Financial Institution · Global Development Projects</div> </div> <div class="partner-arrow">→</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/yatharth.png)"></div> <div class="partner-info"> <div class="partner-name">Yatharth Foundation</div> <div class="partner-sub">Social Impact Organization · Community Development</div> </div> <div class="partner-arrow">→</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/UHRC.jpg)"></div> <div class="partner-info"> <div class="partner-name">Urban Health Resource Centre (UHRC)</div> <div class="partner-sub">Health Systems Strengthening · Urban Public Health</div> </div> <div class="partner-arrow">→</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/KFW.png)"></div> <div class="partner-info"> <div class="partner-name">KFW (BORDA)</div> <div class="partner-sub">German Development Bank · Infrastructure &amp; Sustainability</div> </div> <div class="partner-arrow">→</div> </a> </div> </div> </article> </section> <!-- Contect us Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
+</h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Partners and Testimonials Section --> <section class="margin-top-0 animate"> <article> <div class="partners-section"> <div class="partner-row"> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/world-bank.png)"></div> <div class="partner-name">The World Bank</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/yatharth.png)"></div> <div class="partner-name">Yatharth Foundation</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/UHRC.jpg)"></div> <div class="partner-name">UHRC</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/KFW.png)"></div> <div class="partner-name">KFW</div> </a> <a href="/projects" class="partner-card"> <div class="partner-logo" style="background-image:url(/ico/Partners/USAID.png)"></div> <div class="partner-name">USAID</div> </a> </div> </div> </article> </section> <!-- Contect us Divider --> <section class="relative margin-top-0 flex flex-col items-center gap-4"> <div class="flex mb-5 items-center w-full"> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> <h2 class="text-4xl font-semibold tracking-tight text-black dark:text-white mx-4">
 CONTACT US
 </h2> <hr class="flex-grow border-t border-gray-900 dark:border-gray-900"> </div> </section> <!-- Partners and Testimonials Section --> <section class="margin-top-0 animate"> <article> <h2 class="text-center font-semibold tracking-tight text-black dark:text-white mx-4"> We Would Like To Hear From You </h2> <div class="contact-us-wrapper"> <a href="mailto:#" target="_blank" aria-label="Disruptive Consultancy Services on Email" class="hover:bg-black/5 dark:hover:bg-white/20  blend"> <svg class="size-16 fill-current group-hover:fill-black group-hover:dark:fill-white blend"> <use href="/social.svg#email"></use> </svg> </a><a href="#" target="_blank" aria-label="Disruptive Consultancy Services on LinkedIn" class="hover:bg-black/5 dark:hover:bg-white/20  blend"> <svg class="size-16 fill-current group-hover:fill-black group-hover:dark:fill-white blend"> <use href="/social.svg#linkedin"></use> </svg> </a> </div> </article> </section> </div> </div>  </main> <footer class="relative bg-white dark:bg-black"> <div class="animate"> <section class="py-5"> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="flex items-center justify-center sm:justify-end"> <button id="back-to-top" aria-label="Back to top of page" class="group flex w-fit p-1.5 gap-1.5 text-sm items-center border rounded hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white rotate-90"> <line x1="19" y1="12" x2="5" y2="12" class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 ease-in-out"></line> <polyline points="12 19 5 12 12 5" class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"></polyline> </svg> <div class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">
 Back to top
