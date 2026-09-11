@@ -183,7 +183,7 @@ function enhanceHomeHero() {
     const cta = document.createElement('a')
     cta.className = 'home-cta'
     cta.href = '/contact'
-    cta.innerHTML = 'Get In Touch <span aria-hidden="true">→</span>'
+    
     headerInner.appendChild(cta)
   }
 
