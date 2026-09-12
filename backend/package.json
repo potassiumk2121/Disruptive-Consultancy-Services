@@ -1,0 +1,10 @@
+{
+  "name": "dcs-backend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Local server and API for Disruptive Consultancy Services",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+backend/data/inquiries/
+.DS_Store
+Thumbs.db
