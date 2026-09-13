@@ -21,9 +21,10 @@ var simplemaps_worldmap_mapdata = {
 		location_color: '#1e3a5f',
 		location_opacity: 1,
 		location_hover_opacity: 1,
-		location_size: 14,
-		location_type: 'circle', // circle, square, image
-		location_image_source: "location.png",
+		location_size: 14, // for image markers this is the pin height; width follows the image ratio
+		location_type: 'image', // circle, square, image
+		location_image_source: "location_pin.png",
+		// location_image_position: 'bottom-centre', // pin tip sits on the coordinate
 		location_border_color: '#d4af37',
 		location_border: 2,
 		location_hover_border: 3,
@@ -61,7 +62,7 @@ var simplemaps_worldmap_mapdata = {
 		div: 'map',
 		auto_load: 'yes',		
 		url_new_tab: 'no', 
-		images_directory: 'map_images/', //e.g. 'map_images/'
+		images_directory: '/map_images/', //where location_image_source is loaded from
 		fade_time:  .1, //time to fade out		
 		link_text: 'View Website'  //Text mobile browsers will see for links	
 	},
@@ -1572,48 +1573,48 @@ var simplemaps_worldmap_mapdata = {
 		Afghanistan: { 
 			name: 'Afghanistan',
 			description: 'Afghanistan',
-			lat: '37.67525308303592',
-			lng: '67.85366589993262',
+			lat: '33.94',
+			lng: '67.71',
 			color: '#d4af37',
 			url: '/projects/locations/afghanistan',
 		},
 		Yemen: { 
 			name: 'Yemen',
 			description: 'Yemen',
-			lat: '20.0910008278988',
-			lng: '48.32986220719421',
+			lat: '15.55',
+			lng: '47.60',
 			color: '#d4af37',
 			url: '/projects/locations/yemen'
 		},
 		India: { 
 			name: 'India',
 			description: 'India',
-			lat: '31.100476485143847',
-			lng: '77.17970831502998',
+			lat: '21.50',
+			lng: '78.90',
 			color: '#d4af37',
 			url: '/projects/locations/india'
 		},
 		Nepal: { 
 			name: 'Nepal',
 			description: 'Nepal',
-			lat: '32.2756396280572',
-			lng: '85.56383794456042',
+			lat: '28.20',
+			lng: '84.10',
 			color: '#d4af37',
 			url: '/projects/locations/nepal'
 		},
 		Germany: { 
 			name: 'Germany',
 			description: 'Germany',
-			lat: '55.81335729116941',
-			lng: '10.298985841893973',
+			lat: '51.10',
+			lng: '10.40',
 			color: '#d4af37',
 			url: '#'
 		},
 		Washington: {
 			name: 'Washington, USA',
 			description: 'United States',
-			lat: '39.77092422510255',
-			lng: '-79.43788900276091',
+			lat: '38.91',
+			lng: '-77.04',
 			color: '#d4af37',
 			url: '/projects/locations/washington'
 		},
