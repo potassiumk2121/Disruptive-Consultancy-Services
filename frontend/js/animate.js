@@ -46,12 +46,21 @@ function applySiteChrome() {
       height: auto !important; justify-content: flex-start !important; min-height: 0 !important; padding: 6.2rem 1rem 1.25rem !important;
     }
     .home-hero-title-block {
-      background: none !important; left: auto !important; max-width: 72rem; padding: .35rem 1rem .2rem !important;
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.84), rgba(255,255,255,0)) !important;
+      left: auto !important; max-width: 72rem; padding: .45rem 1rem .85rem !important;
       position: relative !important; text-align: center !important; top: auto !important; transform: none !important; width: 100%; z-index: 5;
     }
     .home-hero-welcome { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .22em; margin: 0 0 .35rem; text-transform: uppercase; color: #111 !important; }
     .home-hero-title { color: #0b1b33 !important; font-size: clamp(1.45rem, 3.1vw, 2.55rem) !important; letter-spacing: .08em !important; line-height: 1.15; margin: 0 auto; max-width: 100%; white-space: normal; }
-    .home-hero-tagline { color: #7a5a12 !important; font-size: 1rem; font-style: italic; letter-spacing: .04em; margin-top: .45rem !important; }
+    .home-hero-tagline {
+      align-items: center; color: #8a6512 !important; display: inline-flex !important; font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(.92rem, 1.45vw, 1.12rem) !important; font-style: italic; font-weight: 500; gap: .75rem;
+      letter-spacing: .06em; line-height: 1.3; margin: .65rem auto 0 !important; position: relative; text-shadow: 0 1px 0 rgba(255,255,255,.9);
+    }
+    .home-hero-tagline::before, .home-hero-tagline::after {
+      background: linear-gradient(90deg, transparent, #d4a72c); content: ''; display: block; height: 1px; width: clamp(28px, 5vw, 68px);
+    }
+    .home-hero-tagline::after { background: linear-gradient(90deg, #d4a72c, transparent); }
     .world_map.home-hero-map {
       background-color: #fff !important; background-position: center center !important; background-repeat: no-repeat !important;
       background-size: contain !important; height: min(38vh, 360px) !important; inset: auto !important; margin: .6rem auto 0 !important;
@@ -351,10 +360,18 @@ function enhanceHomeHero() {
     }
   }
 
-  const tagline = [...hero.querySelectorAll('p')].find((element) =>
-    element.textContent.includes('Transforming Ideas into Impact')
-  )
-  if (tagline) tagline.classList.add('home-hero-tagline')
+  let tagline = hero.querySelector('.home-hero-tagline') ||
+    [...hero.querySelectorAll('p')].find((element) =>
+      element.textContent.toLowerCase().includes('transforming ideas into impact')
+    )
+  if (!tagline && title) {
+    tagline = document.createElement('p')
+  }
+  if (tagline && title) {
+    tagline.textContent = 'Transforming Ideas into Impact'
+    tagline.classList.add('home-hero-tagline')
+    title.insertAdjacentElement('afterend', tagline)
+  }
 }
 
 function enhanceMeetTheTeam() {

@@ -123,15 +123,50 @@
         line-height: 1.05;
         text-transform: uppercase;
         color: #0a1f3d;
-        margin: 0 0 0;
+        margin: 0;
         white-space: nowrap;
         overflow: hidden;
+      }
+
+      .hero-premium-tagline {
+        align-items: center;
+        color: #8a6512;
+        display: flex;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(0.82rem, 1.35vw, 1.08rem);
+        font-style: italic;
+        font-weight: 500;
+        gap: 0.75rem;
+        justify-content: center;
+        letter-spacing: 0.06em;
+        line-height: 1.3;
+        margin: 0.55rem auto 0;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95);
+      }
+
+      .hero-premium-tagline::before,
+      .hero-premium-tagline::after {
+        background: linear-gradient(90deg, transparent, #d4a72c);
+        content: "";
+        display: block;
+        height: 1px;
+        width: clamp(28px, 5vw, 66px);
+      }
+
+      .hero-premium-tagline::after {
+        background: linear-gradient(90deg, #d4a72c, transparent);
       }
 
       @media (max-width: 520px) {
         .hero-main-title {
           white-space: normal;
           font-size: clamp(1.05rem, 4.4vw, 1.6rem);
+        }
+
+        .hero-premium-tagline {
+          font-size: 0.78rem;
+          gap: 0.45rem;
+          letter-spacing: 0.035em;
         }
 
         .hero-section-inner {
@@ -508,6 +543,7 @@
         <div class="hero-section-inner hero-world-map">
           <div class="hero-heading-wrap">
             <h1 class="hero-main-title">Disruptive Consultancy Services</h1>
+            <p class="hero-premium-tagline">Transforming Ideas into Impact</p>
           </div>
         </div>
       </section>
