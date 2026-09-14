@@ -76,42 +76,131 @@ function applySiteChrome() {
       background: #fff; border: 1px solid #ececec; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.04);
       color: #222 !important; font-size: 1.02rem; line-height: 1.8; margin: 0 auto; max-width: 58rem; padding: 1.6rem 1.7rem;
     }
-    .service-grid { display: grid; gap: 1.15rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .service-grid { display: grid; gap: 1.15rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .service-offer-card {
       background: #fff; border: 1px solid #ececec; border-radius: 16px; box-shadow: 0 12px 28px rgba(0,0,0,.05);
-      min-height: 100%; padding: 1.35rem 1.2rem 1.2rem; position: relative;
+      min-height: 420px; overflow: hidden; padding: 0 0 1.25rem; position: relative; transition: box-shadow .25s ease, transform .25s ease;
     }
-    .service-offer-card::before { background: #111; border-radius: 16px 16px 0 0; content: ''; height: 4px; left: 0; position: absolute; right: 0; top: 0; }
-    .service-offer-card h2, .service-offer-card p { color: #111 !important; margin: 0 !important; text-align: left !important; }
-    .service-offer-card h2 { font-size: 1.05rem !important; letter-spacing: .02em; margin-bottom: .55rem !important; }
+    .service-offer-card:hover { box-shadow: 0 22px 46px rgba(15,23,42,.12); transform: translateY(-5px); }
+    .service-media {
+      background-color: #eef1f4; background-position: center; background-repeat: no-repeat; background-size: cover;
+      height: 175px; margin-bottom: 1rem; overflow: hidden; position: relative; width: 100%;
+    }
+    .service-media::after { background: linear-gradient(180deg, transparent 55%, rgba(15,23,42,.18)); content: ""; inset: 0; position: absolute; }
+    .service-offer-card h2, .service-offer-card > p { color: #111 !important; margin-left: 1.1rem !important; margin-right: 1.1rem !important; text-align: left !important; }
+    .service-offer-card h2 p { margin: 0 !important; text-align: left !important; }
+    .service-offer-card h2 { font-size: 1.05rem !important; letter-spacing: .02em; margin-bottom: .65rem !important; }
     .service-offer-card p { color: #444 !important; font-size: .95rem; line-height: 1.6; }
     .team-card {
       background: #fff; border: 1px solid #ececec; border-radius: 16px; box-shadow: 0 12px 28px rgba(0,0,0,.05);
       min-width: 280px; padding: 1.6rem 1.3rem !important; position: relative;
     }
     .team-card, .team-card * { background: #fff !important; color: #111 !important; opacity: 1 !important; }
-    .location-card { background: #fff !important; border: 1px solid #ececec !important; border-radius: 18px !important; box-shadow: 0 12px 28px rgba(0,0,0,.05) !important; color: #111 !important; }
-    .location-card h2, .location-card p { color: #111 !important; -webkit-text-fill-color: #111 !important; background: none !important; }
-
-    .projects-layout { align-items: flex-start; display: grid; gap: 1.5rem; grid-template-columns: 240px 1fr; }
-    .projects-filter {
-      background: #fff; border: 1px solid #ececec; border-radius: 18px; box-shadow: 0 12px 28px rgba(0,0,0,.05); padding: 1.2rem;
+    .locations-catalog { display: grid !important; gap: 1.25rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .location-card {
+      background: #fff !important; border: 1px solid #e8e8e8 !important; border-radius: 18px !important;
+      box-shadow: 0 12px 32px rgba(15,23,42,.07) !important; color: #111 !important; margin: 0 !important;
+      overflow: hidden; padding: 0 !important; transition: box-shadow .25s ease, transform .25s ease;
     }
-    .projects-filter h2 { color: #111 !important; font-size: 1rem !important; letter-spacing: .08em; margin-bottom: .9rem !important; text-transform: uppercase; }
-    .filter-button { background: #fafafa !important; border: 1px solid #e6e6e6 !important; border-radius: 10px !important; color: #111 !important; margin-bottom: .45rem; }
-    .filter-button:hover, .filter-button.active { background: #111 !important; color: #fff !important; }
-    #projects-container { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .location-card:hover { box-shadow: 0 20px 46px rgba(15,23,42,.12) !important; transform: translateY(-5px); }
+    .location-card > div[id^="Project_locations_"] { height: 240px !important; width: 100% !important; }
+    .location-card h2 { border-top: 1px solid #eee; margin: 0 !important; padding: 1rem .7rem 1.15rem; }
+    .location-card h2, .location-card p { background: none !important; color: #111 !important; -webkit-text-fill-color: #111 !important; }
+    .location-card p { font-size: 1rem !important; font-weight: 750; margin: 0 !important; }
+
+    .projects-layout {
+      align-items: flex-start; display: grid !important; gap: 2rem; grid-template-columns: 250px minmax(0, 1fr);
+      max-width: 1380px !important; padding-bottom: 5rem !important;
+    }
+    .projects-filter {
+      background: #fff; border: 1px solid #e4e7eb !important; border-radius: 16px; box-shadow: 0 14px 38px rgba(15,23,42,.07);
+      min-width: 0 !important; overflow: hidden; padding: 0 !important; position: sticky; top: 5.2rem; width: 100% !important;
+    }
+    .filter-panel-head { align-items: center; border-bottom: 1px solid #e7e9ed; display: flex; justify-content: space-between; padding: 1.05rem 1.1rem; }
+    .filter-panel-head h2 { color: #111827 !important; font-size: 1.05rem !important; letter-spacing: 0; margin: 0 !important; text-transform: none; }
+    .filter-clear {
+      background: transparent; border: 0; color: #3267a8; cursor: pointer; font-size: .68rem; font-weight: 800;
+      letter-spacing: .06em; padding: .2rem; text-transform: uppercase;
+    }
+    .filter-clear:hover { color: #a66b00; }
+    .filter-group { padding: 1.15rem 1.1rem 1.3rem; }
+    .filter-group-title { color: #111827; font-size: .76rem; font-weight: 850; letter-spacing: .11em; margin: 0 0 .85rem; text-transform: uppercase; }
+    .location-filter-list { display: grid; gap: .72rem; list-style: none; margin: 0; padding: 0; }
+    .location-filter-option { align-items: center; color: #252b35; cursor: pointer; display: grid; font-size: .9rem; gap: .65rem; grid-template-columns: 18px 1fr auto; }
+    .location-filter-option input {
+      appearance: none; background: #fff; border: 1.5px solid #aeb5bf; border-radius: 3px; cursor: pointer;
+      display: block; height: 18px; margin: 0; position: relative; transition: all .18s ease; width: 18px;
+    }
+    .filter-checkbox { display: none; }
+    .location-filter-option input:checked { background: #111827; border-color: #111827; }
+    .location-filter-option input:checked::after {
+      border: solid #fff; border-width: 0 2px 2px 0; content: ""; height: 9px; left: 5px; position: absolute; top: 2px; transform: rotate(45deg); width: 5px;
+    }
+    .location-filter-option:hover input { border-color: #111827; }
+    .filter-count { background: #f2f4f7; border-radius: 999px; color: #667085; font-size: .7rem; min-width: 24px; padding: .18rem .42rem; text-align: center; }
+    .project-result-count { color: #667085; display: block; font-size: .85rem; font-weight: 500; margin-top: .25rem; }
+    .projects-content { min-width: 0; padding: 0 !important; width: 100% !important; }
+    .projects-content > h2 { font-size: clamp(1.65rem, 2.4vw, 2.25rem) !important; margin: 0 0 1.5rem !important; text-align: left !important; }
+    #projects-container { display: grid !important; gap: 1.25rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .project-item {
       background: #fff !important; border: 1px solid #ececec !important; border-radius: 16px !important;
-      box-shadow: 0 14px 32px rgba(0,0,0,.05) !important; display: flex; flex-direction: column; gap: .45rem; min-height: 188px; padding: 1.25rem 1.2rem !important;
+      box-shadow: 0 12px 30px rgba(15,23,42,.06) !important; display: flex !important; flex-direction: column; gap: .5rem;
+      min-height: 390px; overflow: hidden; padding: 0 0 1.15rem !important; position: relative; transition: box-shadow .25s ease, transform .25s ease;
     }
+    .project-item:hover { box-shadow: 0 22px 48px rgba(15,23,42,.12) !important; transform: translateY(-5px); }
+    .project-media {
+      background-color: #f3f5f7; background-position: center; background-repeat: no-repeat; background-size: cover;
+      height: 190px; margin-bottom: .55rem; overflow: hidden; position: relative; width: 100%;
+    }
+    .project-media::after { background: linear-gradient(180deg, transparent 55%, rgba(15,23,42,.18)); content: ""; inset: 0; position: absolute; }
+    .project-item > h3, .project-item > p { margin-left: 1.05rem !important; margin-right: 1.05rem !important; }
     .project-item h3, .project-item h3 a, .project-item p { color: #111 !important; }
-    .project-item h3 { font-size: 1.08rem; line-height: 1.35; }
-    .project-chip { align-self: flex-start; background: #111; border-radius: 999px; color: #fff; font-size: .7rem; letter-spacing: .08em; padding: .22rem .6rem; text-transform: uppercase; }
+    .project-item h3 { font-size: 1.03rem; line-height: 1.35; min-height: 2.75rem; }
+    .project-item p { color: #4b5563 !important; font-size: .87rem; line-height: 1.55; }
+    .project-item p:last-child { margin-top: auto !important; }
+    .project-item p:last-child span { color: #a66b00 !important; }
+    .project-chip {
+      align-self: flex-start; background: #111827; border-radius: 999px; color: #fff; font-size: .65rem; font-weight: 750;
+      left: .85rem; letter-spacing: .08em; padding: .32rem .65rem; position: absolute; text-transform: uppercase; top: .85rem; z-index: 2;
+    }
+
+    .about-page { background: #f7f8fa !important; }
+    .about-page .page-hero { background: #f7f8fa !important; padding-bottom: 2.5rem !important; }
+    .about-intro-section { padding: 0 1.25rem 4rem; }
+    .about-intro {
+      background: #fff; border: 1px solid #e7e9ed; border-radius: 24px; box-shadow: 0 20px 55px rgba(15,23,42,.08);
+      display: grid; grid-template-columns: 1.05fr .95fr; margin: 0 auto; max-width: 1120px; overflow: hidden;
+    }
+    .about-intro-copy { padding: clamp(2rem, 4vw, 3.5rem); }
+    .about-eyebrow { color: #a66b00 !important; font-size: .72rem !important; font-weight: 850; letter-spacing: .16em; margin: 0 0 .8rem !important; text-transform: uppercase; }
+    .about-intro h1 { color: #111827 !important; font-size: clamp(2rem, 3.6vw, 3.25rem); letter-spacing: -.035em; line-height: 1.08; margin: 0 0 1.1rem; }
+    .about-lead { color: #4b5563 !important; font-size: 1rem !important; line-height: 1.8 !important; margin: 0 !important; text-align: left !important; }
+    .about-intro-media { background: url('/new_world_map2.png') center/cover no-repeat; min-height: 420px; position: relative; }
+    .about-intro-media::after { background: linear-gradient(135deg, rgba(15,23,42,.04), rgba(15,23,42,.36)); content: ""; inset: 0; position: absolute; }
+    .about-metrics { display: grid; gap: .8rem; grid-template-columns: repeat(3, 1fr); margin-top: 1.7rem; }
+    .about-metric { border-left: 2px solid #d4a72c; padding-left: .75rem; }
+    .about-metric strong { color: #111827; display: block; font-size: 1.35rem; line-height: 1; }
+    .about-metric span { color: #667085; display: block; font-size: .72rem; line-height: 1.3; margin-top: .3rem; }
+    .about-page .mx-auto.max-w-6xl { max-width: 1120px !important; }
+    .about-page .mx-auto.max-w-6xl.space-y-24 { padding-bottom: 5rem !important; }
+    .about-page .meet-the-team-section, .about-page .about-divider { margin-top: 1rem; }
+    .about-page .meet-the-team-section h2, .about-page .about-divider h2 { color: #111827 !important; font-size: clamp(1.5rem, 2.5vw, 2rem) !important; letter-spacing: -.02em; white-space: nowrap; }
+    .about-page .meet-the-team-content > article > div { gap: 1.25rem; }
+    .about-page .team-card {
+      align-items: flex-start !important; background: #fff !important; border: 1px solid #e7e9ed; border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(15,23,42,.06); height: auto !important; min-height: 150px; padding: 1.5rem !important;
+    }
+    .about-page .team-card > .text-lg { font-size: 1.15rem; margin: 0 0 .35rem !important; }
+    .team-role { color: #a66b00 !important; display: block; font-size: .78rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
+    .about-page .team-card > .absolute { bottom: 1.2rem !important; left: 1.5rem !important; opacity: 1 !important; transform: none !important; }
+    .about-page .about-content-section article {
+      background: #fff; border: 1px solid #e7e9ed; border-radius: 18px; box-shadow: 0 12px 34px rgba(15,23,42,.05); padding: 1.6rem 1.8rem;
+    }
+    .about-page .about-content-section .prose-block { border: 0; box-shadow: none; margin: 0; max-width: none; padding: 0; }
 
     .contact-shell { display: grid; gap: 1.5rem; grid-template-columns: 1.1fr .9fr; }
     .contact-card, .contact-side {
-      background: #fff; border: 1px solid #ececec; border-radius: 18px; box-shadow: 0 14px 32px rgba(0,0,0,.05); padding: 1.6rem;
+      background: #fff; border: 1px solid #e7e7e7; border-radius: 22px; box-shadow: 0 18px 45px rgba(15,23,42,.07); padding: 2rem;
     }
     .contact-card h2, .contact-side h3, .contact-card label, .contact-card p, .contact-side p, .contact-side a { color: #111 !important; }
     .contact-card input, .contact-card textarea {
@@ -122,12 +211,28 @@ function applySiteChrome() {
     }
     .contact-card button:hover { background: #c9a227; color: #111; }
     .contact-meta { color: #555 !important; font-size: .95rem; line-height: 1.7; }
-    .home-contact-grid { display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 1.2rem; }
-    .home-contact-tile {
-      background: #fff; border: 1px solid #ececec; border-radius: 16px; box-shadow: 0 10px 24px rgba(0,0,0,.04);
-      color: #111; padding: 1.2rem 1.1rem; text-align: left;
+    .contact-side { background: #6484ae !important; border: 0; color: #0f0101 !important; overflow: hidden; position: relative; }
+    .contact-side::before { background: #d4a72c; border-radius: 50%; content: ""; height: 180px; opacity: .16; position: absolute; right: -75px; top: -75px; width: 180px; }
+    .contact-side h3, .contact-side p, .contact-side a, .contact-side strong { color: #fff !important; }
+    .contact-side h3 { font-size: 1.55rem; margin-bottom: .8rem; }
+    .contact-side-intro { color: #cbd5e1 !important; margin-bottom: 1.5rem; }
+    .contact-detail { align-items: flex-start; border-top: 1px solid rgba(255,255,255,.12); display: grid; gap: .8rem; grid-template-columns: 36px 1fr; padding: 1.15rem 0; }
+    .contact-detail-icon { align-items: center; background: #d4a72c; border-radius: 10px; color: #111827 !important; display: flex; font-weight: 850; height: 36px; justify-content: center; width: 36px; }
+    .contact-detail b { color: #f8fafc; display: block; font-size: .72rem; letter-spacing: .12em; margin-bottom: .25rem; text-transform: uppercase; }
+    .contact-detail span, .contact-detail a { color: #010810 !important; font-size: .92rem; line-height: 1.55; }
+    .home-contact-panel {
+      background: #5771a1; border-radius: 24px; box-shadow: 0 20px 50px rgba(15,23,42,.14); color: #fff;
+      display: grid; gap: 2rem; grid-template-columns: 1.05fr 1fr; overflow: hidden; padding: 2.3rem;
     }
-    .home-contact-tile b { display: block; font-size: .78rem; letter-spacing: .12em; margin-bottom: .35rem; text-transform: uppercase; }
+    .home-contact-copy h3 { color: #fff !important; font-size: clamp(1.5rem, 2.6vw, 2.2rem); line-height: 1.18; margin: 0 0 .7rem; }
+    .home-contact-copy p { color: #cbd5e1 !important; line-height: 1.7; margin: 0 0 1.25rem; }
+    .home-contact-button { background: #d4a72c; border-radius: 999px; color: #111827 !important; display: inline-flex; font-weight: 800; padding: .75rem 1.15rem; text-decoration: none; }
+    .home-contact-grid { display: grid; gap: .8rem; grid-template-columns: 1fr; margin: 0; }
+    .home-contact-tile {
+      background: rgba(255,255,255,.075); border: 1px solid rgba(255,255,255,.12); border-radius: 14px;
+      color: #f8fafc !important; padding: .9rem 1rem; text-align: left; text-decoration: none;
+    }
+    .home-contact-tile b { color: #d4a72c !important; display: block; font-size: .68rem; letter-spacing: .12em; margin-bottom: .3rem; text-transform: uppercase; }
 
     .site-footer { background: #fff !important; border-top: 1px solid #eee; color: #111 !important; padding: 3.2rem 6vw 2rem; }
     .site-footer * { color: #111; }
@@ -159,9 +264,21 @@ function applySiteChrome() {
     .where-we-worked-title { color: #111 !important; -webkit-text-fill-color: #111 !important; }
 
     @media (max-width: 980px) {
-      .projects-layout, .contact-shell, .home-contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      #projects-container, .locations-catalog, .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .projects-layout { grid-template-columns: 220px minmax(0, 1fr); }
+      .contact-shell, .home-contact-panel, .footer-grid, .about-intro { grid-template-columns: 1fr; }
+      .about-intro-media { min-height: 320px; }
       .home-hero-title { white-space: normal; }
       .world_map.home-hero-map { height: 38vh !important; }
+    }
+    @media (max-width: 700px) {
+      .projects-layout, #projects-container, .locations-catalog, .service-grid { grid-template-columns: 1fr; }
+      .projects-filter { position: static; }
+      .project-item { min-height: 365px; }
+      .home-contact-panel { padding: 1.4rem; }
+      .about-metrics { grid-template-columns: 1fr; }
+      .about-intro-copy { padding: 1.6rem; }
+      .about-intro-media { min-height: 240px; }
     }
   `
 }
@@ -182,14 +299,14 @@ function enhanceHomeHero() {
   if (headerInner && !header.querySelector('.home-cta')) {
     const cta = document.createElement('a')
     
-    
-    headerInner.appendChild(cta)
   }
 
   enhanceMeetTheTeam()
   enhanceWhatWeDo()
   enhanceInnerPages()
+  enhanceAboutPage()
   enhanceProjects()
+  enhanceLocations()
   enhanceContact()
   replaceDummyCopy()
   replaceSiteFooter()
@@ -311,8 +428,73 @@ function enhanceInnerPages() {
   if (servicesGrid && servicesGrid.dataset.redesigned !== 'true') {
     servicesGrid.dataset.redesigned = 'true'
     servicesGrid.classList.add('service-grid')
-    ;[...servicesGrid.children].forEach((card) => card.classList.add('service-offer-card'))
+    const serviceImages = [
+      '/new_world_map2.png',
+      '/ico/Services/water-suppy.jpg',
+      '/new_world_map2.png',
+      '/new_world_map2.png',
+      '/new_world_map2.png',
+      '/new_world_map2.png',
+      '/new_world_map2.png',
+      '/new_world_map2.png'
+    ]
+    ;[...servicesGrid.children].forEach((card, index) => {
+      card.classList.add('service-offer-card')
+      if (card.querySelector('.service-media')) return
+      const title = card.querySelector('h2')?.textContent.replace(/\s+/g, ' ').trim() || 'Professional service'
+      const media = document.createElement('div')
+      media.className = 'service-media'
+      media.setAttribute('role', 'img')
+      media.setAttribute('aria-label', title)
+      media.style.backgroundImage = `url("${serviceImages[index % serviceImages.length]}")`
+      card.prepend(media)
+    })
   }
+}
+
+function enhanceAboutPage() {
+  if (location.pathname.replace(/\/$/, '') !== '/about-us') return
+  document.body.classList.add('about-page')
+
+  const introSection = document.querySelector('main > section.relative.text-center')
+  if (introSection && introSection.dataset.redesigned !== 'true') {
+    introSection.dataset.redesigned = 'true'
+    introSection.className = 'about-intro-section'
+    introSection.innerHTML = `
+      <div class="about-intro">
+        <div class="about-intro-copy">
+          <p class="about-eyebrow">Evidence-led development consulting</p>
+          <h1>Experience that turns complex programmes into measurable progress.</h1>
+          <p class="about-lead">Disruptive Consultancy Services combines more than three decades of leadership in monitoring, evaluation, infrastructure and institutional development. We help governments and development partners make confident decisions with credible field evidence and practical delivery support.</p>
+          <div class="about-metrics">
+            <div class="about-metric"><strong>30+</strong><span>Years of leadership experience</span></div>
+            <div class="about-metric"><strong>$260M+</strong><span>Programmes led by our founders</span></div>
+            <div class="about-metric"><strong>5</strong><span>Core operating countries</span></div>
+          </div>
+        </div>
+        <div class="about-intro-media" role="img" aria-label="DCS field programme in India"></div>
+      </div>
+    `
+  }
+
+  document.querySelectorAll('main h2').forEach((heading) => {
+    const title = heading.textContent.trim().toUpperCase()
+    if (['OUR STORY & MISSION', 'AWARDS AND ACHIEVEMENTS', 'OUR APPROACH AND TECHNOLOGIES'].includes(title)) {
+      const divider = heading.closest('section')
+      const content = divider?.nextElementSibling
+      divider?.classList.add('about-divider')
+      content?.classList.add('about-content-section')
+    }
+  })
+
+  document.querySelectorAll('.team-card').forEach((card) => {
+    const name = card.querySelector('.text-lg')
+    if (!name || card.querySelector('.team-role')) return
+    const role = document.createElement('span')
+    role.className = 'team-role'
+    role.textContent = 'Co-founder & Senior Adviser'
+    name.insertAdjacentElement('afterend', role)
+  })
 }
 
 function enhanceProjects() {
@@ -321,16 +503,78 @@ function enhanceProjects() {
 
   const wrapper = container.closest('.mx-auto')
   if (wrapper) wrapper.classList.add('projects-layout')
-  wrapper?.querySelector('aside')?.classList.add('projects-filter')
+  const filterPanel = wrapper?.querySelector('aside')
+  filterPanel?.classList.add('projects-filter')
+  container.closest('section')?.classList.add('projects-content')
+
+  const projectImages = {
+    Nepal: ['/ico/locations/Nepal/Picture1.jpg', '/ico/locations/Nepal/Picture2.jpg'],
+    Yemen: ['/ico/locations/Yemen/Picture1.jpg', '/ico/locations/Yemen/Picture3.jpg', '/new_world_map2.png'],
+    India: ['/ico/locations/India/Picture1.jpg', '/ico/locations/India/Picture2.jpg', '/ico/locations/India/Picture3.png'],
+    Afghanistan: ['/ico/locations/Afghanistan/Picture1.png', '/ico/locations/Afghanistan/Picture3.png', '/ico/locations/Afghanistan/Picture5.png'],
+    Others: ['/new_world_map2.png']
+  }
+  const imageCounters = {}
+  const locationCounts = {}
 
   container.querySelectorAll('.project-item').forEach((card) => {
-    if (card.querySelector('.project-chip')) return
     const location = card.getAttribute('data-location') || 'Global'
+    locationCounts[location] = (locationCounts[location] || 0) + 1
+    if (card.querySelector('.project-chip')) return
+    const images = projectImages[location] || ['/new_world_map.png']
+    const imageIndex = imageCounters[location] || 0
+    imageCounters[location] = imageIndex + 1
+    const media = document.createElement('div')
+    media.className = 'project-media'
+    media.setAttribute('role', 'img')
+    media.setAttribute('aria-label', `${location} project`)
+    media.style.backgroundImage = `url("${images[imageIndex % images.length]}")`
+    card.prepend(media)
     const chip = document.createElement('span')
     chip.className = 'project-chip'
     chip.textContent = location
     card.prepend(chip)
   })
+
+  if (filterPanel && filterPanel.dataset.filterReady !== 'true') {
+    filterPanel.dataset.filterReady = 'true'
+    filterPanel.innerHTML = `
+      <div class="filter-panel-head">
+        <h2>Filters</h2>
+        <button class="filter-clear" type="button">Clear all</button>
+      </div>
+      <div class="filter-group">
+        <h3 class="filter-group-title">Location</h3>
+        <ul class="location-filter-list">
+          ${Object.keys(locationCounts).sort().map((location) => `
+            <li>
+              <label class="location-filter-option">
+                <input class="location-filter-input" type="checkbox" value="${location}">
+                <span class="filter-checkbox" aria-hidden="true"></span>
+                <span>${location}</span>
+                <span class="filter-count">${locationCounts[location]}</span>
+              </label>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+    `
+  }
+
+  const projectsHeading = container.previousElementSibling
+  if (projectsHeading && !projectsHeading.querySelector('.project-result-count')) {
+    const count = document.createElement('span')
+    count.className = 'project-result-count'
+    count.textContent = `${container.children.length} projects`
+    projectsHeading.appendChild(count)
+  }
+}
+
+function enhanceLocations() {
+  const locationCards = [...document.querySelectorAll('.location-card')]
+  if (!locationCards.length) return
+  const grid = locationCards[0].parentElement
+  if (grid) grid.classList.add('locations-catalog')
 }
 
 function enhanceContact() {
@@ -353,18 +597,22 @@ function enhanceContact() {
   section.dataset.redesigned = 'true'
   const article = section.querySelector('article') || section
   article.innerHTML = `
-    <p class="prose-block" style="text-align:center;max-width:42rem;margin:0 auto 1.2rem;">
-      We would like to hear from you. Share a project brief, partnership idea, or request for proposal and our team in Delhi will respond promptly.
-    </p>
-    <div class="home-contact-grid">
-      <a class="home-contact-tile" href="mailto:utiwari@developmentmonitors.com">
-        <b>Email</b>utiwari@developmentmonitors.com
-      </a>
-      <a class="home-contact-tile" href="/contact">
-        <b>Enquiry desk</b>Send a structured brief through our contact form
-      </a>
-      <div class="home-contact-tile">
-        <b>Office</b>Disruptive Consultancy Services Pvt. Ltd, Delhi, India
+    <div class="home-contact-panel">
+      <div class="home-contact-copy">
+        <h3>Let’s turn your programme challenge into measurable impact.</h3>
+        <p>Share your assignment, geography and delivery timeline. Our senior team will respond with a practical next step.</p>
+        <a class="home-contact-button" href="/contact">Start a conversation&nbsp; →</a>
+      </div>
+      <div class="home-contact-grid">
+        <a class="home-contact-tile" href="mailto:utiwari@developmentmonitors.com">
+          <b>Email</b>utiwari@developmentmonitors.com
+        </a>
+        <a class="home-contact-tile" href="/projects">
+          <b>Relevant experience</b>Explore our international project portfolio
+        </a>
+        <div class="home-contact-tile">
+          <b>Head office</b>Disruptive Consultancy Services Pvt. Ltd, Delhi, India
+        </div>
       </div>
     </div>
   `
@@ -386,10 +634,23 @@ function contactMarkup() {
       </div>
       <aside class="contact-side">
         <h3>Direct contact</h3>
-        <p class="contact-meta">Disruptive Consultancy Services Pvt. Ltd was established in Delhi to support donor-funded monitoring, evaluation and infrastructure programmes across South Asia and the Middle East.</p>
-        <p class="contact-meta"><strong>Email</strong><br><a href="mailto:utiwari@developmentmonitors.com">utiwari@developmentmonitors.com</a></p>
-        <p class="contact-meta"><strong>Leadership</strong><br>Mr. Umesh Narwadeshwar Tiwari<br>Dr. James K. Weeks</p>
-        <p class="contact-meta"><strong>Focus regions</strong><br>India, Nepal, Afghanistan, Yemen and Bangladesh</p>
+        <p class="contact-side-intro">Connect with our senior advisory team for donor-funded monitoring, evaluation and infrastructure programmes.</p>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">@</span>
+          <div><b>Email</b><a href="mailto:utiwari@developmentmonitors.com">utiwari@developmentmonitors.com</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">D</span>
+          <div><b>Head office</b><span>Delhi, India</span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">L</span>
+          <div><b>Leadership</b><span>Mr. Umesh Narwadeshwar Tiwari<br>Dr. James K. Weeks</span></div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">G</span>
+          <div><b>Focus regions</b><span>India, Nepal, Afghanistan, Yemen and Bangladesh</span></div>
+        </div>
       </aside>
     </div>
   `
