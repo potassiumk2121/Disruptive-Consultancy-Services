@@ -1,62 +1,1159 @@
-<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/DM_logo.png"><meta name="generator" content="Astro v4.16.18"><link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://astro-sphere-demo.vercel.app/projects/"><!-- Primary Meta Tags --><title>Projects | Disruptive Consultancy Services</title><meta name="title" content="Projects | Disruptive Consultancy Services"><meta name="description" content="Welcome to Disruptive Consultancy Services."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-sphere-demo.vercel.app/projects/"><meta property="og:title" content="Projects | Disruptive Consultancy Services"><meta property="og:description" content="Welcome to Disruptive Consultancy Services."><meta property="og:image" content="https://astro-sphere-demo.vercel.app/open-graph.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-sphere-demo.vercel.app/projects/"><meta property="twitter:title" content="Projects | Disruptive Consultancy Services"><meta property="twitter:description" content="Welcome to Disruptive Consultancy Services."><meta property="twitter:image" content="https://astro-sphere-demo.vercel.app/open-graph.jpg"><!-- Sitemap --><link rel="sitemap" href="/sitemap-index.xml"><!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="Projects | Disruptive Consultancy Services" href="https://astro-sphere-demo.vercel.app/rss.xml"><!-- Global Scripts --><script src="/js/theme.js"></script><script src="/js/scroll.js"></script><script src="/js/animate.js"></script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><link rel="stylesheet" href="/_astro/index.BY_4qGpV.css">
-<style>.mt-40{margin-top:10rem}
-</style><script type="module" src="/_astro/hoisted.RlhmG3H2.js"></script></head> <body> <header id="header" class="fixed top-0 w-full h-16 z-50 " data-astro-cid-3ef6ksr2> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="relative h-full w-full" data-astro-cid-3ef6ksr2> <div class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold" data-astro-cid-3ef6ksr2> <a href="/" class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out" data-astro-cid-3ef6ksr2> <!-- LOGO HERE --> <img src="/DM_logo.png" alt="DM" class="width-5" data-astro-cid-3ef6ksr2> <!-- <svg class="size-6 fill-current">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/DM_logo.png" />
+    <meta name="generator" content="Astro v4.16.18" />
+    <link
+      rel="preload"
+      href="/fonts/atkinson-regular.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/atkinson-bold.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://astro-sphere-demo.vercel.app/projects/"
+    />
+    <!-- Primary Meta Tags -->
+    <title>Projects | Disruptive Consultancy Services</title>
+    <meta name="title" content="Projects | Disruptive Consultancy Services" />
+    <meta
+      name="description"
+      content="Welcome to Disruptive Consultancy Services."
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://astro-sphere-demo.vercel.app/projects/"
+    />
+    <meta
+      property="og:title"
+      content="Projects | Disruptive Consultancy Services"
+    />
+    <meta
+      property="og:description"
+      content="Welcome to Disruptive Consultancy Services."
+    />
+    <meta
+      property="og:image"
+      content="https://astro-sphere-demo.vercel.app/open-graph.jpg"
+    />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://astro-sphere-demo.vercel.app/projects/"
+    />
+    <meta
+      property="twitter:title"
+      content="Projects | Disruptive Consultancy Services"
+    />
+    <meta
+      property="twitter:description"
+      content="Welcome to Disruptive Consultancy Services."
+    />
+    <meta
+      property="twitter:image"
+      content="https://astro-sphere-demo.vercel.app/open-graph.jpg"
+    />
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- RSS Feed -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Projects | Disruptive Consultancy Services"
+      href="https://astro-sphere-demo.vercel.app/rss.xml"
+    />
+    <!-- Global Scripts -->
+    <script src="/js/theme.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/animate.js"></script>
+    <meta name="astro-view-transitions-enabled" content="true" />
+    <meta name="astro-view-transitions-fallback" content="animate" />
+    <link rel="stylesheet" href="/_astro/index.BY_4qGpV.css" />
+    <style>
+      .mt-40 {
+        margin-top: 10rem;
+      }
+
+      /* ==========================================================
+         PROJECT CARD — hover effects and smooth transitions
+         ========================================================== */
+      .project-item {
+        position: relative;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.75rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        padding: 1.25rem;
+        cursor: pointer;
+        overflow: hidden;
+        will-change: transform, box-shadow, border-color;
+        transition:
+          transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 400ms ease-out,
+          background-color 400ms ease-out;
+      }
+      .dark .project-item {
+        background-color: rgb(31 41 55);
+        border-color: rgb(55 65 81);
+      }
+
+      /* Animated top accent bar that draws across the top edge */
+      .project-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706);
+        transition: width 700ms cubic-bezier(0.22, 1, 0.36, 1);
+        z-index: 2;
+      }
+
+      /* Animated amber border outline (revealed on hover) */
+      .project-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(
+          135deg,
+          rgba(245, 158, 11, 0.55),
+          rgba(245, 158, 11, 0)
+        );
+        -webkit-mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+                mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+                mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 450ms ease-out;
+        pointer-events: none;
+      }
+
+      /* Hover state */
+      .project-item:hover {
+        transform: translateY(-6px);
+        box-shadow:
+          0 20px 40px -12px rgba(245, 158, 11, 0.28),
+          0 8px 20px -8px rgba(0, 0, 0, 0.12);
+        border-color: #fbbf24;
+        background-color: #fffaf0;
+      }
+      .dark .project-item:hover {
+        border-color: #f59e0b;
+        background-color: rgb(28 36 48);
+      }
+      .project-item:hover::before {
+        width: 100%;
+      }
+      .project-item:hover::after {
+        opacity: 1;
+      }
+
+      /* Title link */
+      .project-item h3 a {
+        position: relative;
+        display: inline-block;
+        color: #000000;
+        transition:
+          color 350ms ease-out,
+          transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform, color;
+      }
+      .dark .project-item h3 a {
+        color: #ffffff;
+      }
+      .project-item:hover h3 a {
+        color: #d97706;
+        transform: translateX(4px);
+      }
+      .dark .project-item:hover h3 a {
+        color: #fbbf24;
+      }
+      .project-item h3 a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        height: 2px;
+        width: 0;
+        background: linear-gradient(90deg, #fbbf24, #f59e0b);
+        transition: width 500ms cubic-bezier(0.22, 1, 0.36, 1) 80ms;
+        border-radius: 2px;
+      }
+      .project-item:hover h3 a::after {
+        width: 100%;
+      }
+
+      /* Description & location paragraphs */
+      .project-item p {
+        transition:
+          color 350ms ease-out,
+          transform 350ms ease-out,
+          opacity 350ms ease-out;
+      }
+      .project-item p:nth-of-type(1) {
+        transition-delay: 60ms;
+      }
+      .project-item p:nth-of-type(2) {
+        transition-delay: 120ms;
+      }
+      .project-item:hover p {
+        color: #1f2937;
+      }
+      .dark .project-item:hover p {
+        color: #e5e7eb;
+      }
+      .project-item:hover p:nth-of-type(1) {
+        transform: translateX(2px);
+      }
+      .project-item:hover p:nth-of-type(2) {
+        transform: translateX(2px);
+      }
+      .project-item p .font-semibold {
+        color: #d97706;
+        transition: color 350ms ease-out;
+      }
+      .project-item:hover p .font-semibold {
+        color: #b45309;
+      }
+      .dark .project-item:hover p .font-semibold {
+        color: #f59e0b;
+      }
+
+      /* Location pin indicator (pseudo-element on the Location line) */
+      .project-item p:nth-of-type(2)::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #f59e0b;
+        margin-right: 8px;
+        transform: scale(0);
+        transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1) 140ms;
+        vertical-align: middle;
+      }
+      .project-item:hover p:nth-of-type(2)::before {
+        transform: scale(1);
+        animation: pulse-dot 1.8s ease-in-out infinite;
+      }
+
+      /* Reveal arrow on hover (after the title) */
+      .project-item h3 a::before {
+        content: "→";
+        display: inline-block;
+        margin-left: 8px;
+        opacity: 0;
+        transform: translateX(-6px);
+        transition:
+          opacity 350ms ease-out,
+          transform 350ms cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .project-item:hover h3 a::before {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      /* Shimmer sweep on the description area */
+      .project-item .card-shimmer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0;
+        background: linear-gradient(
+          100deg,
+          transparent 30%,
+          rgba(251, 191, 36, 0.12) 50%,
+          transparent 70%
+        );
+        transform: translateX(-110%);
+        transition:
+          opacity 400ms ease-out,
+          transform 1200ms ease-out;
+        z-index: 1;
+      }
+      .project-item:hover .card-shimmer {
+        opacity: 1;
+        transform: translateX(110%);
+      }
+
+      /* Keyframes */
+      @keyframes pulse-dot {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6); }
+        50%      { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+      }
+      @keyframes card-glow {
+        0%, 100% { box-shadow: 0 20px 40px -12px rgba(245, 158, 11, 0.28),
+                              0 8px 20px -8px rgba(0, 0, 0, 0.12); }
+        50%      { box-shadow: 0 24px 48px -12px rgba(245, 158, 11, 0.38),
+                              0 10px 24px -8px rgba(0, 0, 0, 0.14); }
+      }
+      .project-item:hover {
+        animation: card-glow 3s ease-in-out infinite;
+      }
+
+      /* Filter button hover polish */
+      .filter-button {
+        position: relative;
+        overflow: hidden;
+        transition:
+          background-color 300ms ease-out,
+          color 300ms ease-out,
+          transform 250ms ease-out,
+          padding-left 300ms ease-out;
+      }
+      .filter-button::before {
+        content: "";
+        position: absolute;
+        left: -100%;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, rgba(245,158,11,0.15), transparent);
+        transition: left 700ms ease-out;
+      }
+      .filter-button:hover::before {
+        left: 100%;
+      }
+      .filter-button:hover {
+        transform: translateX(4px);
+        border-color: #f59e0b;
+        color: #d97706;
+      }
+      .dark .filter-button:hover {
+        color: #fbbf24;
+      }
+      .filter-button.active {
+        background-color: #fef3c7;
+        border-color: #f59e0b;
+        color: #92400e;
+        font-weight: 600;
+      }
+      .dark .filter-button.active {
+        background-color: rgba(245, 158, 11, 0.15);
+        color: #fbbf24;
+      }
+
+      /* Honor reduced-motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        .project-item,
+        .project-item * ,
+        .filter-button,
+        .filter-button::before {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+
+      /* Headline entrance */
+      .animated {
+        animation: fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(14px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+    <script type="module" src="/_astro/hoisted.RlhmG3H2.js"></script>
+  </head>
+  <body>
+    <header
+      id="header"
+      class="fixed top-0 w-full h-16 z-50"
+      data-astro-cid-3ef6ksr2
+    >
+      <div class="w-full h-full mx-auto px-5 max-w-screen-md">
+        <div class="relative h-full w-full" data-astro-cid-3ef6ksr2>
+          <div
+            class="absolute left-0 top-1/2 -translate-y-1/2 flex gap-1 font-semibold"
+            data-astro-cid-3ef6ksr2
+          >
+            <a
+              href="/"
+              class="flex gap-1 text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+              data-astro-cid-3ef6ksr2
+            >
+              <!-- LOGO HERE -->
+              <img
+                src="/DM_logo.png"
+                alt="DM"
+                class="width-5"
+                data-astro-cid-3ef6ksr2
+              />
+              <!-- <svg class="size-6 fill-current">
             <use href="/brand.svg#brand"></use>
-          </svg> --> <div data-astro-cid-3ef6ksr2> Disruptive Consultancy Services </div> </a> </div> <div class="absolute left-1/2 top-1/2 -translate-x -translate-y-1/2" data-astro-cid-3ef6ksr2> <nav class="hidden md:flex items-center justify-center text-sm gap-1" data-astro-cid-3ef6ksr2> <a href="/" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Home </a><a href="/about-us" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Who We Are </a><a href="/services" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> What we Offer </a><a href="/projects" class="h-8 w-max rounded-full px-3 flex items-center justify-center transition-colors duration-300 ease-in-out bg-black dark:bg-white text-white dark:text-black" data-astro-cid-3ef6ksr2> Projects </a><a href="/locations" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Where We&#39;ve Worked </a><a href="/contact" class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white" data-astro-cid-3ef6ksr2> Contact Us </a> </nav> </div> <!-- <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
+          </svg> -->
+              <div data-astro-cid-3ef6ksr2>Disruptive Consultancy Services</div>
+            </a>
+          </div>
+          <div
+            class="absolute left-1/2 top-1/2 -translate-x -translate-y-1/2"
+            data-astro-cid-3ef6ksr2
+          >
+            <nav
+              class="hidden md:flex items-center justify-center text-sm gap-1"
+              data-astro-cid-3ef6ksr2
+            >
+              <a
+                href="/"
+                class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+                data-astro-cid-3ef6ksr2
+              >
+                Home </a
+              ><a
+                href="/about-us"
+                class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+                data-astro-cid-3ef6ksr2
+              >
+                Who We Are </a
+              ><a
+                href="/services"
+                class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+                data-astro-cid-3ef6ksr2
+              >
+                What we Offer </a
+              ><a
+                href="/projects"
+                class="h-8 w-max rounded-full px-3 flex items-center justify-center transition-colors duration-300 ease-in-out bg-black dark:bg-white text-white dark:text-black"
+                data-astro-cid-3ef6ksr2
+              >
+                Projects </a
+              ><a
+                href="/locations"
+                class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+                data-astro-cid-3ef6ksr2
+              >
+                Where We&#39;ve Worked </a
+              ><a
+                href="/contact"
+                class="h-8 w-max rounded-full px-3 text-current flex items-center justify-center transition-colors duration-300 ease-in-out hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white"
+                data-astro-cid-3ef6ksr2
+              >
+                Contact Us
+              </a>
+            </nav>
+          </div>
+          <!-- <button id="header-theme-button" aria-label={`Toggle light and dark theme`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out")}>
        <svg class="size-full block dark:hidden">
          <use href="/ui.svg#sun"></use>
        </svg>
        <svg class="size-full hidden dark:block">
          <use href="/ui.svg#moon"></use>
        </svg>
-     </button> --> </div>  </div> </header>  <script>
-  function toggleDrawer() {
-    const drawer = document.getElementById("drawer")
-    const drawerButton = document.getElementById("header-drawer-button")
-    drawer?.classList.toggle("open")
-    drawerButton?.classList.toggle("open")
-  }
+     </button> -->
+        </div>
+      </div>
+    </header>
+    <script>
+      function toggleDrawer() {
+        const drawer = document.getElementById("drawer");
+        const drawerButton = document.getElementById("header-drawer-button");
+        drawer?.classList.toggle("open");
+        drawerButton?.classList.toggle("open");
+      }
 
-  function initializeDrawerButton() {
-    const drawerButton = document.getElementById("header-drawer-button")
-    drawerButton?.addEventListener("click", toggleDrawer)
-  }
+      function initializeDrawerButton() {
+        const drawerButton = document.getElementById("header-drawer-button");
+        drawerButton?.addEventListener("click", toggleDrawer);
+      }
 
-  document.addEventListener("astro:after-swap", initializeDrawerButton)
-  initializeDrawerButton()
-</script> <div id="drawer" class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out" data-astro-cid-hxtyo74s> <nav class="flex flex-col items-center space-y-2" data-astro-cid-hxtyo74s> <a href="/" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Home </a><a href="/about-us" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Who We Are </a><a href="/services" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> What we Offer </a><a href="/projects" class="flex items-center justify-center px-3 py-1 rounded-full hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out pointer-events-none bg-black dark:bg-white text-white dark:text-black" data-astro-cid-hxtyo74s> Projects </a><a href="/locations" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Where We&#39;ve Worked </a><a href="/contact" class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> Contact Us </a> </nav> <div class="flex gap-1 mt-5" data-astro-cid-hxtyo74s> <a href="/search" aria-label="Search blog posts and projects on Disruptive Consultancy Services" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#search" data-astro-cid-hxtyo74s></use> </svg> </a> <a href="/rss.xml" target="_blank" aria-label="Rss feed for Disruptive Consultancy Services" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#rss" data-astro-cid-hxtyo74s></use> </svg> </a> <button id="drawer-theme-button" aria-label="Toggle light and dark theme" class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out" data-astro-cid-hxtyo74s> <svg class="block dark:hidden size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#sun" data-astro-cid-hxtyo74s></use> </svg> <svg class="hidden dark:block size-full" data-astro-cid-hxtyo74s> <use href="/ui.svg#moon" data-astro-cid-hxtyo74s></use> </svg> </button> </div> </div>  <main>        <script src="/js/bg.js"></script> <script src="/js/projectfilter.js"></script>  <section class="relative h-96 w-full"> <div class="p-5 mt-40 z-10 relative text-center text-black dark:text-white"> <p class="animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white">
-Our Projects
-</p> </div> </section> <div class="relative dark:bg-black"> <div class="mx-auto max-w-6xl p-5 space-y-24 pb-16 flex"> <!-- Filter Section --> <aside class="w-1/4 p-5 border-r border-gray-200 dark:border-gray-700"> <h2 class="text-xl font-semibold text-black dark:text-white mb-4">
-Filter by Location
-</h2> <ul class="space-y-2"> <li> <button class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800" data-location="Afghanistan"> Afghanistan </button> </li><li> <button class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800" data-location="India"> India </button> </li><li> <button class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800" data-location="Nepal"> Nepal </button> </li><li> <button class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800" data-location="Others"> Others </button> </li><li> <button class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800" data-location="Yemen"> Yemen </button> </li> <li> <button class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800" data-location="all">
-All Locations
-</button> </li> </ul> </aside> <!-- Projects Section --> <section class="w-3/4 p-5"> <h2 class="text-2xl md:text-3xl font-bold text-center text-black dark:text-white mb-8">
-Projects Implemented
-</h2> <div id="projects-container" class="space-y-6"> <div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Nepal"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/nepal" class="hover:underline"> Watershed Management Activities </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Kickstarting Watershed Management Activities in Birendranagar, Nepal (2024-25) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Nepal </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Yemen"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/yemen" class="hover:underline"> Study for Food and Nutrition Security- Economic Analysis </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Yemen Agriculture Sector Study for Food and Nutrition Security- Economic Analysis (February 2024-25) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Yemen </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Yemen"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/yemen" class="hover:underline"> Sustainability and climate resilience assessment </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Sustainability and climate resilience assessment of water and sanitation schemes in Yemen (2023- 2024) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Yemen </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="India"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/india" class="hover:underline"> Quality Infrastructure Diagnostic and Planning Toolkit </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Development of Quality Infrastructure Diagnostic and Planning Toolkits for Water Supply Systems in India (2022 - 2023) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  India </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Yemen"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/yemen" class="hover:underline"> Enhancing climate-resilient infrastructure design approaches </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Enhancing climate-resilient infrastructure design approaches in Yemeni cities (2022 - 2023) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Yemen </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Yemen"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/yemen" class="hover:underline"> Solid Waste Management </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Solid Waste Management and Gender Assessments in Yemen (2022) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Yemen </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Yemen"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/yemen" class="hover:underline"> Planning for future climate-resilient </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Planning for future climate-resilient and low-carbon development in Yemen (2022) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Yemen </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Afghanistan"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/afghanistan" class="hover:underline"> Disaster Risk Management Training for Afghanistan Government </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Disaster Risk Management Training for Afghanistan Government Officials (2019 - 2020) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Afghanistan </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Afghanistan"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/afghanistan" class="hover:underline"> Technical Assistance for School </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Technical Assistance for School Delivery in Afghanistan (2018 - 2020) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Afghanistan </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Yemen"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/yemen" class="hover:underline"> Bringing Back Business </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Bringing Back Business in Yemen (2019 - 2020) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Yemen </p> </div><div class="project-item p-5 border rounded-lg shadow-md bg-white dark:bg-gray-800" data-location="Others"> <h3 class="text-xl font-semibold text-black dark:text-white"> <a href="/projects/locations/alpha" class="hover:underline"> Remote Management in Fragile States (KfW) </a> </h3> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Description:</span> Remote Management, Monitoring, and Verification in Fragile States (2017 - 2018) </p> <p class="text-gray-700 dark:text-gray-300"> <span class="font-semibold">Location:</span>  Others </p> </div> </div> </section> </div> </div>  </main> <footer class="relative bg-white dark:bg-black"> <div class="animate"> <section class="py-5"> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="flex items-center justify-center sm:justify-end"> <button id="back-to-top" aria-label="Back to top of page" class="group flex w-fit p-1.5 gap-1.5 text-sm items-center border rounded hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white rotate-90"> <line x1="19" y1="12" x2="5" y2="12" class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 ease-in-out"></line> <polyline points="12 19 5 12 12 5" class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"></polyline> </svg> <div class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">
-Back to top
-</div> </button> </div>  </div> </section> <section class=" py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3"> <div class="flex flex-col items-center sm:items-start"> <a href="/" class="flex gap-1 w-fit font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"> <svg class="size-6 fill-current"></svg><img src="/DM_logo.png" alt="DM" class="w-1/12"> <!-- <use href="/brand.svg#brand"/> --> Disruptive Consultancy Services </a> </div> <div class="flex gap-2 justify-center sm:justify-end items-center"> <span class="relative flex h-3 w-3"> <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300"></span> <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span> </span>
-All systems normal
-</div> </div>  </div> </section> <section class=" py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"> <div class="w-full h-full mx-auto px-5 max-w-screen-md">  <div class="h-full grid grid-cols-1 sm:grid-cols-2 gap-3"> <div class="order-2 sm:order-1 flex flex-col items-center justify-center sm:items-start"> <div class="legal"> <a href="/legal/terms" class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-Terms
-</a> |
-<a href="/legal/privacy" class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-Privacy
-</a> </div> <div class="text-sm mt-2">
-&copy; 2024 | All rights reserved
-</div> </div> <div class="order-1 sm:order-2 flex justify-center sm:justify-end"> <div class="flex flex-wrap gap-1 items-center justify-center"> <ul class="flex flex-col gap-1 items-center justify-center"> <li> <a href="/" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"> Home </a> </li><li> <a href="/about-us" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"> Who We Are </a> </li><li> <a href="/services" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"> What we Offer </a> </li><li> <a href="/projects" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"> Projects </a> </li><li> <a href="/locations" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"> Where We&#39;ve Worked </a> </li><li> <a href="/contact" class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"> Contact Us </a> </li> </ul> </div> <ul> <li class="group rounded-full p-2 items-center justify-center size-10"> <a href="mailto:#" target="_blank" aria-label="Disruptive Consultancy Services on Email" class="hover:bg-black/5 dark:hover:bg-white/20  blend"> <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend"> <use href="/social.svg#email"></use> </svg> </a> </li><li class="group rounded-full p-2 items-center justify-center size-10"> <a href="#" target="_blank" aria-label="Disruptive Consultancy Services on LinkedIn" class="hover:bg-black/5 dark:hover:bg-white/20  blend"> <svg class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend"> <use href="/social.svg#linkedin"></use> </svg> </a> </li> </ul> </div> </div>  </div></section></div> </footer> <script>
-  function goBackToTop(event) {
-    event.preventDefault()
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    })
-  }
+      document.addEventListener("astro:after-swap", initializeDrawerButton);
+      initializeDrawerButton();
+    </script>
+    <div
+      id="drawer"
+      class="fixed inset-0 h-0 z-40 overflow-hidden flex flex-col items-center justify-center md:hidden bg-neutral-100 dark:bg-neutral-900 transition-[height] duration-300 ease-in-out"
+      data-astro-cid-hxtyo74s
+    >
+      <nav class="flex flex-col items-center space-y-2" data-astro-cid-hxtyo74s>
+        <a
+          href="/"
+          class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          Home </a
+        ><a
+          href="/about-us"
+          class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          Who We Are </a
+        ><a
+          href="/services"
+          class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          What we Offer </a
+        ><a
+          href="/projects"
+          class="flex items-center justify-center px-3 py-1 rounded-full hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out pointer-events-none bg-black dark:bg-white text-white dark:text-black"
+          data-astro-cid-hxtyo74s
+        >
+          Projects </a
+        ><a
+          href="/locations"
+          class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          Where We&#39;ve Worked </a
+        ><a
+          href="/contact"
+          class="flex items-center justify-center px-3 py-1 rounded-full text-current hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/20 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          Contact Us
+        </a>
+      </nav>
+      <div class="flex gap-1 mt-5" data-astro-cid-hxtyo74s>
+        <a
+          href="/search"
+          aria-label="Search blog posts and projects on Disruptive Consultancy Services"
+          class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          <svg class="size-full" data-astro-cid-hxtyo74s>
+            <use href="/ui.svg#search" data-astro-cid-hxtyo74s></use>
+          </svg>
+        </a>
+        <a
+          href="/rss.xml"
+          target="_blank"
+          aria-label="Rss feed for Disruptive Consultancy Services"
+          class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          <svg class="size-full" data-astro-cid-hxtyo74s>
+            <use href="/ui.svg#rss" data-astro-cid-hxtyo74s></use>
+          </svg>
+        </a>
+        <button
+          id="drawer-theme-button"
+          aria-label="Toggle light and dark theme"
+          class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out"
+          data-astro-cid-hxtyo74s
+        >
+          <svg class="block dark:hidden size-full" data-astro-cid-hxtyo74s>
+            <use href="/ui.svg#sun" data-astro-cid-hxtyo74s></use>
+          </svg>
+          <svg class="hidden dark:block size-full" data-astro-cid-hxtyo74s>
+            <use href="/ui.svg#moon" data-astro-cid-hxtyo74s></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <main>
+      <script src="/js/bg.js"></script>
+      <script src="/js/projectfilter.js"></script>
+      <section class="relative h-96 w-full">
+        <div
+          class="p-5 mt-40 z-10 relative text-center text-black dark:text-white"
+        >
+          <p
+            class="animated text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-black dark:text-white"
+          >
+            Our Projects
+          </p>
+        </div>
+      </section>
+      <div class="relative dark:bg-black">
+        <div class="mx-auto max-w-6xl p-5 space-y-24 pb-16 flex">
+          <!-- Filter Section -->
+          <aside
+            class="w-1/4 p-5 border-r border-gray-200 dark:border-gray-700"
+          >
+            <h2 class="text-xl font-semibold text-black dark:text-white mb-4">
+              Filter by Location
+            </h2>
+            <ul class="space-y-2">
+              <li>
+                <button
+                  class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800"
+                  data-location="Afghanistan"
+                >
+                  Afghanistan
+                </button>
+              </li>
+              <li>
+                <button
+                  class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800"
+                  data-location="India"
+                >
+                  India
+                </button>
+              </li>
+              <li>
+                <button
+                  class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800"
+                  data-location="Nepal"
+                >
+                  Nepal
+                </button>
+              </li>
+              <li>
+                <button
+                  class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800"
+                  data-location="Others"
+                >
+                  Others
+                </button>
+              </li>
+              <li>
+                <button
+                  class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800"
+                  data-location="Yemen"
+                >
+                  Yemen
+                </button>
+              </li>
+              <li>
+                <button
+                  class="filter-button w-full text-left p-2 border rounded-lg bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-800"
+                  data-location="all"
+                >
+                  All Locations
+                </button>
+              </li>
+            </ul>
+          </aside>
+          <!-- Projects Section -->
+          <section class="w-3/4 p-5">
+            <h2
+              class="text-2xl md:text-3xl font-bold text-center text-black dark:text-white mb-8"
+            >
+              Projects Implemented
+            </h2>
+            <div id="projects-container" class="space-y-6">
 
-  function inintializeBackToTop() {
-    const backToTop = document.getElementById("back-to-top")
-    backToTop?.addEventListener("click", goBackToTop)
-  }
+              <!-- ============== PROJECT CARD 1 ============== -->
+              <div
+                class="project-item"
+                data-location="Nepal"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/nepal" class="hover:underline">
+                    Watershed Management Activities
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Kickstarting
+                  Watershed Management Activities in Birendranagar, Nepal
+                  (2024-25)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Nepal
+                </p>
+              </div>
 
-  document.addEventListener("astro:after-swap", inintializeBackToTop)
-  inintializeBackToTop()
-</script> </body></html>
+              <!-- ============== PROJECT CARD 2 ============== -->
+              <div
+                class="project-item"
+                data-location="Yemen"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/yemen" class="hover:underline">
+                    Study for Food and Nutrition Security- Economic Analysis
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Yemen
+                  Agriculture Sector Study for Food and Nutrition Security-
+                  Economic Analysis (February 2024-25)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Yemen
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 3 ============== -->
+              <div
+                class="project-item"
+                data-location="Yemen"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/yemen" class="hover:underline">
+                    Sustainability and climate resilience assessment
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Sustainability
+                  and climate resilience assessment of water and sanitation
+                  schemes in Yemen (2023- 2024)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Yemen
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 4 ============== -->
+              <div
+                class="project-item"
+                data-location="India"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/india" class="hover:underline">
+                    Quality Infrastructure Diagnostic and Planning Toolkit
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Development of
+                  Quality Infrastructure Diagnostic and Planning Toolkits for
+                  Water Supply Systems in India (2022 - 2023)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> India
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 5 ============== -->
+              <div
+                class="project-item"
+                data-location="Yemen"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/yemen" class="hover:underline">
+                    Enhancing climate-resilient infrastructure design approaches
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Enhancing
+                  climate-resilient infrastructure design approaches in Yemeni
+                  cities (2022 - 2023)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Yemen
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 6 ============== -->
+              <div
+                class="project-item"
+                data-location="Yemen"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/yemen" class="hover:underline">
+                    Solid Waste Management
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Solid Waste
+                  Management and Gender Assessments in Yemen (2022)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Yemen
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 7 ============== -->
+              <div
+                class="project-item"
+                data-location="Yemen"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/yemen" class="hover:underline">
+                    Planning for future climate-resilient
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Planning for
+                  future climate-resilient and low-carbon development in Yemen
+                  (2022)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Yemen
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 8 ============== -->
+              <div
+                class="project-item"
+                data-location="Afghanistan"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a
+                    href="/projects/locations/afghanistan"
+                    class="hover:underline"
+                  >
+                    Disaster Risk Management Training for Afghanistan Government
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Disaster Risk
+                  Management Training for Afghanistan Government Officials (2019
+                  - 2020)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Afghanistan
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 9 ============== -->
+              <div
+                class="project-item"
+                data-location="Afghanistan"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a
+                    href="/projects/locations/afghanistan"
+                    class="hover:underline"
+                  >
+                    Technical Assistance for School
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Technical
+                  Assistance for School Delivery in Afghanistan (2018 - 2020)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Afghanistan
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 10 ============== -->
+              <div
+                class="project-item"
+                data-location="Yemen"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/yemen" class="hover:underline">
+                    Bringing Back Business
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Bringing Back
+                  Business in Yemen (2019 - 2020)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Yemen
+                </p>
+              </div>
+
+              <!-- ============== PROJECT CARD 11 ============== -->
+              <div
+                class="project-item"
+                data-location="Others"
+              >
+                <span class="card-shimmer" aria-hidden="true"></span>
+                <h3 class="text-xl font-semibold text-black dark:text-white relative z-10">
+                  <a href="/projects/locations/alpha" class="hover:underline">
+                    Remote Management in Fragile States (KfW)
+                  </a>
+                </h3>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Description:</span> Remote
+                  Management, Monitoring, and Verification in Fragile States
+                  (2017 - 2018)
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 relative z-10">
+                  <span class="font-semibold">Location:</span> Others
+                </p>
+              </div>
+
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- ========================== ENHANCEMENT SCRIPT ========================== -->
+    <script>
+      // Card entry stagger animation
+      (function () {
+        const cards = document.querySelectorAll(".project-item");
+        cards.forEach((card, i) => {
+          card.style.opacity = "0";
+          card.style.transform = "translateY(20px)";
+          card.style.transition =
+            "opacity 600ms ease-out, transform 600ms cubic-bezier(0.22, 1, 0.36, 1)";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+          }, 80 * i + 100);
+        });
+
+        // Click ripple
+        cards.forEach((card) => {
+          card.addEventListener("click", function (e) {
+            const ripple = document.createElement("span");
+            const rect = card.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height) * 1.6;
+            ripple.style.cssText = `
+              position:absolute;border-radius:50%;pointer-events:none;
+              background:radial-gradient(circle,rgba(245,158,11,0.35) 0%,transparent 70%);
+              width:${size}px;height:${size}px;
+              left:${e.clientX - rect.left - size / 2}px;
+              top:${e.clientY - rect.top - size / 2}px;
+              transform:scale(0);opacity:1;
+              transition:transform 700ms ease-out,opacity 700ms ease-out;
+              z-index:3;
+            `;
+            card.appendChild(ripple);
+            requestAnimationFrame(() => {
+              ripple.style.transform = "scale(1)";
+              ripple.style.opacity = "0";
+            });
+            setTimeout(() => ripple.remove(), 750);
+          });
+        });
+
+        // Mark active filter button
+        const buttons = document.querySelectorAll(".filter-button");
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            buttons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+          });
+        });
+
+        // Smooth hide/show on filter via your existing projectfilter.js scope,
+        // visual fade only — does not change filter logic.
+        document.addEventListener("filterApplied", function () {});
+      })();
+    </script>
+
+    <footer class="relative bg-white dark:bg-black">
+      <div class="animate">
+        <section class="py-5">
+          <div class="w-full h-full mx-auto px-5 max-w-screen-md">
+            <div class="flex items-center justify-center sm:justify-end">
+              <button
+                id="back-to-top"
+                aria-label="Back to top of page"
+                class="group flex w-fit p-1.5 gap-1.5 text-sm items-center border rounded hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white rotate-90"
+                >
+                  <line
+                    x1="19"
+                    y1="12"
+                    x2="5"
+                    y2="12"
+                    class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 ease-in-out"
+                  ></line>
+                  <polyline
+                    points="12 19 5 12 12 5"
+                    class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out"
+                  ></polyline>
+                </svg>
+                <div
+                  class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out"
+                >
+                  Back to top
+                </div>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"
+        >
+          <div class="w-full h-full mx-auto px-5 max-w-screen-md">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="flex flex-col items-center sm:items-start">
+                <a
+                  href="/"
+                  class="flex gap-1 w-fit font-semibold text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+                >
+                  <svg class="size-6 fill-current"></svg
+                  ><img src="/DM_logo.png" alt="DM" class="w-1/12" />
+                  <!-- <use href="/brand.svg#brand"/> -->
+                  Disruptive Consultancy Services
+                </a>
+              </div>
+              <div
+                class="flex gap-2 justify-center sm:justify-end items-center"
+              >
+                <span class="relative flex h-3 w-3">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-300"
+                  ></span>
+                  <span
+                    class="relative inline-flex rounded-full h-3 w-3 bg-green-500"
+                  ></span>
+                </span>
+                All systems normal
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="py-5 overflow-hidden whitespace-nowrap border-t border-black/10 dark:border-white/25"
+        >
+          <div class="w-full h-full mx-auto px-5 max-w-screen-md">
+            <div class="h-full grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div
+                class="order-2 sm:order-1 flex flex-col items-center justify-center sm:items-start"
+              >
+                <div class="legal">
+                  <a
+                    href="/legal/terms"
+                    class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+                  >
+                    Terms
+                  </a>
+                  |
+                  <a
+                    href="/legal/privacy"
+                    class="text-current hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+                  >
+                    Privacy
+                  </a>
+                </div>
+                <div class="text-sm mt-2">
+                  &copy; 2024 | All rights reserved
+                </div>
+              </div>
+              <div
+                class="order-1 sm:order-2 flex justify-center sm:justify-end"
+              >
+                <div class="flex flex-wrap gap-1 items-center justify-center">
+                  <ul class="flex flex-col gap-1 items-center justify-center">
+                    <li>
+                      <a
+                        href="/"
+                        class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/about-us"
+                        class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"
+                      >
+                        Who We Are
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/services"
+                        class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"
+                      >
+                        What we Offer
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/projects"
+                        class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"
+                      >
+                        Projects
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/locations"
+                        class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"
+                      >
+                        Where We&#39;ve Worked
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/contact"
+                        class="h-8 rounded-full px-3 text-current flex items-center justify-center transition-colors hover:text-black dark:hover:text-white"
+                      >
+                        Contact Us
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <ul>
+                  <li
+                    class="group rounded-full p-2 items-center justify-center size-10"
+                  >
+                    <a
+                      href="mailto:#"
+                      target="_blank"
+                      aria-label="Disruptive Consultancy Services on Email"
+                      class="hover:bg-black/5 dark:hover:bg-white/20 blend"
+                    >
+                      <svg
+                        class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend"
+                      >
+                        <use href="/social.svg#email"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li
+                    class="group rounded-full p-2 items-center justify-center size-10"
+                  >
+                    <a
+                      href="#"
+                      target="_blank"
+                      aria-label="Disruptive Consultancy Services on LinkedIn"
+                      class="hover:bg-black/5 dark:hover:bg-white/20 blend"
+                    >
+                      <svg
+                        class="size-full fill-current group-hover:fill-black group-hover:dark:fill-white blend"
+                      >
+                        <use href="/social.svg#linkedin"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+    <script>
+      function goBackToTop(event) {
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      }
+
+      function inintializeBackToTop() {
+        const backToTop = document.getElementById("back-to-top");
+        backToTop?.addEventListener("click", goBackToTop);
+      }
+
+      document.addEventListener("astro:after-swap", inintializeBackToTop);
+      inintializeBackToTop();
+    </script>
+  </body>
+</html>
