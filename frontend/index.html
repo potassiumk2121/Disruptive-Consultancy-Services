@@ -79,10 +79,35 @@
     <meta name="astro-view-transitions-fallback" content="animate" />
     <style>
       .hero-world-map {
-        background-image: url("/new_world_map.png");
-        background-size: 100% auto !important;
-        background-position: center top !important;
-        background-repeat: no-repeat !important;
+        background: #ffffff !important;
+      }
+
+      .hero-world-map::before {
+        animation: hero-map-breathe 12s ease-in-out infinite alternate;
+        background-image: url("/new_world_map.png?v=20260914");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: "";
+        inset: -1.25%;
+        position: absolute;
+        transform: scale(1);
+        transform-origin: center center;
+        will-change: transform;
+        z-index: 0;
+      }
+
+      .hero-world-map::after {
+        animation: hero-light-pulse 4.5s ease-in-out infinite alternate;
+        background:
+          radial-gradient(circle at 48% 48%, rgba(255, 197, 68, 0.22) 0, rgba(255, 197, 68, 0) 7%),
+          radial-gradient(circle at 33% 67%, rgba(255, 211, 103, 0.18) 0, rgba(255, 211, 103, 0) 6%),
+          radial-gradient(circle at 78% 70%, rgba(255, 190, 48, 0.17) 0, rgba(255, 190, 48, 0) 6%);
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
       }
 
       .hero-section-outer {
@@ -90,46 +115,173 @@
         width: 100%;
         overflow: hidden;
         background: #ffffff;
-        min-height: 0;
-        padding-top: 0rem;
+        min-height: 520px;
         padding-bottom: 0;
       }
 
       .hero-section-inner {
         position: relative;
         width: 100%;
-        /* matches the 1672x941 map image so it fills edge to edge without cropping */
-        padding-top: 56.28%;
-        max-height: none;
-        margin-top: 3.5rem;
+        height: 100svh;
+        min-height: 520px;
+        max-height: 920px;
+        margin-top: 0;
+        padding-top: 0;
       }
 
       .hero-heading-wrap {
+        animation: hero-title-reveal 0.9s ease-out both;
         position: absolute;
-        top: 1.25rem;
+        top: clamp(4.15rem, 8.5vh, 5.75rem);
         left: 0;
         right: 0;
         z-index: 20;
         text-align: center;
         padding: 0 0.75rem;
-        padding-top: 0.5rem;
+        padding-top: 1.4rem;
         margin: 0;
       }
 
-      .hero-main-title {
-        font-size: clamp(1.25rem, 3.1vw, 2.6rem);
-        font-weight: 800;
-        letter-spacing: 0.01em;
-        line-height: 1.05;
+      .hero-side-message {
+        animation: hero-side-reveal 0.9s 0.35s ease-out both;
+        bottom: clamp(2.5rem, 7vh, 4.75rem);
+        color: #253041;
+        display: flex;
+        flex-direction: column;
+        font-size: clamp(0.58rem, 0.78vw, 0.72rem);
+        font-weight: 600;
+        gap: 0.32rem;
+        letter-spacing: 0.28em;
+        line-height: 1.25;
+        position: absolute;
         text-transform: uppercase;
+        top: auto;
+        z-index: 15;
+      }
+
+      .hero-side-message::before {
+        background: linear-gradient(180deg, #d4a72c, rgba(212, 167, 44, 0.35));
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
+
+      .hero-side-left {
+        left: clamp(1.6rem, 3.2vw, 3.6rem);
+        padding-left: 1.15rem;
+      }
+
+      .hero-side-left::before {
+        left: 0;
+      }
+
+      .hero-side-right {
+        align-items: flex-start;
+        right: clamp(1.6rem, 3.2vw, 3.6rem);
+        padding-right: 1.15rem;
+      }
+
+      .hero-side-right::before {
+        right: 0;
+      }
+
+      .hero-connections {
+        height: 100%;
+        inset: 0;
+        overflow: visible;
+        pointer-events: none;
+        position: absolute;
+        width: 100%;
+        z-index: 3;
+      }
+
+      .hero-route {
+        animation: hero-route-flow 5.5s linear infinite;
+        fill: none;
+        stroke: rgba(190, 132, 18, 0.62);
+        stroke-dasharray: 7 13;
+        stroke-linecap: round;
+        stroke-width: 1.6;
+        vector-effect: non-scaling-stroke;
+      }
+
+      .hero-route:nth-of-type(2) {
+        animation-delay: -1.2s;
+      }
+
+      .hero-route:nth-of-type(3) {
+        animation-delay: -2.4s;
+      }
+
+      .hero-route:nth-of-type(4) {
+        animation-delay: -3.6s;
+      }
+
+      .hero-route:nth-of-type(5) {
+        animation-delay: -4.8s;
+      }
+
+      .hero-route-dot {
+        animation: hero-route-dot-pulse 2.4s ease-in-out infinite;
+        fill: #e8ad29;
+        filter: drop-shadow(0 0 6px rgba(235, 170, 34, 0.95));
+      }
+
+      .hero-route-dot:nth-of-type(even) {
+        animation-delay: -1.2s;
+      }
+
+      .hero-main-title {
+        align-items: center;
         color: #0a1f3d;
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
         margin: 0;
+        text-transform: uppercase;
+      }
+
+      .hero-main-title::after {
+        animation: hero-accent-reveal 0.8s 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+        background: linear-gradient(90deg, transparent, #c99627, transparent);
+        content: "";
+        display: block;
+        height: 2px;
+        margin-top: 0.35rem;
+        width: clamp(54px, 7vw, 92px);
+      }
+
+      .hero-title-primary {
+        animation: hero-wordmark-reveal 1s 0.08s cubic-bezier(0.16, 1, 0.3, 1) both;
+        color: #0a1f3d;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.35rem, 4.15vw, 4.1rem);
+        font-weight: 500;
+        letter-spacing: 0.025em;
+        line-height: 0.9;
+        text-shadow: 0 2px 0 rgba(255, 255, 255, 0.9);
+      }
+
+      .hero-title-secondary {
+        animation: hero-subtitle-reveal 0.9s 0.22s cubic-bezier(0.22, 1, 0.36, 1) both;
+        color: #17263b;
+        font-size: clamp(0.82rem, 1.55vw, 1.3rem);
+        font-weight: 750;
+        letter-spacing: 0.36em;
+        line-height: 1.2;
+        margin-top: 0.4rem;
+        padding-left: 0.36em;
         white-space: nowrap;
-        overflow: hidden;
       }
 
       .hero-premium-tagline {
         align-items: center;
+        animation: hero-tagline-reveal 0.9s 0.38s ease-out both;
+        background: rgba(255, 255, 255, 0.78);
+        border-radius: 999px;
+        box-shadow: 0 0 18px 8px rgba(255, 255, 255, 0.54);
         color: #8a6512;
         display: flex;
         font-family: Georgia, "Times New Roman", serif;
@@ -140,8 +292,10 @@
         justify-content: center;
         letter-spacing: 0.06em;
         line-height: 1.3;
-        margin: 0.55rem auto 0;
+        margin: 0.18rem auto 0;
+        padding: 0.08rem 0.5rem;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.95);
+        width: max-content;
       }
 
       .hero-premium-tagline::before,
@@ -157,20 +311,176 @@
         background: linear-gradient(90deg, #d4a72c, transparent);
       }
 
+      @keyframes hero-map-breathe {
+        0% {
+          transform: scale(1);
+        }
+
+        100% {
+          transform: scale(1.028) translate3d(0, -5px, 0);
+        }
+      }
+
+      @keyframes hero-wordmark-reveal {
+        from {
+          letter-spacing: 0.1em;
+          opacity: 0;
+          transform: translateY(-12px);
+        }
+
+        to {
+          letter-spacing: 0.025em;
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes hero-subtitle-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes hero-accent-reveal {
+        from {
+          opacity: 0;
+          transform: scaleX(0);
+        }
+
+        to {
+          opacity: 1;
+          transform: scaleX(1);
+        }
+      }
+
+      @keyframes hero-tagline-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes hero-route-dot-pulse {
+        0%,
+        100% {
+          opacity: 0.65;
+          filter: drop-shadow(0 0 4px rgba(235, 170, 34, 0.7));
+        }
+
+        50% {
+          opacity: 1;
+          filter: drop-shadow(0 0 9px rgba(235, 170, 34, 1));
+        }
+      }
+
+      @keyframes hero-light-pulse {
+        0% {
+          opacity: 0.28;
+          transform: scale(0.98);
+        }
+
+        100% {
+          opacity: 0.9;
+          transform: scale(1.035);
+        }
+      }
+
+      @keyframes hero-title-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes hero-side-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes hero-route-flow {
+        from {
+          stroke-dashoffset: 0;
+        }
+
+        to {
+          stroke-dashoffset: -80;
+        }
+      }
+
+      @media (max-width: 850px) {
+        .hero-side-message {
+          display: none;
+        }
+      }
+
       @media (max-width: 520px) {
         .hero-main-title {
-          white-space: normal;
-          font-size: clamp(1.05rem, 4.4vw, 1.6rem);
+          width: 100%;
+        }
+
+        .hero-title-primary {
+          font-size: clamp(2rem, 10vw, 2.8rem);
+        }
+
+        .hero-title-secondary {
+          font-size: 0.67rem;
+          letter-spacing: 0.2em;
+          padding-left: 0.2em;
         }
 
         .hero-premium-tagline {
           font-size: 0.78rem;
           gap: 0.45rem;
           letter-spacing: 0.035em;
+          max-width: calc(100vw - 2rem);
         }
 
         .hero-section-inner {
-          margin-top: 5rem;
+          height: 78svh;
+          min-height: 500px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-world-map::before,
+        .hero-world-map::after,
+        .hero-heading-wrap,
+        .hero-title-primary,
+        .hero-title-secondary,
+        .hero-main-title::after,
+        .hero-premium-tagline,
+        .hero-side-message,
+        .hero-route,
+        .hero-route-dot {
+          animation: none;
+          transform: none;
+        }
+
+        .hero-route-dot {
+          display: none;
         }
       }
 
@@ -542,9 +852,45 @@
       <section class="hero-section-outer">
         <div class="hero-section-inner hero-world-map">
           <div class="hero-heading-wrap">
-            <h1 class="hero-main-title">Disruptive Consultancy Services</h1>
+            <h1 class="hero-main-title">
+              <span class="hero-title-primary">Disruptive</span>
+              <span class="hero-title-secondary">Consultancy Services</span>
+            </h1>
             <p class="hero-premium-tagline">Transforming Ideas into Impact</p>
           </div>
+          <aside class="hero-side-message hero-side-left" aria-label="Our values">
+            <span>People</span>
+            <span>Ideas</span>
+            <span>Solutions</span>
+            <span>Impact</span>
+          </aside>
+          <aside class="hero-side-message hero-side-right" aria-label="Our vision">
+            <span>A brighter</span>
+            <span>tomorrow</span>
+            <span>together</span>
+          </aside>
+          <svg class="hero-connections" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+            <path class="hero-route" d="M330 485 Q555 275 785 430"></path>
+            <path class="hero-route" d="M785 430 Q1045 275 1265 455"></path>
+            <path class="hero-route" d="M785 430 Q810 590 850 680"></path>
+            <path class="hero-route" d="M330 485 Q485 590 520 720"></path>
+            <path class="hero-route" d="M1265 455 Q1390 570 1360 720"></path>
+            <circle class="hero-route-dot" r="5">
+              <animateMotion dur="6s" repeatCount="indefinite" path="M330 485 Q555 275 785 430"></animateMotion>
+            </circle>
+            <circle class="hero-route-dot" r="5">
+              <animateMotion dur="7s" begin="-2s" repeatCount="indefinite" path="M785 430 Q1045 275 1265 455"></animateMotion>
+            </circle>
+            <circle class="hero-route-dot" r="4.5">
+              <animateMotion dur="5.5s" begin="-1s" repeatCount="indefinite" path="M785 430 Q810 590 850 680"></animateMotion>
+            </circle>
+            <circle class="hero-route-dot" r="4.5">
+              <animateMotion dur="6.5s" begin="-3s" repeatCount="indefinite" path="M330 485 Q485 590 520 720"></animateMotion>
+            </circle>
+            <circle class="hero-route-dot" r="5">
+              <animateMotion dur="6s" begin="-4s" repeatCount="indefinite" path="M1265 455 Q1390 570 1360 720"></animateMotion>
+            </circle>
+          </svg>
         </div>
       </section>
       <div class="relative dark:bg-black">
@@ -642,7 +988,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(1.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
@@ -662,7 +1008,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(2.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
@@ -680,7 +1026,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(3.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
@@ -700,7 +1046,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(4.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
@@ -720,7 +1066,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(5.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
@@ -740,7 +1086,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(6.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
@@ -758,7 +1104,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(7.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
@@ -778,7 +1124,7 @@
                   <div
                     class="round-10rem border-2 border-opacity-50 border-black rounded-full bg-gray-300 flex items-center justify-center strong-blur-container blur-container transition-all duration-300"
                     style="
-                      background-image: url(/ico/Services/assessment.png);
+                      background-image: url(8.png);
                       background-size: 100%;
                       opacity: 90%;
                       background-position: center center;
