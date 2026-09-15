@@ -3,5 +3,32 @@
   "framework": null,
   "buildCommand": "",
   "outputDirectory": "frontend",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/work",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/search",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/rss.xml",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

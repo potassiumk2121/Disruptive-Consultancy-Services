@@ -28,15 +28,22 @@ function applySiteChrome() {
     html.dark, html.dark body, main, footer, .relative.dark\\:bg-black { background: #fff !important; color: #111 !important; }
     header.home-page-header { background: #fff !important; border-bottom: 1px solid #ececec !important; box-shadow: 0 1px 0 rgba(0,0,0,.04); color: #111 !important; }
     header.home-page-header > div { max-width: none !important; padding-left: 3.2vw; padding-right: 3.2vw; }
-    header.home-page-header > div > div { display: flex; align-items: center; justify-content: space-between; }
-    header.home-page-header .home-brand { align-items: center; color: #111 !important; display: flex; font-size: .98rem; gap: .55rem; }
+    header.home-page-header > div > div { display: flex; align-items: center; gap: 1rem; justify-content: space-between; }
+    header.home-page-header > div > div > div { left: auto !important; position: static !important; top: auto !important; transform: none !important; }
+    header.home-page-header .home-brand { align-items: center; color: #111 !important; display: flex; flex: 0 1 auto; font-size: .98rem; gap: .55rem; min-width: 0; }
     header.home-page-header .home-brand img {
       background: #f7f9fc; border: 1px solid #e1e7ef; border-radius: 50%; box-shadow: 0 3px 10px rgba(15,31,61,.1);
       flex: 0 0 42px; height: 42px !important; object-fit: contain; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; width: 42px !important;
     }
     header.home-page-header .home-brand:hover img { border-color: #cfaa4a; box-shadow: 0 4px 14px rgba(15,31,61,.15); transform: translateY(-1px); }
-    header.home-page-header nav { position: static !important; transform: none !important; }
+    #drawer { display: none !important; height: 0 !important; pointer-events: none !important; }
+    header.home-page-header nav { flex: 1 1 auto; justify-content: flex-end; min-width: 0; position: static !important; transform: none !important; }
     header.home-page-header nav a { color: #222 !important; }
+    @media (min-width: 768px) and (max-width: 1100px) {
+      header.home-page-header .home-brand { font-size: .8rem; }
+      header.home-page-header nav { gap: .1rem; }
+      header.home-page-header nav a { font-size: .72rem; height: 2rem; padding-left: .45rem; padding-right: .45rem; }
+    }
     header.home-page-header nav a:hover { background: #f6f6f6 !important; color: #111 !important; }
     header.home-page-header nav a.bg-black, header.home-page-header nav a.bg-white { background: #f5b942 !important; color: #111 !important; }
     .home-cta {
@@ -187,7 +194,7 @@ function applySiteChrome() {
     }
     .about-intro-copy { padding: clamp(2rem, 4vw, 3.5rem); }
     .about-eyebrow { color: #a66b00 !important; font-size: .72rem !important; font-weight: 850; letter-spacing: .16em; margin: 0 0 .8rem !important; text-transform: uppercase; }
-    .about-intro h1 { color: #111827 !important; font-size: clamp(2rem, 3.6vw, 3.25rem); letter-spacing: -.035em; line-height: 1.08; margin: 0 0 1.1rem; }
+    .about-intro-title { color: #111827 !important; font-size: clamp(2rem, 3.6vw, 3.25rem); font-weight: 500; letter-spacing: -.035em; line-height: 1.08; margin: 0 0 1.1rem; }
     .about-lead { color: #4b5563 !important; font-size: 1rem !important; line-height: 1.8 !important; margin: 0 !important; text-align: left !important; }
     .about-intro-media { background: url('/new_world_map2.png') center/cover no-repeat; min-height: 420px; position: relative; }
     .about-intro-media::after { background: linear-gradient(135deg, rgba(15,23,42,.04), rgba(15,23,42,.36)); content: ""; inset: 0; position: absolute; }
@@ -198,7 +205,7 @@ function applySiteChrome() {
     .about-page .mx-auto.max-w-6xl { max-width: 1120px !important; }
     .about-page .mx-auto.max-w-6xl.space-y-24 { padding-bottom: 5rem !important; }
     .about-page .meet-the-team-section, .about-page .about-divider { margin-top: 1rem; }
-    .about-page .meet-the-team-section h2, .about-page .about-divider h2 { color: #111827 !important; font-size: clamp(1.5rem, 2.5vw, 2rem) !important; letter-spacing: -.02em; white-space: nowrap; }
+    .about-page .meet-the-team-section h2, .about-page .about-divider h2 { color: #111827 !important; font-size: clamp(1.5rem, 2.5vw, 2rem) !important; letter-spacing: -.02em; }
     .about-page .meet-the-team-content > article > div { gap: 1.25rem; }
     .about-page .team-card {
       align-items: flex-start !important; background: #fff !important; border: 1px solid #e7e9ed; border-radius: 18px;
@@ -318,7 +325,115 @@ function applySiteChrome() {
       .about-section-points { grid-template-columns: 1fr; }
       .about-page .about-content-section article { padding: 1.35rem; }
     }
+    .mobile-nav-rail { display: none; }
+    @media not all and (min-width: 768px) {
+      header.home-page-header > div { padding-left: .75rem !important; padding-right: .75rem !important; }
+      header.home-page-header .home-brand { font-size: .78rem; gap: .35rem; max-width: calc(100vw - 1.5rem); min-width: 0; }
+      header.home-page-header .home-brand img { flex-basis: 36px; height: 36px !important; width: 36px !important; }
+      header.home-page-header .home-brand div { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      header.home-page-header nav:not(.mobile-nav-rail) { display: none !important; }
+      .mobile-nav-rail {
+        background: rgba(255,255,255,.98); border-bottom: 1px solid #e7e9ed; display: block; height: 48px;
+        left: 0; overflow: hidden; position: fixed; right: 0; top: 64px; z-index: 49;
+      }
+      .mobile-nav-track {
+        align-items: center; display: flex; gap: .45rem; height: 100%; overflow-x: auto; overflow-y: hidden;
+        padding: .35rem .75rem; scroll-padding-inline: .75rem; scroll-snap-type: x proximity; scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      .mobile-nav-track::-webkit-scrollbar { display: none; }
+      .mobile-nav-link {
+        align-items: center; border: 1px solid transparent; border-radius: 999px; color: #273244 !important; display: inline-flex;
+        flex: 0 0 auto; font-size: .78rem; font-weight: 700; height: 34px; justify-content: center; padding: 0 .85rem;
+        scroll-snap-align: center; text-decoration: none; white-space: nowrap;
+      }
+      .mobile-nav-link[aria-current="page"] { background: #f1bd3f; border-color: #e1a91e; color: #111827 !important; }
+      .page-hero, .locations-hero { padding-top: 8.4rem !important; }
+      .contact-page .page-hero { padding-top: 8.4rem !important; }
+      .hero-heading-wrap { top: 7.35rem !important; }
+      .home-hero-stacked { padding-top: 7rem !important; }
+      .what-we-do-track { gap: .85rem; padding-left: 1rem; padding-right: 1rem; }
+      .what-we-do-card { flex-basis: min(82vw, 18rem); }
+      .site-footer { padding: 2rem 1rem 1.25rem; }
+      .footer-top { align-items: flex-start; margin-bottom: 1.5rem; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .footer-bottom { margin-top: 1.5rem; }
+      .about-intro-section { padding-left: .75rem; padding-right: .75rem; }
+      .about-intro-title { font-size: clamp(1.8rem, 9vw, 2.5rem); }
+      .contact-card, .contact-side { padding: 1.25rem; }
+      .contact-detail span, .contact-detail a { overflow-wrap: anywhere; }
+      .projects-content { margin-top: 0 !important; }
+      .projects-content, .locations-catalog { min-width: 0; }
+      .filter-panel-head { padding: .8rem .9rem; }
+      .filter-group { padding: .8rem .9rem .9rem; }
+      .filter-group-title { margin-bottom: .55rem; }
+      .location-filter-list {
+        display: flex; gap: .5rem; margin-left: -.1rem; overflow-x: auto; padding: .1rem .1rem .3rem;
+        scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+      }
+      .location-filter-list::-webkit-scrollbar { display: none; }
+      .location-filter-option {
+        background: #f8f9fb; border: 1px solid #e1e5ea; border-radius: 999px; flex: 0 0 auto;
+        gap: .45rem; grid-template-columns: 18px auto auto; padding: .45rem .65rem; scroll-snap-align: start; white-space: nowrap;
+      }
+      .project-item, .location-card, .service-offer-card { max-width: 100%; min-width: 0; }
+      .inner-page h1, .inner-page h2, .inner-page h3, .inner-page p { overflow-wrap: anywhere; }
+      .page-hero p, .page-hero h1, .locations-hero p, .locations-hero h1 { font-size: clamp(1.35rem, 7vw, 1.9rem) !important; letter-spacing: .08em !important; }
+      .about-page .meet-the-team-section h2, .about-page .about-divider h2 { white-space: normal; }
+      main .flex.mb-5.items-center.w-full { flex-wrap: wrap; justify-content: center; }
+      main .flex.mb-5.items-center.w-full h2 { font-size: clamp(1.2rem, 6vw, 1.7rem) !important; text-align: center; white-space: normal; }
+      [id^="Project_locations_"], .location-card > div[id^="Project_locations_"] { height: min(320px, 52vh) !important; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .partner-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .prose-block { padding: 1.15rem; }
+      .who-we-are-text p { font-size: .95rem; }
+    }
+    @media (max-width: 480px) {
+      .home-brand { font-size: .72rem !important; }
+      .hero-title-primary { font-size: clamp(1.7rem, 9vw, 2.2rem) !important; }
+      .hero-title-secondary { letter-spacing: .16em !important; }
+      .hero-section-inner { min-height: 460px !important; }
+    }
   `
+}
+
+function enhanceMobileNavigation() {
+  const header = document.querySelector('header')
+  if (!header || document.querySelector('.mobile-nav-rail')) return
+
+  const links = [
+    ['/', 'Home'],
+    ['/about-us', 'Who We Are'],
+    ['/services', 'What We Offer'],
+    ['/projects', 'Projects'],
+    ['/locations', "Where We've Worked"],
+    ['/contact', 'Contact Us']
+  ]
+  const currentPath = location.pathname.replace(/\/$/, '') || '/'
+  const rail = document.createElement('nav')
+  rail.className = 'mobile-nav-rail'
+  rail.setAttribute('aria-label', 'Mobile primary navigation')
+  const track = document.createElement('div')
+  track.className = 'mobile-nav-track'
+
+  links.forEach(([href, label]) => {
+    const link = document.createElement('a')
+    const normalizedHref = href.replace(/\/$/, '') || '/'
+    const isCurrent = normalizedHref === '/'
+      ? currentPath === '/'
+      : currentPath === normalizedHref || currentPath.startsWith(`${normalizedHref}/`)
+    link.className = 'mobile-nav-link'
+    link.href = href
+    link.textContent = label
+    if (isCurrent) link.setAttribute('aria-current', 'page')
+    track.appendChild(link)
+  })
+
+  rail.appendChild(track)
+  header.insertAdjacentElement('afterend', rail)
+  requestAnimationFrame(() => {
+    track.querySelector('[aria-current="page"]')?.scrollIntoView({ block: 'nearest', inline: 'center' })
+  })
 }
 
 function enhanceHomeHero() {
@@ -332,12 +447,7 @@ function enhanceHomeHero() {
     brand.classList.add('home-brand')
     brand.setAttribute('aria-label', 'Return to the home page')
   }
-
-  const headerInner = header?.querySelector(':scope > div > div')
-  if (headerInner && !header.querySelector('.home-cta')) {
-    const cta = document.createElement('a')
-    
-  }
+  enhanceMobileNavigation()
 
   enhanceMeetTheTeam()
   enhanceWhatWeDo()
@@ -462,6 +572,14 @@ function enhanceInnerPages() {
     section.classList.remove('h-96', 'h-72')
   })
 
+  document.querySelectorAll('.page-hero p, .locations-hero p').forEach((paragraph) => {
+    if (document.querySelector('h1') || paragraph.closest('article, form')) return
+    const heading = document.createElement('h1')
+    heading.className = paragraph.className
+    heading.textContent = paragraph.textContent.trim()
+    paragraph.replaceWith(heading)
+  })
+
   document.querySelectorAll('article p').forEach((paragraph) => {
     if (paragraph.closest('.service-offer-card, .project-item, .contact-card, form')) return
     if (paragraph.textContent.trim().length > 180) paragraph.classList.add('prose-block')
@@ -510,7 +628,7 @@ function enhanceAboutPage() {
       <div class="about-intro">
         <div class="about-intro-copy">
           <p class="about-eyebrow">Evidence-led development consulting</p>
-          <h1>Experience that turns complex programmes into measurable progress.</h1>
+          <h2 class="about-intro-title">Experience that turns complex programmes into measurable progress.</h2>
           <p class="about-lead">Disruptive Consultancy Services combines more than three decades of leadership in monitoring, evaluation, infrastructure and institutional development. We help governments and development partners make confident decisions with credible field evidence and practical delivery support.</p>
           <div class="about-metrics">
             <div class="about-metric"><strong>30+</strong><span>Years of leadership experience</span></div>

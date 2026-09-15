@@ -32,6 +32,7 @@
       name="description"
       content="Evidence-led consulting for monitoring, evaluation, infrastructure and sustainable development programmes."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta
@@ -78,15 +79,42 @@
       property="twitter:image"
       content="https://disruptive-consultancy-services.vercel.app/new_world_map2.png"
     />
+    <meta
+      name="twitter:image:alt"
+      content="Disruptive Consultancy Services global programme network"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["Organization", "ProfessionalService"],
+            "@id": "https://disruptive-consultancy-services.vercel.app/#organization",
+            "name": "Disruptive Consultancy Services",
+            "url": "https://disruptive-consultancy-services.vercel.app/",
+            "logo": "https://disruptive-consultancy-services.vercel.app/DM_logo.png",
+            "image": "https://disruptive-consultancy-services.vercel.app/new_world_map2.png",
+            "email": "utiwari@developmentmonitors.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Delhi",
+              "addressCountry": "IN"
+            },
+            "areaServed": ["IN", "NP", "AF", "YE", "BD"],
+            "description": "Evidence-led consulting for monitoring, evaluation, infrastructure and sustainable development programmes."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://disruptive-consultancy-services.vercel.app/#website",
+            "url": "https://disruptive-consultancy-services.vercel.app/",
+            "name": "Disruptive Consultancy Services",
+            "publisher": { "@id": "https://disruptive-consultancy-services.vercel.app/#organization" }
+          }
+        ]
+      }
+    </script>
     <!-- Sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <!-- RSS Feed -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Home | Disruptive Consultancy Services"
-      href="https://disruptive-consultancy-services.vercel.app/rss.xml"
-    />
     <!-- Global Scripts -->
     <script src="/js/theme.js"></script>
     <script src="/js/scroll.js"></script>
@@ -446,6 +474,32 @@
         }
       }
 
+      @media not all and (min-width: 768px) {
+        .hero-heading-wrap {
+          top: 7.35rem;
+          padding-top: 0.35rem;
+        }
+
+        .hero-title-primary {
+          font-size: clamp(1.85rem, 8.5vw, 2.5rem);
+        }
+
+        .hero-title-secondary {
+          font-size: 0.72rem;
+          letter-spacing: 0.22em;
+        }
+
+        .hero-premium-tagline {
+          font-size: 0.8rem;
+          max-width: calc(100vw - 1.5rem);
+        }
+
+        .hero-section-inner {
+          height: 78svh;
+          min-height: 520px;
+        }
+      }
+
       @media (max-width: 850px) {
         .hero-side-message {
           display: none;
@@ -625,7 +679,7 @@
       .partners-section {
         background: #ffffff;
         margin: 0.35rem 0 0.75rem;
-        padding: 1.15rem 2rem 1.25rem;
+        padding: 4.15rem 2rem 3.25rem;
       }
 
       .partner-row {
@@ -721,7 +775,7 @@
             </a>
           </div>
           <div
-            class="absolute left-1/2 top-1/2 -translate-x -translate-y-1/2"
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             data-astro-cid-3ef6ksr2
           >
             <nav
@@ -838,27 +892,6 @@
         </a>
       </nav>
       <div class="flex gap-1 mt-5" data-astro-cid-hxtyo74s>
-        <a
-          href="/search"
-          aria-label="Search blog posts and projects on Disruptive Consultancy Services"
-          class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out"
-          data-astro-cid-hxtyo74s
-        >
-          <svg class="size-full" data-astro-cid-hxtyo74s>
-            <use href="/ui.svg#search" data-astro-cid-hxtyo74s></use>
-          </svg>
-        </a>
-        <a
-          href="/rss.xml"
-          target="_blank"
-          aria-label="Rss feed for Disruptive Consultancy Services"
-          class="size-9 rounded-full p-2 items-center justify-center bg-transparent hover:bg-black/5 dark:hover:bg-white/20 stroke-current hover:stroke-black hover:dark:stroke-white border border-black/10 dark:border-white/25 transition-colors duration-300 ease-in-out"
-          data-astro-cid-hxtyo74s
-        >
-          <svg class="size-full" data-astro-cid-hxtyo74s>
-            <use href="/ui.svg#rss" data-astro-cid-hxtyo74s></use>
-          </svg>
-        </a>
         <button
           id="drawer-theme-button"
           aria-label="Toggle light and dark theme"

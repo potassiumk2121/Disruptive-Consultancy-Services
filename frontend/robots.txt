@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /blog
+Disallow: /blog/
+Disallow: /work
+Disallow: /search
 
-Sitemap: https://astro-sphere-demo.vercel.app/sitemap-index.xml
+Sitemap: https://disruptive-consultancy-services.vercel.app/sitemap-index.xml
