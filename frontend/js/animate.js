@@ -1,3 +1,12 @@
+const DCS_EMAIL = 'utiwari@developmentmonitors.com'
+const DCS_LINKEDIN = 'https://www.linkedin.com/in/umesh-kumar-tiwari-62162816'
+const DCS_ADDRESS = {
+  name: 'Disruptive Consultancy Services Pvt. Ltd',
+  street: 'Flat 307, 2nd Floor, Janta Flats, Pocket B-9, Sector 3, Rohini',
+  city: 'New Delhi 110085, India',
+  maps: 'https://www.google.com/maps/search/?api=1&query=Flat+307+Janta+Flats+Pocket+B-9+Sector+3+Rohini+Delhi+110085'
+}
+
 function animate() {
   document.querySelectorAll('.animate').forEach((element, index) => {
     setTimeout(() => element.classList.add('show'), index * 150)
@@ -240,17 +249,23 @@ function applySiteChrome() {
     .contact-card h2 { font-size: 1.3rem; line-height: 1.25; margin: 0 0 .5rem; }
     .contact-card form { display: grid; gap: .7rem .85rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: .9rem !important; }
     .contact-card form > div { margin-bottom: 0 !important; }
-    .contact-card form > div:nth-child(3), .contact-card form > div:nth-child(4), .contact-card form > button { grid-column: 1 / -1; }
+    .contact-card form > .full { grid-column: 1 / -1; }
     .contact-card label { display: block; font-size: .84rem; margin-bottom: .3rem; }
     .contact-card input, .contact-card textarea {
       background: #fafafa; border: 1px solid #e4e4e4; border-radius: 9px; box-sizing: border-box; color: #111; padding: .5rem .7rem; width: 100%;
     }
     .contact-card input { height: 38px; }
     .contact-card textarea { height: 70px !important; min-height: 70px; resize: vertical; }
+    .contact-card form > .full { grid-column: 1 / -1; }
+    .contact-honeypot { display: none !important; }
     .contact-card button {
       background: #111; border: 0; border-radius: 999px; color: #fff; cursor: pointer; font-weight: 700; height: 38px; justify-self: start; padding: .45rem 1.2rem;
     }
     .contact-card button:hover { background: #c9a227; color: #111; }
+    .contact-card button:disabled { cursor: wait; opacity: .65; }
+    .contact-form-status { color: #374151 !important; font-size: .9rem; line-height: 1.5; margin: .15rem 0 0; }
+    .contact-form-status.is-success { color: #166534 !important; }
+    .contact-form-status.is-error { color: #991b1b !important; }
     .contact-meta { color: #555 !important; font-size: .9rem; line-height: 1.55; margin: 0; }
     .contact-side { background: linear-gradient(145deg, #6484ae, #58789f) !important; border: 0; color: #0f0101 !important; overflow: hidden; position: relative; }
     .contact-side::before { background: #d4a72c; border-radius: 50%; content: ""; height: 180px; opacity: .16; position: absolute; right: -75px; top: -75px; width: 180px; }
@@ -287,6 +302,9 @@ function applySiteChrome() {
     .footer-grid a { color: #2563eb !important; display: block; font-size: .95rem; line-height: 1.9; text-decoration: none; }
     .footer-grid a:hover { text-decoration: underline; }
     .footer-bottom { border-top: 1px solid #f0f0f0; color: #666; font-size: .85rem; margin-top: 2.4rem; padding-top: 1.1rem; }
+    .legal-page article h4 { color: #111 !important; font-size: 1.05rem; font-weight: 750; margin: 1.5rem 0 .45rem; }
+    .legal-page article p { color: #222 !important; line-height: 1.8; margin: 0 0 1rem; }
+    .legal-page article a { color: #1d4ed8 !important; }
 
     .meet-the-team-section h2, .meet-the-team-content, .meet-the-team-content * { color: #111 !important; }
     .what-we-do-shell { position: relative; }
@@ -378,7 +396,7 @@ function applySiteChrome() {
       }
       .project-item, .location-card, .service-offer-card { max-width: 100%; min-width: 0; }
       .inner-page h1, .inner-page h2, .inner-page h3, .inner-page p { overflow-wrap: anywhere; }
-      .page-hero p, .page-hero h1, .locations-hero p, .locations-hero h1 { font-size: clamp(1.35rem, 7vw, 1.9rem) !important; letter-spacing: .08em !important; }
+      .page-hero p, .page-hero h1, .locations-hero p, .locations-hero h1 { font-size: clamp(1.35rem, 7vw, 1.9rem) !important; letter-spacing: .02em !important; text-transform: none !important; }
       .about-page .meet-the-team-section h2, .about-page .about-divider h2 { white-space: normal; }
       main .flex.mb-5.items-center.w-full { flex-wrap: wrap; justify-content: center; }
       main .flex.mb-5.items-center.w-full h2 { font-size: clamp(1.2rem, 6vw, 1.7rem) !important; text-align: center; white-space: normal; }
@@ -403,11 +421,11 @@ function enhanceMobileNavigation() {
 
   const links = [
     ['/', 'Home'],
-    ['/about-us', 'Who We Are'],
-    ['/services', 'What We Offer'],
+    ['/about-us', 'Who we are'],
+    ['/services', 'What we offer'],
     ['/projects', 'Projects'],
-    ['/locations', "Where We've Worked"],
-    ['/contact', 'Contact Us']
+    ['/locations', "Where we've worked"],
+    ['/contact', 'Contact us']
   ]
   const currentPath = location.pathname.replace(/\/$/, '') || '/'
   const rail = document.createElement('nav')
@@ -458,6 +476,8 @@ function enhanceHomeHero() {
   enhanceContact()
   replaceDummyCopy()
   replaceSiteFooter()
+  copyEditSite()
+  enhanceLegalPages()
 
   const hero = document.querySelector('section.relative.h-screen')
   if (!hero) return
@@ -769,15 +789,15 @@ function enhanceContact() {
         <a class="home-contact-button" href="/contact">Start a conversation&nbsp; →</a>
       </div>
       <div class="home-contact-grid">
-        <a class="home-contact-tile" href="mailto:utiwari@developmentmonitors.com">
-          <b>Email</b>utiwari@developmentmonitors.com
+        <a class="home-contact-tile" href="mailto:${DCS_EMAIL}">
+          <b>Email</b>${DCS_EMAIL}
         </a>
-        <a class="home-contact-tile" href="/projects">
-          <b>Relevant experience</b>Explore our international project portfolio
+        <a class="home-contact-tile" href="${DCS_LINKEDIN}" target="_blank" rel="noopener noreferrer">
+          <b>LinkedIn</b>Umesh Kumar Tiwari
         </a>
-        <div class="home-contact-tile">
-          <b>Head office</b>Disruptive Consultancy Services Pvt. Ltd, Delhi, India
-        </div>
+        <a class="home-contact-tile" href="${DCS_ADDRESS.maps}" target="_blank" rel="noopener noreferrer">
+          <b>Registered office</b>${DCS_ADDRESS.name}, ${DCS_ADDRESS.street}, ${DCS_ADDRESS.city}
+        </a>
       </div>
     </div>
   `
@@ -789,28 +809,34 @@ function contactMarkup() {
       <div class="contact-card">
         <h2>Have a question, idea or assignment?</h2>
         <p class="contact-meta">Tell us about the programme, geography and timeline. We typically reply within two working days.</p>
-        <form id="dcs-contact-form" class="mt-4">
-          <div class="mb-4"><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your name"></div>
-          <div class="mb-4"><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@organisation.org"></div>
-          <div class="mb-4"><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text" placeholder="Agency, ministry or firm"></div>
-          <div class="mb-4"><label for="message">Message</label><textarea id="message" name="message" rows="4" required placeholder="Project context, location and support required"></textarea></div>
-          <button type="submit">Send message</button>
+        <form id="dcs-contact-form" class="mt-4" novalidate>
+          <label class="contact-honeypot">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          <div><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your name"></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@organisation.org"></div>
+          <div class="full"><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text" placeholder="Agency, ministry or firm"></div>
+          <div class="full"><label for="message">Message</label><textarea id="message" name="message" rows="4" required placeholder="Project context, location and support required"></textarea></div>
+          <button class="full" type="submit">Send message</button>
+          <p class="contact-form-status full" id="dcs-contact-status" role="status" aria-live="polite"></p>
         </form>
       </div>
       <aside class="contact-side">
         <h3>Direct contact</h3>
-        <p class="contact-side-intro">Connect with our senior advisory team for donor-funded monitoring, evaluation and infrastructure programmes.</p>
+        <p class="contact-side-intro">Write to the senior advisory team about donor-funded monitoring, evaluation and infrastructure programmes.</p>
         <div class="contact-detail">
           <span class="contact-detail-icon">@</span>
-          <div><b>Email</b><a href="mailto:utiwari@developmentmonitors.com">utiwari@developmentmonitors.com</a></div>
+          <div><b>Email</b><a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a></div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">in</span>
+          <div><b>LinkedIn</b><a href="${DCS_LINKEDIN}" target="_blank" rel="noopener noreferrer">Umesh Kumar Tiwari</a></div>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-icon">D</span>
-          <div><b>Office & regions</b><span>Delhi, India · India, Nepal, Afghanistan, Yemen and Bangladesh</span></div>
+          <div><b>Registered office</b><a href="${DCS_ADDRESS.maps}" target="_blank" rel="noopener noreferrer">${DCS_ADDRESS.name}<br>${DCS_ADDRESS.street}<br>${DCS_ADDRESS.city}</a></div>
         </div>
         <div class="contact-detail">
           <span class="contact-detail-icon">L</span>
-          <div><b>Leadership</b><span>Mr. Umesh Narwadeshwar Tiwari<br>Dr. James K. Weeks</span></div>
+          <div><b>Leadership</b><span>Umesh Kumar Tiwari, Managing Director<br>Dr James K. Weeks</span></div>
         </div>
       </aside>
     </div>
@@ -818,14 +844,48 @@ function contactMarkup() {
 }
 
 function bindContactForm(root) {
-  root.querySelector('#dcs-contact-form')?.addEventListener('submit', (event) => {
+  const form = root.querySelector('#dcs-contact-form')
+  const status = root.querySelector('#dcs-contact-status')
+  const button = form?.querySelector('button[type="submit"]')
+  if (!form || !status || !button) return
+
+  form.addEventListener('submit', async (event) => {
     event.preventDefault()
     const name = root.querySelector('#name')?.value.trim() || ''
     const email = root.querySelector('#email')?.value.trim() || ''
     const organisation = root.querySelector('#organisation')?.value.trim() || ''
     const message = root.querySelector('#message')?.value.trim() || ''
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nOrganisation: ${organisation}\n\n${message}`)
-    window.location.href = `mailto:utiwari@developmentmonitors.com?subject=${encodeURIComponent('Website enquiry from ' + name)}&body=${body}`
+    const website = root.querySelector('input[name="website"]')?.value.trim() || ''
+
+    status.className = 'contact-form-status full'
+    if (!name || !email || !message) {
+      status.classList.add('is-error')
+      status.textContent = 'Please complete your name, email and message.'
+      return
+    }
+
+    button.disabled = true
+    status.textContent = 'Sending your message…'
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ name, email, organisation, message, website })
+      })
+      const data = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(data.error || 'The message could not be sent.')
+      status.classList.add('is-success')
+      status.textContent = data.emailed === false
+        ? `Your message was received. If you do not hear back within two working days, please write to ${DCS_EMAIL}.`
+        : 'Thank you. Your message has been emailed to the team. We typically reply within two working days.'
+      form.reset()
+    } catch (error) {
+      status.classList.add('is-error')
+      status.innerHTML = `${error.message || 'The message could not be sent.'} You can also write directly to <a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a>.`
+    } finally {
+      button.disabled = false
+    }
   })
 }
 
@@ -835,6 +895,7 @@ function replaceDummyCopy() {
     'WATERSHED MANAGEMENT': 'Technical support for watershed restoration, water-resource planning and community-based catchment management, including economic analysis of water investments.',
     'DISASTER RISK MANAGEMENT AND EARLY WARNING SYSTEMS': 'Disaster risk management training, climate-resilient planning and early-warning support for governments and implementing agencies in fragile settings.',
     'SOLID WASTE MANAGEMENT AND GENERAL ASSESSMENT': 'Solid waste diagnostics, gender-responsive assessments and operational planning to strengthen municipal and programme-level waste systems.',
+    'MARKET ASSESSMENT AND VALUE CHAIN ANALYSIS': 'Market diagnostics and agricultural value-chain analysis to identify constraints, opportunities and practical interventions for producers and local enterprise.',
     'MARKET ASSESSMENT AND VALUE CHAIN ANALAYSIS': 'Market diagnostics and agricultural value-chain analysis to identify constraints, opportunities and practical interventions for producers and local enterprise.',
     'DEVELOPMENT OF TOOLKIT': 'Design of practical diagnostic and planning toolkits, including quality-infrastructure tools for water supply systems that can be used by governments and utilities.',
     'AGRICULTURAL SECTOR ASSESSMENT': 'Agriculture and food-security studies covering production systems, nutrition outcomes and economic analysis to inform investment and policy decisions.',
@@ -964,20 +1025,20 @@ function replaceSiteFooter() {
       <div>
         <h4>Company</h4>
         <a href="/">Home</a>
-        <a href="/about-us">Who We Are</a>
+        <a href="/about-us">Who we are</a>
         <a href="/contact">Contact</a>
       </div>
       <div>
         <h4>Services</h4>
-        <a href="/services">What We Offer</a>
-        <a href="/services">Monitoring &amp; Evaluation</a>
-        <a href="/services">Watershed Management</a>
-        <a href="/services">Disaster Risk Management</a>
+        <a href="/services">What we offer</a>
+        <a href="/services">Monitoring and evaluation</a>
+        <a href="/services">Watershed management</a>
+        <a href="/services">Disaster risk management</a>
       </div>
       <div>
         <h4>Portfolio</h4>
         <a href="/projects">Projects</a>
-        <a href="/locations">Where We've Worked</a>
+        <a href="/locations">Where we've worked</a>
         <a href="/projects/locations/india">India</a>
         <a href="/projects/locations/nepal">Nepal</a>
       </div>
@@ -986,15 +1047,148 @@ function replaceSiteFooter() {
         <a href="/projects/locations/yemen">Yemen</a>
         <a href="/projects/locations/afghanistan">Afghanistan</a>
         <a href="/locations">All locations</a>
-        <a href="mailto:utiwari@developmentmonitors.com">Email the team</a>
+        <a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a>
       </div>
       <div>
         <h4>Legal</h4>
         <a href="/legal/privacy">Privacy</a>
         <a href="/legal/terms">Terms</a>
+        <a href="${DCS_LINKEDIN}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="${DCS_ADDRESS.maps}" target="_blank" rel="noopener noreferrer">Rohini, New Delhi</a>
       </div>
     </div>
     <div class="footer-bottom">© ${new Date().getFullYear()} Disruptive Consultancy Services Pvt. Ltd. All rights reserved.</div>
+  `
+}
+
+function copyEditSite() {
+  const headingFixes = {
+    'WHO WE ARE': 'Who we are',
+    'WHAT WE DO': 'What we do',
+    'WHAT WE OFFER': 'What we offer',
+    "WHERE WE'VE WORKED": "Where we've worked",
+    'WHERE WEVE WORKED': "Where we've worked",
+    'PARTNERS': 'Partners',
+    'CONTACT US': 'Contact us',
+    'REACH US': 'Reach us',
+    'OUR PROJECTS': 'Our projects',
+    'PROFESSIONAL SERVICES': 'Professional services',
+    'LOCATIONS WITH PROJECTS': 'Locations with projects',
+    'OUR STORY & MISSION': 'Our story and mission',
+    'OUR STORY AND MISSION': 'Our story and mission',
+    'AWARDS AND ACHIEVEMENTS': 'Awards and achievements',
+    'OUR APPROACH AND TECHNOLOGIES': 'Our approach and technologies',
+    'MEET THE TEAM': 'Meet the team',
+    'WHO WE ARE': 'Who we are',
+    'WHAT WE OFFER': 'What we offer',
+    'MONITORING AND EVALUATION': 'Monitoring and evaluation',
+    'WATERSHED MANAGEMENT': 'Watershed management',
+    'DISASTER RISK MANAGEMENT AND EARLY WARNING SYSTEMS': 'Disaster risk management and early warning systems',
+    'SOLID WASTE MANAGEMENT AND GENERAL ASSESSMENT': 'Solid waste management and general assessment',
+    'MARKET ASSESSMENT AND VALUE CHAIN ANALYSIS': 'Market assessment and value chain analysis',
+    'MARKET ASSESSMENT AND VALUE CHAIN ANALAYSIS': 'Market assessment and value chain analysis',
+    'DEVELOPMENT OF TOOLKIT': 'Development of toolkit',
+    'AGRICULTURAL SECTOR ASSESSMENT': 'Agricultural sector assessment',
+    'INSTITUTIONAL DEVELOPMENT': 'Institutional development',
+    'PRIVACY POLICY': 'Privacy policy',
+    'TERMS OF USE': 'Terms of use'
+  }
+
+  const navFixes = {
+    'who we are': 'Who we are',
+    'what we offer': 'What we offer',
+    'what we offer': 'What we offer',
+    "where we've worked": "Where we've worked",
+    'contact us': 'Contact us'
+  }
+
+  document.querySelectorAll('h1, h2, h3, h4, p').forEach((node) => {
+    node.classList.remove('uppercase')
+    const compact = node.textContent.replace(/\s+/g, ' ').trim()
+    if (!compact || node.closest('form, .contact-card, .footer-grid, .about-intro-copy, .home-hero-title, .hero-main-title')) return
+    const key = compact.toUpperCase().replace(/['’]/g, "'")
+    if (headingFixes[key]) {
+      node.textContent = headingFixes[key]
+      return
+    }
+    if (compact.includes('Analaysis') || compact.includes('analaysis')) {
+      node.textContent = compact.replace(/Analaysis/g, 'Analysis').replace(/analaysis/g, 'analysis')
+    }
+  })
+
+  document.querySelectorAll('header nav a, .mobile-nav-link, .footer-grid a').forEach((link) => {
+    const key = link.textContent.replace(/\s+/g, ' ').trim().toLowerCase()
+    if (navFixes[key]) link.textContent = navFixes[key]
+    if (link.textContent.includes('What we Offer')) link.textContent = link.textContent.replace('What we Offer', 'What we offer')
+  })
+
+  document.querySelectorAll('p, li, span, a, h2, h3').forEach((node) => {
+    if (!node.childElementCount && /Analaysis|analaysis/.test(node.textContent)) {
+      node.textContent = node.textContent.replace(/Analaysis/g, 'Analysis').replace(/analaysis/g, 'analysis')
+    }
+  })
+}
+
+function enhanceLegalPages() {
+  const path = location.pathname.replace(/\/$/, '')
+  const article = document.querySelector('main article')
+  if (!article) return
+  if (path === '/legal/privacy' || path === '/legal/terms') document.body.classList.add('legal-page')
+  if (path === '/legal/privacy') {
+    article.innerHTML = privacyMarkup()
+    const updated = document.querySelector('main .page-heading')?.nextElementSibling
+    if (updated && updated.tagName === 'P') updated.textContent = 'Last updated: 15 September 2026'
+  }
+  if (path === '/legal/terms') {
+    article.innerHTML = termsMarkup()
+    const updated = document.querySelector('main .page-heading')?.nextElementSibling
+    if (updated && updated.tagName === 'P') updated.textContent = 'Last updated: 15 September 2026'
+  }
+}
+
+function privacyMarkup() {
+  return `
+    <p>This privacy notice explains how Disruptive Consultancy Services Private Limited (“DCS”, “we”, “us”) collects, uses and protects information when you visit this website or contact us. It is written for a professional services firm incorporated in India (CIN U74999DL2022PTC400214) and is intended to sit alongside the Digital Personal Data Protection Act, 2023. It is not a substitute for the confidentiality or data-processing clauses in a signed assignment contract.</p>
+    <h4 id="who-we-are">Who we are</h4>
+    <p>The data fiduciary for this website is Disruptive Consultancy Services Pvt. Ltd, registered at Flat 307, 2nd Floor, Janta Flats, Pocket B-9, Sector 3, Rohini, New Delhi 110085, India. Enquiries: <a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a>.</p>
+    <h4 id="personal-identification-information">Personal information we collect</h4>
+    <p>If you use the contact form or email us, we collect your name, email address, organisation name if you provide one, and the content of your message. We do not ask for government identity numbers, financial credentials or special-category data through this website. Please do not send confidential third-party information unless you are authorised to do so.</p>
+    <h4 id="non-personal-identification-information">Technical information</h4>
+    <p>Our hosting provider may record standard server logs such as IP address, browser type, referring URL and pages requested. We use this information to keep the site available, diagnose faults and understand which pages are useful. We do not use it to build advertising profiles.</p>
+    <h4 id="web-browser-cookies">Cookies</h4>
+    <p>This site uses only cookies or local storage that are needed for basic operation, such as remembering a display preference. We do not set advertising or cross-site tracking cookies. You can block or delete cookies in your browser; essential functions of the site will still work.</p>
+    <h4 id="how-we-use-collected-information">How we use information</h4>
+    <p>We use enquiry data to reply to you, assess whether we can help, prepare a proposal where relevant, and keep a short record of correspondence. We may also use anonymised usage data to improve the website. We do not sell, rent or trade personal information.</p>
+    <h4 id="how-we-protect-your-information">How we protect information</h4>
+    <p>Access to enquiry records is limited to staff and processors who need them to respond or host the site. Messages are transmitted to us by email. Email is not a perfectly secure channel; do not send passwords or highly sensitive personal data through the form. Assignment files are handled under the security terms of the relevant contract.</p>
+    <h4 id="sharing-your-personal-information">When we share information</h4>
+    <p>We share personal information with our email and hosting providers, and with professional advisers, only as needed to operate the site or respond to you. We may disclose information if required by Indian law, a court or a regulator. We do not pass website enquiries to unrelated third parties for marketing.</p>
+    <h4 id="retention-and-your-rights">Retention and your rights</h4>
+    <p>We keep unsuccessful or general enquiries only as long as needed to complete the correspondence and any follow-up, then delete or anonymise them. If you become a client, retention follows the contract and our statutory record-keeping duties. You may request access, correction or erasure of personal data we hold about you by writing to <a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a>, subject to legal exceptions.</p>
+    <h4 id="changes-to-this-privacy-policy">Changes</h4>
+    <p>If we change this notice we will update this page and the date above. Continued use of the website after a change means you have had notice of the revised practice. For questions about privacy, contact the registered office or email listed above.</p>
+  `
+}
+
+function termsMarkup() {
+  return `
+    <p>These terms of use govern access to the public website of Disruptive Consultancy Services Private Limited (“DCS”). By using the site you agree to them. They apply to website use only. Professional services are provided solely under a separate written contract, purchase order or terms of engagement.</p>
+    <h4 id="agreement-to-terms">Using this website</h4>
+    <p>You may browse the site for information about our firm, services and experience. You must not misuse the enquiry form, attempt to disrupt the site, scrape it in a way that impairs others, or submit content that is unlawful, defamatory or confidential to a third party. We may suspend access for maintenance or misuse.</p>
+    <h4 id="intellectual-property-rights">Intellectual property</h4>
+    <p>Unless otherwise stated, the text, layout, logo, maps and photographs on this site belong to DCS or to licensors who have allowed us to display them. You may quote a short extract for non-commercial reference with acknowledgement. You may not copy the site, our project descriptions or our visual identity for commercial use without written permission. Client and donor names appear as factual descriptions of work; their logos remain their property.</p>
+    <h4 id="information-on-the-site">Information on the site</h4>
+    <p>Project summaries, maps and service descriptions are provided for general professional communication. They are not an offer, a bid, a guarantee of outcome, or advice on which you should rely for a specific decision. Dates, values and geographies are stated in good faith from our records and may be summarised. Always confirm current facts with us before relying on them in a procurement or legal process.</p>
+    <h4 id="user-representations">Enquiries and proposals</h4>
+    <p>Submitting an enquiry does not create a client relationship. We are not obliged to respond to every message or to bid for every assignment. Any proposal, fee, timeline or methodology we later send is valid only on the terms stated in that document until a contract is signed.</p>
+    <h4 id="links-to-other-websites">Third-party sites</h4>
+    <p>The site may link to donor, partner, mapping or social-media services, including LinkedIn. Those sites have their own terms and privacy practices. DCS is not responsible for their content or for any loss arising from your use of them.</p>
+    <h4 id="liability">Limitation of liability</h4>
+    <p>To the extent permitted by Indian law, DCS is not liable for loss arising from use of this website, including interruption, inaccurate summary information, or reliance on material that is not a signed deliverable. Nothing in these terms excludes liability that cannot be excluded by law, including for fraud or personal injury caused by negligence.</p>
+    <h4 id="governing-law">Governing law</h4>
+    <p>These website terms are governed by the laws of India. Courts at New Delhi have exclusive jurisdiction over disputes about use of the website, unless a signed professional contract names a different forum for that assignment.</p>
+    <h4 id="changes-to-these-terms-of-use">Changes</h4>
+    <p>We may revise these terms from time to time. The date at the top of the page is the effective date. If you continue to use the site after a revision, the updated terms apply to that later use.</p>
   `
 }
 
