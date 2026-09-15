@@ -208,9 +208,17 @@ function applySiteChrome() {
     .team-role { color: #a66b00 !important; display: block; font-size: .78rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
     .about-page .team-card > .absolute { bottom: 1.2rem !important; left: 1.5rem !important; opacity: 1 !important; transform: none !important; }
     .about-page .about-content-section article {
-      background: #fff; border: 1px solid #e7e9ed; border-radius: 18px; box-shadow: 0 12px 34px rgba(15,23,42,.05); padding: 1.6rem 1.8rem;
+      background: #fff; border: 1px solid #e7e9ed; border-radius: 20px; box-shadow: 0 12px 34px rgba(15,23,42,.05); padding: 1.8rem 2rem;
     }
     .about-page .about-content-section .prose-block { border: 0; box-shadow: none; margin: 0; max-width: none; padding: 0; }
+    .about-section-copy { margin: 0 auto; max-width: 66rem; }
+    .about-section-copy > p { color: #344054 !important; font-size: .98rem; line-height: 1.8; margin: 0; }
+    .about-section-copy > p + p { margin-top: .75rem; }
+    .about-section-copy .about-section-lead { color: #111827 !important; font-size: 1.05rem; font-weight: 650; }
+    .about-section-points { display: grid; gap: .85rem; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; margin: 1.35rem 0 0; padding: 0; }
+    .about-section-points li { background: #f8f9fb; border: 1px solid #e8ebef; border-radius: 14px; min-height: 112px; padding: 1rem; }
+    .about-section-points strong { color: #9a6900; display: block; font-size: .72rem; letter-spacing: .11em; margin-bottom: .45rem; text-transform: uppercase; }
+    .about-section-points span { color: #344054; display: block; font-size: .88rem; line-height: 1.55; }
 
     .contact-page main { background: linear-gradient(180deg, #fff 0, #fbfaf7 58%, #fff 100%); }
     .contact-page .page-hero { padding: 5.6rem 1.25rem .9rem !important; }
@@ -307,6 +315,8 @@ function applySiteChrome() {
       .about-metrics { grid-template-columns: 1fr; }
       .about-intro-copy { padding: 1.6rem; }
       .about-intro-media { min-height: 240px; }
+      .about-section-points { grid-template-columns: 1fr; }
+      .about-page .about-content-section article { padding: 1.35rem; }
     }
   `
 }
@@ -720,9 +730,33 @@ function replaceDummyCopy() {
     if (title && body && !body.textContent.trim() && serviceCopy[title]) body.textContent = serviceCopy[title]
   })
 
-  replaceSectionCopy('OUR STORY & MISSION', 'DCSPL was established in 2022 in Delhi to bring senior monitoring, evaluation and programme-management expertise to governments and development partners. Our mission is to convert complex field evidence into decisions that improve infrastructure quality, climate resilience and community outcomes. We combine economist-led analysis with operational teams in India, Nepal, Afghanistan, Bangladesh and Yemen so that programmes can be designed, verified and course-corrected with reliable data.')
-  replaceSectionCopy('AWARDS AND ACHIEVEMENTS', 'The founding team has led multi-million-dollar rural and urban development programmes with a cumulative contract value exceeding US$260 million for the World Bank, KfW, USAID, the European Commission, WHO, UNICEF and leading foundations. Assignments have included asset verification, climate-resilient infrastructure design, disaster-risk training for government officials, and food and nutrition security analysis. This record reflects trusted delivery in fragile and resource-constrained settings, not promotional awards.')
-  replaceSectionCopy('OUR APPROACH AND TECHNOLOGIES', 'We use citizen- and community-based methods together with practical, low-cost tools: smartphone data collection, open-source applications, satellite imagery, sensors and UAVs. The aim is not technology for its own sake, but faster verification, clearer evidence and solutions that host governments can sustain. Remote management, monitoring and verification methods allow us to remain accountable even where access is limited.')
+  replaceSectionCopy('OUR STORY & MISSION', {
+    lead: 'DCSPL was established in Delhi in 2022 to bring senior monitoring, evaluation and programme-management expertise closer to governments and development partners.',
+    body: 'Our mission is to turn complex field evidence into practical decisions that improve infrastructure quality, climate resilience and community outcomes. We combine economist-led analysis with experienced operational teams across South Asia and fragile contexts, helping programmes move from design to verification and measurable delivery.',
+    points: [
+      ['Our purpose', 'Make development investments more transparent, accountable and responsive to the people they serve.'],
+      ['Our model', 'Connect senior strategic advice with dependable local teams, field evidence and clear reporting.'],
+      ['Our commitment', 'Deliver independent findings, practical recommendations and solutions that partners can sustain.']
+    ]
+  })
+  replaceSectionCopy('AWARDS AND ACHIEVEMENTS', {
+    lead: 'Our strongest achievement is a record of trusted delivery across complex rural, urban and humanitarian programmes.',
+    body: 'The founding team has led assignments with a cumulative programme value exceeding US$260 million for institutions including the World Bank, KfW, USAID, the European Commission, WHO, UNICEF and leading foundations. This experience includes infrastructure verification, climate-resilient design, disaster-risk training, food-security analysis and institutional strengthening.',
+    points: [
+      ['Programme scale', 'Leadership across multi-million-dollar portfolios with demanding technical and fiduciary requirements.'],
+      ['Institutional trust', 'Assignments delivered for global development agencies, governments, foundations and implementing partners.'],
+      ['Field achievement', 'Credible evidence and recommendations produced in fragile, remote and resource-constrained settings.']
+    ]
+  })
+  replaceSectionCopy('OUR APPROACH AND TECHNOLOGIES', {
+    lead: 'We combine participatory field methods, rigorous analysis and fit-for-purpose technology to produce evidence that decision-makers can use.',
+    body: 'Our teams use smartphone data collection, open-source applications, satellite imagery, sensors and UAVs where they improve accuracy, speed or access. Technology is supported by quality assurance, local consultation and senior technical review, ensuring that digital evidence reflects real programme conditions and leads to practical action.',
+    points: [
+      ['Evidence first', 'Clear indicators, representative data and independent quality checks guide every assessment.'],
+      ['Smart technology', 'Remote monitoring and geospatial tools extend oversight where travel or access is limited.'],
+      ['Sustainable delivery', 'Low-cost, transferable systems help host institutions continue using the approach independently.']
+    ]
+  })
 
   document.querySelectorAll('p, li').forEach((node) => {
     const text = node.textContent
@@ -769,12 +803,30 @@ function contextualCopy(heading, original) {
   return 'Disruptive Consultancy Services provides monitoring, evaluation, climate-resilience and institutional-development support for governments and development partners.'
 }
 
-function replaceSectionCopy(title, copy) {
+function replaceSectionCopy(title, content) {
   const heading = [...document.querySelectorAll('h2')].find((element) =>
     element.textContent.trim().toUpperCase() === title
   )
-  const paragraph = heading?.closest('section')?.nextElementSibling?.querySelector('p')
-  if (paragraph) paragraph.textContent = copy
+  const article = heading?.closest('section')?.nextElementSibling?.querySelector('article')
+  if (!article) return
+
+  if (typeof content === 'string') {
+    const paragraph = article.querySelector('p')
+    if (paragraph) paragraph.textContent = content
+    return
+  }
+
+  const points = content.points.map(([label, text]) =>
+    `<li><strong>${label}</strong><span>${text}</span></li>`
+  ).join('')
+
+  article.innerHTML = `
+    <div class="about-section-copy">
+      <p class="about-section-lead">${content.lead}</p>
+      <p>${content.body}</p>
+      <ul class="about-section-points">${points}</ul>
+    </div>
+  `
 }
 
 function replaceSiteFooter() {
