@@ -29,7 +29,12 @@ function applySiteChrome() {
     header.home-page-header { background: #fff !important; border-bottom: 1px solid #ececec !important; box-shadow: 0 1px 0 rgba(0,0,0,.04); color: #111 !important; }
     header.home-page-header > div { max-width: none !important; padding-left: 3.2vw; padding-right: 3.2vw; }
     header.home-page-header > div > div { display: flex; align-items: center; justify-content: space-between; }
-    header.home-page-header .home-brand { align-items: center; color: #111 !important; display: flex; font-size: .98rem; gap: .45rem; }
+    header.home-page-header .home-brand { align-items: center; color: #111 !important; display: flex; font-size: .98rem; gap: .55rem; }
+    header.home-page-header .home-brand img {
+      background: #f7f9fc; border: 1px solid #e1e7ef; border-radius: 50%; box-shadow: 0 3px 10px rgba(15,31,61,.1);
+      flex: 0 0 42px; height: 42px !important; object-fit: contain; transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; width: 42px !important;
+    }
+    header.home-page-header .home-brand:hover img { border-color: #cfaa4a; box-shadow: 0 4px 14px rgba(15,31,61,.15); transform: translateY(-1px); }
     header.home-page-header nav { position: static !important; transform: none !important; }
     header.home-page-header nav a { color: #222 !important; }
     header.home-page-header nav a:hover { background: #f6f6f6 !important; color: #111 !important; }
