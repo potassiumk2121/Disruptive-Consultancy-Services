@@ -386,8 +386,21 @@ function applySiteChrome() {
       .contact-page .page-hero { padding-top: 8.4rem !important; }
       .hero-heading-wrap { top: 7.35rem !important; }
       .home-hero-stacked { padding-top: 7rem !important; }
-      .what-we-do-track { gap: .85rem; padding-left: 1rem; padding-right: 1rem; }
-      .what-we-do-card { flex-basis: min(82vw, 18rem); }
+      .what-we-do-nav { gap: .4rem; margin: 0 0 .35rem; }
+      .what-we-do-nav button { height: 1.85rem; width: 1.85rem; }
+      .what-we-do-scroller { padding: 0 0 .4rem; }
+      .what-we-do-track { gap: .65rem; padding: .15rem .75rem .3rem; }
+      .what-we-do-card {
+        border-radius: 1rem; flex: 0 0 min(64vw, 12.75rem); min-height: 0 !important;
+        padding: .75rem .65rem .7rem;
+      }
+      .what-we-do-card::before { height: 3px; }
+      .what-we-do-card .round-10rem {
+        height: 4.15rem !important; margin-bottom: .4rem !important; width: 4.15rem !important;
+      }
+      .what-we-do-card > p { font-size: .78rem !important; line-height: 1.3; margin-top: 0 !important; }
+      .what-we-do-card .mb-8 { margin-bottom: 0 !important; }
+      main .space-y-24 > section:has(.what-we-do-shell) { margin-top: .85rem !important; }
       .site-footer { padding: 2rem 1rem 1.25rem; }
       .footer-top { align-items: flex-start; margin-bottom: 1.5rem; }
       .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -418,7 +431,16 @@ function applySiteChrome() {
       main .flex.mb-5.items-center.w-full h2 { font-size: clamp(1.2rem, 6vw, 1.7rem) !important; text-align: center; white-space: normal; }
       [id^="Project_locations_"], .location-card > div[id^="Project_locations_"] { height: min(320px, 52vh) !important; }
       .footer-grid { grid-template-columns: 1fr; }
-      .partner-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .partners-section { overflow: hidden; padding: 1rem 0 .35rem !important; }
+      .partner-row {
+        display: flex !important; gap: .7rem; grid-template-columns: none !important;
+        max-width: none; overflow-x: auto; overflow-y: hidden; padding: .1rem .75rem .55rem;
+        scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+      }
+      .partner-row::-webkit-scrollbar { display: none; }
+      .partner-card { flex: 0 0 8.4rem; padding: .8rem .6rem; scroll-snap-align: start; }
+      .partner-logo { height: 58px; margin-bottom: .4rem; width: 58px; }
+      .partner-name { font-size: .75rem; }
       .prose-block { padding: 1.15rem; }
       .who-we-are-text p { font-size: .95rem; }
     }
