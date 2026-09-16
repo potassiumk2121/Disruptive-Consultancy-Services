@@ -193,16 +193,18 @@
       }
 
       .hero-side-message {
+        align-items: flex-start;
         animation: hero-side-reveal 0.9s 0.35s ease-out both;
-        bottom: clamp(2.5rem, 7vh, 4.75rem);
-        color: #253041;
+        bottom: 3.2rem;
+        color: #0a1f3d;
         display: flex;
         flex-direction: column;
-        font-size: clamp(0.58rem, 0.78vw, 0.72rem);
-        font-weight: 600;
-        gap: 0.32rem;
-        letter-spacing: 0.28em;
-        line-height: 1.25;
+        font-family: Atkinson, sans-serif;
+        font-size: 0.68rem;
+        font-weight: 650;
+        gap: 0.4rem;
+        letter-spacing: 0.22em;
+        line-height: 1.35;
         position: absolute;
         text-transform: uppercase;
         top: auto;
@@ -210,31 +212,26 @@
       }
 
       .hero-side-message::before {
-        background: linear-gradient(180deg, #d4a72c, rgba(212, 167, 44, 0.35));
+        background: #d4a72c;
         content: "";
         height: 100%;
+        left: 0;
         position: absolute;
         top: 0;
-        width: 1px;
+        width: 2px;
+      }
+
+      .hero-side-left,
+      .hero-side-right {
+        padding-left: 1.05rem;
       }
 
       .hero-side-left {
-        left: clamp(1.6rem, 3.2vw, 3.6rem);
-        padding-left: 1.15rem;
-      }
-
-      .hero-side-left::before {
-        left: 0;
+        left: 3.2vw;
       }
 
       .hero-side-right {
-        align-items: flex-start;
-        right: clamp(1.6rem, 3.2vw, 3.6rem);
-        padding-right: 1.15rem;
-      }
-
-      .hero-side-right::before {
-        right: 0;
+        right: 3.2vw;
       }
 
       .hero-connections {
