@@ -47,14 +47,27 @@ function applySiteChrome() {
     header.home-page-header .home-brand:hover img { border-color: #cfaa4a; box-shadow: 0 4px 14px rgba(15,31,61,.15); transform: translateY(-1px); }
     #drawer { display: none !important; height: 0 !important; pointer-events: none !important; }
     header.home-page-header nav { flex: 1 1 auto; justify-content: flex-end; min-width: 0; position: static !important; transform: none !important; }
-    header.home-page-header nav a { color: #222 !important; }
+    header.home-page-header nav a { color: #222 !important; font-family: Atkinson, sans-serif; }
     @media (min-width: 768px) and (max-width: 1100px) {
       header.home-page-header .home-brand { font-size: .8rem; }
       header.home-page-header nav { gap: .1rem; }
       header.home-page-header nav a { font-size: .72rem; height: 2rem; padding-left: .45rem; padding-right: .45rem; }
     }
-    header.home-page-header nav a:hover { background: #f6f6f6 !important; color: #111 !important; }
-    header.home-page-header nav a.bg-black, header.home-page-header nav a.bg-white { background: #f5b942 !important; color: #111 !important; }
+    header.home-page-header nav a:hover {
+      background: transparent !important;
+      color: #0a1f3d !important;
+    }
+    header.home-page-header nav a.bg-black,
+    header.home-page-header nav a.bg-white {
+      background: transparent !important;
+      border-bottom: 2px solid #d4a72c;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      color: #0a1f3d !important;
+      font-weight: 700;
+      padding-left: .2rem !important;
+      padding-right: .2rem !important;
+    }
     .home-cta {
       align-items: center; background: #111; border-radius: 999px; color: #fff !important; display: none;
       font-size: .82rem; font-weight: 600; gap: .4rem; letter-spacing: .02em; padding: .55rem 1.05rem; position: absolute; right: 0; text-decoration: none; top: 50%; transform: translateY(-50%); white-space: nowrap; z-index: 2;
@@ -361,11 +374,14 @@ function applySiteChrome() {
       }
       .mobile-nav-track::-webkit-scrollbar { display: none; }
       .mobile-nav-link {
-        align-items: center; border: 1px solid transparent; border-radius: 999px; color: #273244 !important; display: inline-flex;
-        flex: 0 0 auto; font-size: .78rem; font-weight: 700; height: 34px; justify-content: center; padding: 0 .85rem;
+        align-items: center; border: 1px solid transparent; border-radius: 0; color: #273244 !important; display: inline-flex;
+        flex: 0 0 auto; font-family: Atkinson, sans-serif; font-size: .78rem; font-weight: 650; height: 34px; justify-content: center; padding: 0 .85rem;
         scroll-snap-align: center; text-decoration: none; white-space: nowrap;
       }
-      .mobile-nav-link[aria-current="page"] { background: #f1bd3f; border-color: #e1a91e; color: #111827 !important; }
+      .mobile-nav-link[aria-current="page"] {
+        background: transparent; border: 0; border-bottom: 2px solid #d4a72c;
+        color: #0a1f3d !important; font-weight: 700;
+      }
       .page-hero, .locations-hero { padding-top: 8.4rem !important; }
       .contact-page .page-hero { padding-top: 8.4rem !important; }
       .hero-heading-wrap { top: 7.35rem !important; }
