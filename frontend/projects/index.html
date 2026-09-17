@@ -50,7 +50,7 @@
     <!-- Global Scripts -->
     <script src="/js/theme.js"></script>
     <script src="/js/scroll.js"></script>
-    <script src="/js/animate.js?v=20260917d"></script>
+    <script src="/js/animate.js?v=20260917f"></script>
     <meta name="astro-view-transitions-enabled" content="true" />
     <meta name="astro-view-transitions-fallback" content="animate" />
     <link rel="stylesheet" href="/_astro/index.BY_4qGpV.css" />
@@ -350,8 +350,8 @@
         border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important;
         overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; white-space: nowrap !important;
       }
-      main { padding-top: 6.6rem; }
-      @media not all and (min-width: 768px) { main { padding-top: 8.85rem; } }
+      main { padding-top: 5.85rem; }
+      @media not all and (min-width: 768px) { main { padding-top: 8.2rem; } }
       .projects-layout {
         align-items: start !important;
         display: grid !important;
@@ -360,7 +360,7 @@
         grid-template-columns: 250px minmax(0, 1fr) !important;
       }
       .projects-layout > * { margin-top: 0 !important; }
-      .projects-page-title { grid-area: title !important; margin: 0 !important; }
+      .projects-title-row { grid-area: title !important; }
       .projects-filter { grid-area: filters !important; }
       .projects-content { grid-area: cards !important; padding: 0 !important; }
       #projects-container {
@@ -486,9 +486,11 @@
       </section>
       <div class="relative dark:bg-black">
         <div class="mx-auto max-w-6xl p-5 space-y-24 pb-16 flex projects-layout">
-          <h2 class="projects-page-title text-2xl md:text-3xl font-bold text-left text-black dark:text-white">
-            Projects Implemented
-          </h2>
+          <div class="projects-title-row section-rule">
+            <hr>
+            <h2 class="projects-page-title section-kicker">Projects implemented</h2>
+            <hr>
+          </div>
           <!-- Filter Section -->
           <aside
             class="projects-filter w-1/4 p-5 border-r border-gray-200 dark:border-gray-700"

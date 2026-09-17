@@ -115,7 +115,7 @@ function applySiteChrome() {
       border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important;
       overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important; white-space: nowrap !important;
     }
-    .compact-inner main { padding-top: 6.6rem !important; }
+    .compact-inner main { padding-top: 5.85rem !important; }
     .inner-page .mx-auto.max-w-6xl.p-5 { padding-top: .4rem !important; }
     .inner-page .mx-auto.space-y-24 > section:first-of-type { gap: .3rem !important; margin-top: 0 !important; }
     .inner-page .mx-auto.space-y-24 > section:first-of-type .mb-5 { margin-bottom: .35rem !important; }
@@ -179,9 +179,27 @@ function applySiteChrome() {
       max-width: 1380px !important; padding-bottom: 5rem !important; padding-top: .35rem !important;
     }
     .projects-layout > * { margin-top: 0 !important; }
-    .projects-page-title {
-      align-items: baseline; display: flex; flex-wrap: wrap; font-size: 1.45rem !important; gap: .4rem .7rem;
-      grid-area: title; line-height: 1.2; margin: 0 !important; text-align: left !important;
+    .projects-title-row { grid-area: title; }
+    .section-rule {
+      align-items: center !important; display: flex !important; gap: 1.05rem; justify-content: center; margin: 0 !important; width: 100%;
+    }
+    .section-rule > hr {
+      background: #ddd3c0; border: 0 !important; flex: 1 1 auto; height: 1px !important; margin: 0 !important; opacity: .95;
+    }
+    .section-kicker,
+    .section-rule > h2,
+    .inner-page h2.section-kicker,
+    .inner-page h2.projects-page-title,
+    .inner-page h2.where-we-worked-title {
+      color: #3c3428 !important; -webkit-text-fill-color: #3c3428 !important;
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif !important;
+      font-size: clamp(1.16rem, 1.65vw, 1.38rem) !important; font-style: normal; font-weight: 400 !important;
+      letter-spacing: .12em !important; line-height: 1.25 !important; margin: 0 .15rem !important; text-align: center !important;
+      text-transform: none; white-space: nowrap;
+    }
+    .project-result-count {
+      color: #8d8678 !important; display: inline; font-family: Atkinson, sans-serif !important;
+      font-size: .66rem !important; font-weight: 500 !important; letter-spacing: .1em; margin-left: .55rem; text-transform: uppercase;
     }
     .projects-filter {
       background: #fff; border: 1px solid #e4e7eb !important; border-radius: 16px; box-shadow: 0 14px 38px rgba(15,23,42,.07);
@@ -244,7 +262,7 @@ function applySiteChrome() {
 
     .about-page { background: #f7f8fa !important; }
     .about-page .page-hero { background: #f7f8fa !important; padding-bottom: .4rem !important; }
-    .about-intro-section { padding: .85rem 1.25rem 3.25rem; }
+    .about-intro-section { padding: .35rem 1.25rem 3.25rem; }
     .about-intro {
       background: #fff; border: 1px solid #e7e9ed; border-radius: 24px; box-shadow: 0 20px 55px rgba(15,23,42,.08);
       display: grid; grid-template-columns: 1.05fr .95fr; margin: 0 auto; max-width: 1120px; overflow: hidden;
@@ -368,7 +386,7 @@ function applySiteChrome() {
     .what-we-do-nav button { background: #fff; border: 1px solid #ddd; border-radius: 999px; color: #111; cursor: pointer; height: 2.5rem; width: 2.5rem; }
     .who-we-are-text p { color: #111 !important; line-height: 1.85; }
     .where-we-worked-section { background: #fff !important; border: 1px solid #ececec; border-radius: 20px; box-shadow: 0 12px 28px rgba(0,0,0,.04); margin: 0; padding: 1.5rem; }
-    .where-we-worked-title { color: #111 !important; -webkit-text-fill-color: #111 !important; }
+    .where-we-worked-title { color: #3c3428 !important; -webkit-text-fill-color: #3c3428 !important; }
 
     @media (max-width: 980px) {
       #projects-container, .locations-catalog, .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -381,6 +399,9 @@ function applySiteChrome() {
     @media (max-width: 700px) {
       .projects-layout, #projects-container, .locations-catalog, .service-grid { grid-template-columns: 1fr; }
       .projects-layout { grid-template-areas: "title" "filters" "cards"; }
+      .section-kicker, .inner-page h2.section-kicker, .inner-page h2.projects-page-title, .inner-page h2.where-we-worked-title {
+        letter-spacing: .08em !important; white-space: normal;
+      }
       .projects-filter { position: static; }
       .project-item { min-height: 365px; }
       .contact-card form { grid-template-columns: 1fr; }
@@ -420,7 +441,7 @@ function applySiteChrome() {
         background: transparent; border: 0; border-bottom: 2px solid #d4a72c;
         color: #0a1f3d !important; font-weight: 700;
       }
-      .compact-inner main { padding-top: 8.85rem !important; }
+      .compact-inner main { padding-top: 8.2rem !important; }
       .page-hero, .locations-hero { padding-top: 8.4rem !important; }
       main:has(.projects-layout) .page-hero { padding: 8.4rem 1.25rem .85rem !important; }
       .contact-page .page-hero { padding-top: 8.4rem !important; }
