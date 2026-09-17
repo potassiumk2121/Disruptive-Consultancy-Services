@@ -153,9 +153,9 @@ function applySiteChrome() {
       justify-content: center; margin: 0 auto; max-width: 760px; width: 100%;
     }
     .team-photo {
-      background: #eef1f4 url('/ico/Team/dummy.jpeg') center/cover no-repeat; height: 210px; overflow: hidden; width: 100%;
+      background: #f5f6f8; height: 210px; overflow: hidden; width: 100%;
     }
-    .team-photo img { display: block; height: 100%; object-fit: cover; width: 100%; }
+    .team-photo img { display: block; height: 100%; object-fit: contain; object-position: center 18%; width: 100%; }
     .team-copy { background: #fff; padding: 1.15rem 1.2rem 1.3rem; }
     .team-copy .text-lg, .team-copy h3 { color: #111827 !important; font-size: 1.12rem; font-weight: 700; margin: 0 0 .35rem !important; }
     .team-role { color: #a66b00 !important; display: block; font-size: .72rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
@@ -190,7 +190,9 @@ function applySiteChrome() {
     .section-rule > h2,
     .inner-page h2.section-kicker,
     .inner-page h2.projects-page-title,
-    .inner-page h2.where-we-worked-title {
+    .inner-page h2.where-we-worked-title,
+    .inner-page h1.section-kicker,
+    .contact-page .page-hero h1 {
       color: #3c3428 !important; -webkit-text-fill-color: #3c3428 !important;
       font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif !important;
       font-size: clamp(1.16rem, 1.65vw, 1.38rem) !important; font-style: normal; font-weight: 400 !important;
@@ -303,9 +305,9 @@ function applySiteChrome() {
     .about-section-points span { color: #344054; display: block; font-size: .88rem; line-height: 1.55; }
 
     .contact-page main { background: linear-gradient(180deg, #fff 0, #fbfaf7 58%, #fff 100%); }
-    .contact-page .page-hero { padding: 5.6rem 1.25rem .9rem !important; }
-    .contact-page .page-hero > div { padding: .5rem 0 0 !important; }
-    .contact-page .page-hero p { font-size: clamp(1.55rem, 2.5vw, 2rem) !important; }
+    .contact-page .page-hero { padding: 5.85rem 1.25rem .45rem !important; }
+    .contact-page .page-hero > div { margin: 0 auto !important; max-width: 72rem; padding: 0 1.25rem !important; }
+    .contact-page .page-hero p { font-size: clamp(1.16rem, 1.65vw, 1.38rem) !important; }
     .contact-page main > .relative > .mx-auto { padding-bottom: 2.25rem !important; padding-top: .75rem !important; }
     .contact-shell { display: grid; gap: 1.25rem; grid-template-columns: 1.16fr .84fr; margin: 0 auto; max-width: 1080px; }
     .contact-card, .contact-side {
@@ -399,7 +401,7 @@ function applySiteChrome() {
     @media (max-width: 700px) {
       .projects-layout, #projects-container, .locations-catalog, .service-grid { grid-template-columns: 1fr; }
       .projects-layout { grid-template-areas: "title" "filters" "cards"; }
-      .section-kicker, .inner-page h2.section-kicker, .inner-page h2.projects-page-title, .inner-page h2.where-we-worked-title {
+      .section-kicker, .inner-page h2.section-kicker, .inner-page h2.projects-page-title, .inner-page h2.where-we-worked-title, .contact-page .page-hero h1 {
         letter-spacing: .08em !important; white-space: normal;
       }
       .projects-filter { position: static; }
@@ -785,7 +787,7 @@ function enhanceAboutPage() {
     }
     card.querySelectorAll('[data-team-photo]').forEach((image) => {
       image.addEventListener('error', () => {
-        image.src = '/ico/Team/dummy.jpeg'
+        image.src = '/ico/Team/team-portrait.jpg'
       }, { once: true })
     })
   })
