@@ -460,7 +460,7 @@ function applySiteChrome() {
         max-height: none !important;
         min-height: 0 !important;
         overflow: hidden !important;
-        padding: 7.05rem 0.95rem 1.2rem !important;
+        padding: 7.9rem 0.95rem 1.2rem !important;
       }
       .hero-world-map::before {
         animation: none !important;
@@ -491,7 +491,7 @@ function applySiteChrome() {
         -webkit-mask-image: none !important;
         mask-image: none !important;
         order: 1 !important;
-        padding: 0 0.15rem 0.85rem !important;
+        padding: 0.45rem 0.15rem 0.85rem !important;
         position: relative !important;
         top: auto !important;
       }
