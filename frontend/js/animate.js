@@ -447,8 +447,70 @@ function applySiteChrome() {
       .page-hero, .locations-hero { padding-top: 8.4rem !important; }
       main:has(.projects-layout) .page-hero { padding: 8.4rem 1.25rem .85rem !important; }
       .contact-page .page-hero { padding-top: 8.4rem !important; }
-      .hero-heading-wrap { top: 7.35rem !important; }
-      .home-hero-stacked { padding-top: 7rem !important; }
+      .hero-section-outer {
+        background: #f7f6f2 !important;
+        min-height: 0 !important;
+      }
+      .hero-section-inner.hero-world-map {
+        align-items: center !important;
+        background: linear-gradient(180deg, #fbfaf7 0%, #f3f0e8 100%) !important;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        padding: 7.05rem 0.95rem 1.2rem !important;
+      }
+      .hero-world-map::before {
+        animation: none !important;
+        background-color: #f6f1e6 !important;
+        background-position: center 46% !important;
+        background-size: contain !important;
+        border: 1px solid rgba(201, 176, 122, 0.28) !important;
+        border-radius: 18px !important;
+        box-shadow: 0 1px 0 rgba(255,255,255,0.85) inset, 0 14px 28px rgba(28,36,52,0.08) !important;
+        filter: saturate(0.92) contrast(1.04) !important;
+        height: min(42vh, 252px) !important;
+        inset: auto !important;
+        margin: 0.05rem 0 0 !important;
+        max-width: 24.75rem !important;
+        order: 2 !important;
+        position: relative !important;
+        transform: none !important;
+        width: 100% !important;
+        will-change: auto !important;
+        z-index: 1 !important;
+      }
+      .hero-world-map::after,
+      .hero-connections {
+        display: none !important;
+      }
+      .hero-heading-wrap {
+        background: none !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+        order: 1 !important;
+        padding: 0 0.15rem 0.85rem !important;
+        position: relative !important;
+        top: auto !important;
+      }
+      .hero-title-primary {
+        font-size: clamp(1.48rem, 6.8vw, 1.88rem) !important;
+        letter-spacing: 0.045em !important;
+        text-shadow: none !important;
+      }
+      .hero-title-secondary {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.2em !important;
+      }
+      .hero-premium-tagline {
+        background: none !important;
+        box-shadow: none !important;
+        font-size: 0.76rem !important;
+        padding: 0 !important;
+      }
+      .home-hero-stacked { padding-top: 6.6rem !important; }
       .what-we-do-nav { gap: .4rem; margin: 0 0 .35rem; }
       .what-we-do-nav button { height: 1.85rem; width: 1.85rem; }
       .what-we-do-scroller { padding: 0 0 .4rem; }
@@ -510,9 +572,10 @@ function applySiteChrome() {
     }
     @media (max-width: 480px) {
       .home-brand { font-size: .72rem !important; }
-      .hero-title-primary { font-size: clamp(1.7rem, 9vw, 2.2rem) !important; }
+      .hero-title-primary { font-size: clamp(1.42rem, 7vw, 1.72rem) !important; }
       .hero-title-secondary { letter-spacing: .16em !important; }
-      .hero-section-inner { min-height: 460px !important; }
+      .hero-section-inner { height: auto !important; min-height: 0 !important; }
+      .hero-world-map::before { height: min(38vh, 230px) !important; }
     }
   `
 }

@@ -124,7 +124,7 @@
     <!-- Global Scripts -->
     <script src="/js/theme.js"></script>
     <script src="/js/scroll.js"></script>
-    <script src="/js/animate.js"></script>
+    <script src="/js/animate.js?v=20260921-mobile-map"></script>
     <meta name="astro-view-transitions-enabled" content="true" />
     <meta name="astro-view-transitions-fallback" content="animate" />
     <style>
@@ -478,28 +478,100 @@
       }
 
       @media not all and (min-width: 768px) {
+        .hero-section-outer {
+          background: #f7f6f2;
+          min-height: 0;
+        }
+
+        .hero-section-inner.hero-world-map {
+          align-items: center;
+          background: linear-gradient(180deg, #fbfaf7 0%, #f3f0e8 100%);
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          max-height: none;
+          min-height: 0;
+          overflow: hidden;
+          padding: 7.05rem 0.95rem 1.2rem;
+        }
+
+        .hero-world-map::before {
+          animation: none;
+          background-color: #f6f1e6;
+          background-position: center 46%;
+          background-size: contain;
+          border: 1px solid rgba(201, 176, 122, 0.28);
+          border-radius: 18px;
+          box-shadow:
+            0 1px 0 rgba(255, 255, 255, 0.85) inset,
+            0 14px 28px rgba(28, 36, 52, 0.08);
+          filter: saturate(0.92) contrast(1.04);
+          height: min(42vh, 252px);
+          inset: auto;
+          margin: 0.05rem 0 0;
+          max-width: 24.75rem;
+          order: 2;
+          position: relative;
+          transform: none;
+          width: 100%;
+          will-change: auto;
+          z-index: 1;
+        }
+
+        .hero-world-map::after {
+          display: none;
+        }
+
         .hero-heading-wrap {
-          top: 7.35rem;
-          padding-top: 0.35rem;
+          background: none;
+          -webkit-mask-image: none;
+          mask-image: none;
+          order: 1;
+          padding: 0 0.15rem 0.85rem;
+          position: relative;
+          top: auto;
+        }
+
+        .hero-main-title {
+          width: 100%;
+        }
+
+        .hero-main-title::after {
+          height: 1px;
+          margin-top: 0.42rem;
+          width: 40px;
         }
 
         .hero-title-primary {
-          font-size: clamp(1.85rem, 8.5vw, 2.5rem);
+          font-size: clamp(1.48rem, 6.8vw, 1.88rem);
+          font-weight: 500;
+          letter-spacing: 0.045em;
+          line-height: 0.95;
+          text-shadow: none;
         }
 
         .hero-title-secondary {
-          font-size: 0.72rem;
-          letter-spacing: 0.22em;
+          font-size: 0.6rem;
+          font-weight: 650;
+          letter-spacing: 0.2em;
+          margin-top: 0.28rem;
+          padding-left: 0.2em;
         }
 
         .hero-premium-tagline {
-          font-size: 0.8rem;
-          max-width: calc(100vw - 1.5rem);
+          background: none;
+          box-shadow: none;
+          font-size: 0.76rem;
+          gap: 0.42rem;
+          letter-spacing: 0.04em;
+          margin-top: 0.42rem;
+          max-width: calc(100vw - 2.2rem);
+          padding: 0;
+          white-space: normal;
         }
 
-        .hero-section-inner {
-          height: 78svh;
-          min-height: 520px;
+        .hero-connections {
+          display: none;
         }
       }
 
@@ -510,30 +582,25 @@
       }
 
       @media (max-width: 520px) {
-        .hero-main-title {
-          width: 100%;
-        }
-
         .hero-title-primary {
-          font-size: clamp(2rem, 10vw, 2.8rem);
+          font-size: clamp(1.42rem, 7vw, 1.72rem);
         }
 
         .hero-title-secondary {
-          font-size: 0.67rem;
-          letter-spacing: 0.2em;
-          padding-left: 0.2em;
+          font-size: 0.56rem;
+          letter-spacing: 0.18em;
+          padding-left: 0.18em;
         }
 
         .hero-premium-tagline {
-          font-size: 0.78rem;
-          gap: 0.45rem;
-          letter-spacing: 0.035em;
+          font-size: 0.72rem;
+          gap: 0.32rem;
+          letter-spacing: 0.03em;
           max-width: calc(100vw - 2rem);
         }
 
-        .hero-section-inner {
-          height: 78svh;
-          min-height: 500px;
+        .hero-world-map::before {
+          height: min(38vh, 230px);
         }
       }
 
