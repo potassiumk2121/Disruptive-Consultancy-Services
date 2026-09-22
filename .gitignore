@@ -5,3 +5,5 @@ backend/data/inquiries/
 backend/.env
 .DS_Store
 Thumbs.db
+.vercel
+.env*
