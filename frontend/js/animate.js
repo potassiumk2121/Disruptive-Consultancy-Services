@@ -988,7 +988,7 @@ function contactMarkup() {
           <label class="contact-honeypot">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
           <div><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Your name"></div>
           <div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="you@organisation.org"></div>
-          <div class="full"><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text" placeholder="Agency, ministry or firm"></div>
+          <div class="full"><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text" required placeholder="Agency, ministry or firm"></div>
           <div class="full"><label for="message">Message</label><textarea id="message" name="message" rows="4" required placeholder="Project context, location and support required"></textarea></div>
           <button class="full" type="submit">Send message</button>
           <p class="contact-form-status full" id="dcs-contact-status" role="status" aria-live="polite"></p>
@@ -1033,13 +1033,15 @@ function bindContactForm(root) {
     const website = root.querySelector('input[name="website"]')?.value.trim() || ''
 
     status.className = 'contact-form-status full'
-    if (!name || !email || !message) {
+    if (!name || !email || !organisation || !message) {
       status.classList.add('is-error')
-      status.textContent = 'Please complete your name, email and message.'
+      status.textContent = 'Please complete your name, email, organisation and message.'
       return
     }
 
+    const originalLabel = button.textContent
     button.disabled = true
+    button.textContent = 'Sending…'
     status.textContent = 'Sending your message…'
 
     try {
@@ -1051,15 +1053,14 @@ function bindContactForm(root) {
       const data = await response.json().catch(() => ({}))
       if (!response.ok) throw new Error(data.error || 'The message could not be sent.')
       status.classList.add('is-success')
-      status.textContent = data.emailed === false
-        ? `Your message was received. If you do not hear back within two working days, please write to ${DCS_EMAIL}.`
-        : 'Thank you. Your message has been emailed to the team. We typically reply within two working days.'
+      status.textContent = 'Thank you. Your message has been sent. We will get back to you shortly.'
       form.reset()
     } catch (error) {
       status.classList.add('is-error')
       status.innerHTML = `${error.message || 'The message could not be sent.'} You can also write directly to <a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a>.`
     } finally {
       button.disabled = false
+      button.textContent = originalLabel
     }
   })
 }

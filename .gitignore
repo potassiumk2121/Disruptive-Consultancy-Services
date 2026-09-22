@@ -1,4 +1,7 @@
 node_modules/
 backend/data/inquiries/
+.env
+.env.local
+backend/.env
 .DS_Store
 Thumbs.db

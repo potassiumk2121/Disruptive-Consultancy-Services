@@ -1,0 +1,13 @@
+{
+  "name": "dcs-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Disruptive Consultancy Services website and contact API",
+  "scripts": {
+    "start": "node backend/src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "resend": "^6.1.2"
+  }
+}
