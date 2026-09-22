@@ -1,4 +1,4 @@
-const { parseContactPayload, sendContactEmails } = require("../backend/src/contact-mailer");
+const { parseContactPayload, sendContactEmails } = require("../lib/contact-mailer");
 
 function json(res, status, data) {
   res.status(status).setHeader("Content-Type", "application/json; charset=utf-8");
@@ -12,44 +12,53 @@ function readPayload(req) {
   return req.body || {};
 }
 
+function errorText(error) {
+  if (!error) return "The message could not be sent. Please try again.";
+  if (typeof error === "string") return error;
+  if (typeof error.message === "string" && error.message !== "[object Object]") {
+    return error.message;
+  }
+  return "The message could not be sent. Please try again.";
+}
+
 module.exports = async (req, res) => {
-  if (req.method === "OPTIONS") {
-    res.status(204).end();
-    return;
-  }
-
-  if (req.method !== "POST") {
-    json(res, 405, { error: "Use POST" });
-    return;
-  }
-
-  let payload;
   try {
-    payload = readPayload(req);
-  } catch {
-    json(res, 400, { error: "Invalid JSON body" });
-    return;
-  }
+    if (req.method === "OPTIONS") {
+      res.status(204).end();
+      return;
+    }
 
-  const parsed = parseContactPayload(payload);
-  if (parsed.honeypot) {
-    json(res, 201, { ok: true });
-    return;
-  }
-  if (parsed.error) {
-    json(res, 400, { error: parsed.error });
-    return;
-  }
+    if (req.method !== "POST") {
+      json(res, 405, { error: "Use POST" });
+      return;
+    }
 
-  try {
+    let payload;
+    try {
+      payload = readPayload(req);
+    } catch {
+      json(res, 400, { error: "Invalid JSON body" });
+      return;
+    }
+
+    const parsed = parseContactPayload(payload);
+    if (parsed.honeypot) {
+      json(res, 201, { ok: true });
+      return;
+    }
+    if (parsed.error) {
+      json(res, 400, { error: parsed.error });
+      return;
+    }
+
     const result = await sendContactEmails(parsed.inquiry);
     json(res, 201, { ok: true, confirmationSent: result.confirmationSent });
   } catch (error) {
-    console.error("Contact email failed:", error.message);
+    console.error("Contact email failed:", error);
     const message =
-      error.code === "CONFIG"
+      error && error.code === "CONFIG"
         ? "Email service is not configured."
-        : "The message could not be sent. Please try again.";
+        : errorText(error);
     json(res, 502, { error: message });
   }
 };
