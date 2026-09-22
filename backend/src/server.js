@@ -145,6 +145,15 @@ const server = http.createServer(async (req, res) => {
   serveStatic(req, res);
 });
 
+server.on("error", (error) => {
+  if (error.code === "EADDRINUSE") {
+    console.error(`Port ${PORT} is already in use. A DCS server is probably already running.`);
+    console.error(`Open http://localhost:${PORT} or stop the other process, then try again.`);
+    process.exit(1);
+  }
+  throw error;
+});
+
 server.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
   console.log(`Serving frontend from ${FRONTEND_DIR}`);

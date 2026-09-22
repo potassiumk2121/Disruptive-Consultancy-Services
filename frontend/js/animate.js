@@ -334,6 +334,7 @@ function applySiteChrome() {
     .contact-form-status { color: #374151 !important; font-size: .9rem; line-height: 1.5; margin: .15rem 0 0; }
     .contact-form-status.is-success { color: #166534 !important; }
     .contact-form-status.is-error { color: #991b1b !important; }
+    .contact-form-status a { color: #991b1b !important; text-decoration: underline; }
     .contact-meta { color: #555 !important; font-size: .9rem; line-height: 1.55; margin: 0; }
     .contact-side { background: linear-gradient(145deg, #6484ae, #58789f) !important; border: 0; color: #0f0101 !important; overflow: hidden; position: relative; }
     .contact-side::before { background: #d4a72c; border-radius: 50%; content: ""; height: 180px; opacity: .16; position: absolute; right: -75px; top: -75px; width: 180px; }
@@ -1018,6 +1019,15 @@ function contactMarkup() {
   `
 }
 
+function contactErrorText(value) {
+  if (typeof value === 'string' && value.trim() && value !== '[object Object]') return value
+  if (value && typeof value === 'object') {
+    if (typeof value.message === 'string' && value.message !== '[object Object]') return value.message
+    if (typeof value.error === 'string') return value.error
+  }
+  return 'The message could not be sent. Please try again.'
+}
+
 function bindContactForm(root) {
   const form = root.querySelector('#dcs-contact-form')
   const status = root.querySelector('#dcs-contact-status')
@@ -1051,13 +1061,19 @@ function bindContactForm(root) {
         body: JSON.stringify({ name, email, organisation, message, website })
       })
       const data = await response.json().catch(() => ({}))
-      if (!response.ok) throw new Error(data.error || 'The message could not be sent.')
+      if (!response.ok) throw new Error(contactErrorText(data.error))
       status.classList.add('is-success')
       status.textContent = 'Thank you. Your message has been sent. We will get back to you shortly.'
       form.reset()
     } catch (error) {
       status.classList.add('is-error')
-      status.innerHTML = `${error.message || 'The message could not be sent.'} You can also write directly to <a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a>.`
+      const detail = contactErrorText(error && error.message)
+      status.replaceChildren()
+      status.append(`${detail} You can also write directly to `)
+      const link = document.createElement('a')
+      link.href = `mailto:${DCS_EMAIL}`
+      link.textContent = DCS_EMAIL
+      status.append(link, '.')
     } finally {
       button.disabled = false
       button.textContent = originalLabel

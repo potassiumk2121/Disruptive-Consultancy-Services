@@ -1,6 +1,6 @@
 const { Resend } = require("resend");
 
-const CONTACT_TO = process.env.CONTACT_TO || "potassiumk2121@gmail.com";
+const CONTACT_TO = process.env.CONTACT_TO || "untiwari@dcspl.net";
 const CONTACT_FROM =
   process.env.CONTACT_FROM ||
   "Disruptive Consultancy Services <hello@dcspl.net>";
@@ -53,12 +53,30 @@ async function sendResendEmail(fields) {
   const resend = getResendClient();
   const { data, error } = await resend.emails.send(fields);
   if (error) {
-    const sendError = new Error(error.message || "Resend rejected the email.");
+    const sendError = new Error(resendErrorMessage(error));
     sendError.code = "RESEND";
     sendError.details = error;
     throw sendError;
   }
   return data;
+}
+
+function resendErrorMessage(error) {
+  if (!error) return "Resend rejected the email.";
+  if (typeof error === "string") return error;
+  if (typeof error.message === "string" && error.message !== "[object Object]") {
+    return error.message;
+  }
+  if (error.message && typeof error.message === "object") {
+    if (typeof error.message.message === "string") return error.message.message;
+    try {
+      return JSON.stringify(error.message);
+    } catch {
+      return "Resend rejected the email.";
+    }
+  }
+  if (typeof error.name === "string") return error.name;
+  return "Resend rejected the email.";
 }
 
 function escapeHtml(value) {
@@ -119,37 +137,14 @@ function notificationText(inquiry, extraLines = []) {
 }
 
 async function sendTeamNotification(inquiry) {
-  try {
-    await sendResendEmail({
-      from: CONTACT_FROM,
-      to: [CONTACT_TO],
-      replyTo: inquiry.email,
-      subject: "New Contact Form Submission",
-      text: notificationText(inquiry),
-    });
-    return CONTACT_TO;
-  } catch (error) {
-    const allowed = /own email address \(([^)]+)\)/i.exec(error.message || "")?.[1];
-    if (!allowed || allowed.toLowerCase() === CONTACT_TO.toLowerCase()) {
-      throw error;
-    }
-
-    console.warn(
-      `Resend test mode can only send to ${allowed}. Delivering there until a domain is verified.`
-    );
-    await sendResendEmail({
-      from: CONTACT_FROM,
-      to: [allowed],
-      replyTo: inquiry.email,
-      subject: "New Contact Form Submission",
-      text: notificationText(inquiry, [
-        `Intended recipient: ${CONTACT_TO}`,
-        `Delivered to ${allowed} because Resend is still in test mode. Verify a domain at resend.com/domains to send directly to the intended inbox.`,
-        "",
-      ]),
-    });
-    return allowed;
-  }
+  await sendResendEmail({
+    from: CONTACT_FROM,
+    to: [CONTACT_TO],
+    replyTo: inquiry.email,
+    subject: "New Contact Form Submission",
+    text: notificationText(inquiry),
+  });
+  return CONTACT_TO;
 }
 
 async function sendContactEmails(inquiry) {
