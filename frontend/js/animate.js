@@ -1,4 +1,4 @@
-const DCS_EMAIL = 'utiwari@developmentmonitors.com'
+const DCS_EMAIL = 'untiwari@dcspl.net'
 const DCS_LINKEDIN = 'https://www.linkedin.com/in/umesh-kumar-tiwari-62162816'
 const DCS_ADDRESS = {
   name: 'Disruptive Consultancy Services Pvt. Ltd',
