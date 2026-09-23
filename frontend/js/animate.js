@@ -763,7 +763,7 @@ function enhanceWhatWeDo() {
   scroller.appendChild(track)
 
   track.classList.add('what-we-do-track')
-  ;[...track.children].forEach((card) => card.classList.add('what-we-do-card'))
+    ;[...track.children].forEach((card) => card.classList.add('what-we-do-card'))
 
   const scrollByCard = (direction) => scroller.scrollBy({ left: direction * 300, behavior: 'smooth' })
   nav.querySelector('.what-we-do-prev')?.addEventListener('click', () => scrollByCard(-1))
@@ -806,17 +806,17 @@ function enhanceInnerPages() {
       '/new_world_map2.png',
       '/new_world_map2.png'
     ]
-    ;[...servicesGrid.children].forEach((card, index) => {
-      card.classList.add('service-offer-card')
-      if (card.querySelector('.service-media')) return
-      const title = card.querySelector('h2')?.textContent.replace(/\s+/g, ' ').trim() || 'Professional service'
-      const media = document.createElement('div')
-      media.className = 'service-media'
-      media.setAttribute('role', 'img')
-      media.setAttribute('aria-label', title)
-      media.style.backgroundImage = `url("${serviceImages[index % serviceImages.length]}")`
-      card.prepend(media)
-    })
+      ;[...servicesGrid.children].forEach((card, index) => {
+        card.classList.add('service-offer-card')
+        if (card.querySelector('.service-media')) return
+        const title = card.querySelector('h2')?.textContent.replace(/\s+/g, ' ').trim() || 'Professional service'
+        const media = document.createElement('div')
+        media.className = 'service-media'
+        media.setAttribute('role', 'img')
+        media.setAttribute('aria-label', title)
+        media.style.backgroundImage = `url("${serviceImages[index % serviceImages.length]}")`
+        card.prepend(media)
+      })
   }
 }
 
