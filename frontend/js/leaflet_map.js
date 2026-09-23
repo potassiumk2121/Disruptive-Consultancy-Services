@@ -28,10 +28,11 @@ function initializeMaps() {
         const geoJsonLayer = L.geoJSON(geojsonData, {
           style: function (feature) {
             return {
-              color: 'green',
+              color: '#c9a24d',
               weight: 2,
-              opacity: 0.7,
-              fillOpacity: 0.5,
+              opacity: 1,
+              fillColor: '#b11226',
+              fillOpacity: 0.9,
             };
           },
           onEachFeature: function (feature, layer) {
