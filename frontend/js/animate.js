@@ -320,7 +320,21 @@ function applySiteChrome() {
     .contact-card form > .full { grid-column: 1 / -1; }
     .contact-card label { display: block; font-size: .84rem; margin-bottom: .3rem; }
     .contact-card input, .contact-card textarea {
-      background: #fafafa; border: 1px solid #e4e4e4; border-radius: 9px; box-sizing: border-box; color: #111; padding: .5rem .7rem; width: 100%;
+      background: #fff !important; border: 1px solid #c5ccd6; border-radius: 9px; box-sizing: border-box;
+      color: #111 !important; font-size: .95rem; padding: .5rem .7rem; width: 100%;
+    }
+    .contact-card input::placeholder, .contact-card textarea::placeholder { color: #6b7280; opacity: 1; }
+    .contact-card input:focus, .contact-card textarea:focus {
+      border-color: #c9a227; box-shadow: 0 0 0 3px rgba(201,167,39,.18); outline: none;
+    }
+    .contact-card input:-webkit-autofill,
+    .contact-card input:-webkit-autofill:hover,
+    .contact-card input:-webkit-autofill:focus,
+    .contact-card input:-webkit-autofill:active {
+      -webkit-text-fill-color: #111 !important;
+      caret-color: #111;
+      box-shadow: 0 0 0 1000px #fff inset !important;
+      transition: background-color 99999s ease-out 0s;
     }
     .contact-card input { height: 38px; }
     .contact-card textarea { height: 70px !important; min-height: 70px; resize: vertical; }
