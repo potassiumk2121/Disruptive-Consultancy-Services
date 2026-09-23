@@ -7,7 +7,17 @@ const DCS_ADDRESS = {
   maps: 'https://www.google.com/maps/search/?api=1&query=Flat+307+Janta+Flats+Pocket+B-9+Sector+3+Rohini+Delhi+110085'
 }
 
+function enableVercelAnalytics() {
+  if (document.querySelector('script[src="/_vercel/insights/script.js"]')) return
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments) }
+  const script = document.createElement('script')
+  script.defer = true
+  script.src = '/_vercel/insights/script.js'
+  document.head.appendChild(script)
+}
+
 function animate() {
+  enableVercelAnalytics()
   document.querySelectorAll('.animate').forEach((element, index) => {
     setTimeout(() => element.classList.add('show'), index * 150)
   })
