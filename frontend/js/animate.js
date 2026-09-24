@@ -945,8 +945,7 @@ function enhanceProjects() {
     'solid waste management': ['/ico/Services/solid-waste-line.jpg', 'center'],
     'planning for future climate-resilient': ['/ico/locations/Yemen/Picture1.jpg', 'center 30%'],
     'disaster risk management training for afghanistan government': ['/ico/locations/India/Picture2.jpg', 'center 40%'],
-    'bringing back business': ['/ico/locations/Yemen/Picture6.png', 'center 42%'],
-    'remote management in fragile states (kfw)': ['/ico/locations/Yemen/Picture1.jpg', 'center 30%']
+    'bringing back business': ['/ico/locations/Yemen/Picture6.png', 'center 42%']
   }
   const locationCounts = {}
 
