@@ -411,10 +411,12 @@ function applySiteChrome() {
 
     .meet-the-team-section h2, .meet-the-team-content, .meet-the-team-content * { color: #111 !important; }
     .what-we-do-heading h2 {
-      color: #1c2434 !important; font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif !important;
+      color: #1c2434 !important; -webkit-text-fill-color: #1c2434 !important;
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif !important;
       font-size: clamp(1.35rem, 2vw, 1.7rem) !important; font-weight: 500 !important; letter-spacing: .16em !important;
     }
     .what-we-do-heading hr { border-color: #ddd3c0 !important; opacity: .85; }
+    .what-we-do-heading + section { margin-top: 1.75rem !important; }
     .what-we-do-shell { margin: 0 auto; max-width: 1180px; padding: 0 1.5rem; position: relative; }
     .what-we-do-scroller { cursor: grab; overflow-x: auto; overflow-y: hidden; padding: .1rem 0 .2rem; scrollbar-width: none; }
     .what-we-do-scroller::-webkit-scrollbar { display: none; }
@@ -775,6 +777,13 @@ function enhanceMeetTheTeam() {
 }
 
 function enhanceWhatWeDo() {
+  const sectionTitles = new Set(['WHO WE ARE', 'WHAT WE DO', "WHERE WE'VE WORKED", 'PARTNERS', 'CONTACT US'])
+  document.querySelectorAll('h2').forEach((element) => {
+    if (!sectionTitles.has(element.textContent.trim().toUpperCase())) return
+    const section = element.closest('section')
+    if (section?.querySelector('hr')) section.classList.add('what-we-do-heading')
+  })
+
   const heading = [...document.querySelectorAll('h2')].find((element) =>
     element.textContent.trim().toUpperCase() === 'WHAT WE DO'
   )
