@@ -410,17 +410,36 @@ function applySiteChrome() {
     .legal-page article a { color: #1d4ed8 !important; }
 
     .meet-the-team-section h2, .meet-the-team-content, .meet-the-team-content * { color: #111 !important; }
-    .what-we-do-shell { position: relative; }
-    .what-we-do-scroller { cursor: grab; overflow-x: auto; overflow-y: hidden; padding: .25rem 0 1.5rem; scrollbar-width: thin; }
+    .what-we-do-heading h2 {
+      color: #1c2434 !important; font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif !important;
+      font-size: clamp(1.35rem, 2vw, 1.7rem) !important; font-weight: 500 !important; letter-spacing: .16em !important;
+    }
+    .what-we-do-heading hr { border-color: #ddd3c0 !important; opacity: .85; }
+    .what-we-do-shell { margin: 0 auto; max-width: 1180px; padding: 0 1.5rem; position: relative; }
+    .what-we-do-scroller { cursor: grab; overflow-x: auto; overflow-y: hidden; padding: .1rem 0 .2rem; scrollbar-width: none; }
+    .what-we-do-scroller::-webkit-scrollbar { display: none; }
     .what-we-do-scroller.is-dragging { cursor: grabbing; }
-    .what-we-do-track { align-items: stretch !important; display: flex !important; flex-wrap: nowrap !important; gap: 1.25rem; justify-content: flex-start !important; min-width: max-content; padding: .5rem 4.5rem .75rem; }
-    .what-we-do-card { background: #fff; border: 1px solid #ececec; border-radius: 1.35rem; box-shadow: 0 18px 40px rgba(16,42,67,.08); flex: 0 0 17.5rem; margin: 0 !important; min-height: 19.5rem; padding: 1.35rem 1.2rem 1.2rem; position: relative; }
-    .what-we-do-card:hover { box-shadow: 0 24px 48px rgba(16,42,67,.14); transform: translateY(-6px); }
-    .what-we-do-card::before { background: #111; border-radius: 1.35rem 1.35rem 0 0; content: ''; height: 5px; left: 0; position: absolute; right: 0; top: 0; }
-    .what-we-do-card .round-10rem { background-color: #f6f6f6 !important; border-color: #ddd !important; flex-shrink: 0; height: 7.5rem !important; margin-bottom: .85rem; width: 7.5rem !important; }
-    .what-we-do-card > p, .what-we-do-card > p span { color: #111 !important; }
-    .what-we-do-nav { display: flex; gap: .6rem; justify-content: flex-end; margin: 0 0 .75rem; }
-    .what-we-do-nav button { background: #fff; border: 1px solid #ddd; border-radius: 999px; color: #111; cursor: pointer; height: 2.5rem; width: 2.5rem; }
+    .what-we-do-track { align-items: stretch !important; display: flex !important; flex-wrap: nowrap !important; gap: 1rem; justify-content: flex-start !important; min-width: max-content; padding: .35rem .15rem .7rem; }
+    .what-we-do-card {
+      background: #fff; border: 1px solid #e7e3da; border-radius: 12px; box-shadow: 0 8px 22px rgba(10,31,61,.045);
+      flex: 0 0 15.25rem; margin: 0 !important; min-height: 0; padding: 1.35rem 1.1rem 1.15rem; position: relative;
+      text-decoration: none; transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .what-we-do-card:hover { border-color: #d8c7a2; box-shadow: 0 12px 26px rgba(10,31,61,.07); transform: translateY(-2px); }
+    .what-we-do-card::before { background: #c9a24d; border-radius: 12px 12px 0 0; content: ''; height: 2px; left: 0; position: absolute; right: 0; top: 0; }
+    .what-we-do-card .round-10rem {
+      background-color: #f7f6f2 !important; border: 1px solid #ece7dc !important; box-shadow: none !important;
+      flex-shrink: 0; height: 5.5rem !important; margin-bottom: .85rem; width: 5.5rem !important;
+    }
+    .what-we-do-card:hover .round-10rem { box-shadow: none !important; transform: none !important; }
+    .what-we-do-card > p, .what-we-do-card > p span { color: #1c2434 !important; }
+    .what-we-do-card > p { font-size: .92rem !important; font-weight: 600; letter-spacing: .01em; line-height: 1.4; margin: 0 !important; }
+    .what-we-do-nav { display: flex; gap: .45rem; justify-content: flex-end; margin: 0 0 .45rem; }
+    .what-we-do-nav button {
+      background: #fff; border: 1px solid #e4dfd4; border-radius: 999px; color: #0a1f3d; cursor: pointer;
+      font-size: 1rem; height: 2.05rem; line-height: 1; width: 2.05rem;
+    }
+    .what-we-do-nav button:hover { border-color: #c9a24d; }
     .who-we-are-text p { color: #111 !important; line-height: 1.85; }
     .where-we-worked-section { background: #fff !important; border: 1px solid #ececec; border-radius: 20px; box-shadow: 0 12px 28px rgba(0,0,0,.04); margin: 0; padding: 1.5rem; }
     .where-we-worked-title { color: #3c3428 !important; -webkit-text-fill-color: #3c3428 !important; }
@@ -546,17 +565,18 @@ function applySiteChrome() {
         padding: 0 !important;
       }
       .home-hero-stacked { padding-top: 6.6rem !important; }
-      .what-we-do-nav { gap: .4rem; margin: 0 0 .35rem; }
-      .what-we-do-nav button { height: 1.85rem; width: 1.85rem; }
-      .what-we-do-scroller { padding: 0 0 .4rem; }
-      .what-we-do-track { gap: .65rem; padding: .15rem .75rem .3rem; }
+      .what-we-do-shell { padding: 0 .75rem; }
+      .what-we-do-nav { gap: .35rem; margin: 0 0 .3rem; }
+      .what-we-do-nav button { height: 1.75rem; width: 1.75rem; }
+      .what-we-do-scroller { padding: 0; }
+      .what-we-do-track { gap: .65rem; padding: .15rem .1rem .35rem; }
       .what-we-do-card {
-        border-radius: 1rem; flex: 0 0 min(64vw, 12.75rem); min-height: 0 !important;
-        padding: .75rem .65rem .7rem;
+        border-radius: 10px; flex: 0 0 min(68vw, 13.5rem); min-height: 0 !important;
+        padding: .95rem .75rem .85rem;
       }
-      .what-we-do-card::before { height: 3px; }
+      .what-we-do-card::before { height: 2px; }
       .what-we-do-card .round-10rem {
-        height: 4.15rem !important; margin-bottom: .4rem !important; width: 4.15rem !important;
+        height: 4.1rem !important; margin-bottom: .55rem !important; width: 4.1rem !important;
       }
       .what-we-do-card > p { font-size: .78rem !important; line-height: 1.3; margin-top: 0 !important; }
       .what-we-do-card .mb-8 { margin-bottom: 0 !important; }
@@ -760,6 +780,7 @@ function enhanceWhatWeDo() {
   )
   if (!heading) return
 
+  heading.closest('section')?.classList.add('what-we-do-heading')
   const contentSection = heading.closest('section')?.nextElementSibling
   if (!contentSection || contentSection.dataset.premiumReady === 'true') return
   contentSection.dataset.premiumReady = 'true'
