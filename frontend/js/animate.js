@@ -175,7 +175,10 @@ function applySiteChrome() {
     }
     .team-photo img { display: block; height: 100%; object-fit: contain; object-position: center 18%; width: 100%; }
     .team-photo:has(.is-portrait) { align-items: center; display: flex; justify-content: center; }
-    .team-photo img.is-portrait { aspect-ratio: 1; height: 100%; object-fit: contain; object-position: center bottom; width: auto; }
+    .team-photo img.is-portrait {
+      aspect-ratio: auto; flex: 0 0 auto; height: 100%; margin: 0 auto; max-width: none;
+      object-fit: contain; object-position: center center; width: auto;
+    }
     .team-copy { background: #fff; padding: 1.15rem 1.2rem 1.3rem; }
     .team-copy .text-lg, .team-copy h3 { color: #111827 !important; font-size: 1.12rem; font-weight: 700; margin: 0 0 .35rem !important; }
     .team-role { color: #a66b00 !important; display: block; font-size: .72rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
