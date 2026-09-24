@@ -33,6 +33,10 @@ function applySiteChrome() {
 
   style.textContent = `
     html { scroll-behavior: smooth; }
+    @media (min-width: 1024px) {
+      html { font-size: 80%; }
+      [id^="Project_locations_"] { height: 400px !important; }
+    }
     html, body {
       background: #fff !important;
       color: #111 !important;
