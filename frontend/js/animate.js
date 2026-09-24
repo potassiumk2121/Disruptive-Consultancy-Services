@@ -147,12 +147,16 @@ function applySiteChrome() {
     .service-offer-card:hover { box-shadow: 0 22px 46px rgba(15,23,42,.12); transform: translateY(-5px); }
     .service-media {
       background-color: #eef1f4; background-position: center; background-repeat: no-repeat; background-size: cover;
-      height: 175px; margin-bottom: 1rem; overflow: hidden; position: relative; width: 100%;
+      height: 210px; margin-bottom: 1.05rem; overflow: hidden; position: relative; width: 100%;
+    }
+    .services-lead {
+      color: #3d4654 !important; font-size: 1.05rem; line-height: 1.7; margin: .15rem auto 0;
+      max-width: 44rem; text-align: center;
     }
     .service-media::after { background: linear-gradient(180deg, transparent 55%, rgba(15,23,42,.18)); content: ""; inset: 0; position: absolute; }
     .service-offer-card h2, .service-offer-card > p { color: #111 !important; margin-left: 1.1rem !important; margin-right: 1.1rem !important; text-align: left !important; }
     .service-offer-card h2 p { margin: 0 !important; text-align: left !important; }
-    .service-offer-card h2 { font-size: 1.05rem !important; letter-spacing: .02em; margin-bottom: .65rem !important; }
+    .service-offer-card h2 { font-size: 1.08rem !important; letter-spacing: .01em; line-height: 1.35; margin-bottom: .55rem !important; }
     .service-offer-card p { color: #444 !important; font-size: .95rem; line-height: 1.6; }
     .team-card {
       background: #fff; border: 1px solid #ececec; border-radius: 18px; box-shadow: 0 12px 28px rgba(15,23,42,.06);
@@ -166,6 +170,8 @@ function applySiteChrome() {
       background: #f5f6f8; height: 210px; overflow: hidden; width: 100%;
     }
     .team-photo img { display: block; height: 100%; object-fit: contain; object-position: center 18%; width: 100%; }
+    .team-photo:has(.is-portrait) { align-items: center; display: flex; justify-content: center; }
+    .team-photo img.is-portrait { aspect-ratio: 1; height: 100%; object-fit: contain; object-position: center bottom; width: auto; }
     .team-copy { background: #fff; padding: 1.15rem 1.2rem 1.3rem; }
     .team-copy .text-lg, .team-copy h3 { color: #111827 !important; font-size: 1.12rem; font-weight: 700; margin: 0 0 .35rem !important; }
     .team-role { color: #a66b00 !important; display: block; font-size: .72rem; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
@@ -806,25 +812,28 @@ function enhanceInnerPages() {
   if (servicesGrid && servicesGrid.dataset.redesigned !== 'true') {
     servicesGrid.dataset.redesigned = 'true'
     servicesGrid.classList.add('service-grid')
-    const serviceImages = [
-      '/new_world_map2.png',
-      '/ico/Services/water-suppy.jpg',
-      '/new_world_map2.png',
-      '/new_world_map2.png',
-      '/new_world_map2.png',
-      '/new_world_map2.png',
-      '/new_world_map2.png',
-      '/new_world_map2.png'
-    ]
-      ;[...servicesGrid.children].forEach((card, index) => {
+    const serviceImages = {
+      'MONITORING AND EVALUATION': ['/ico/Services/monitoring.jpg', 'center'],
+      'WATERSHED MANAGEMENT': ['/ico/Services/water-suppy.jpg', 'center 58%'],
+      'DISASTER RISK MANAGEMENT AND EARLY WARNING SYSTEMS': ['/ico/locations/India/Picture2.jpg', 'center 42%'],
+      'SOLID WASTE MANAGEMENT AND GENERAL ASSESSMENT': ['/ico/Services/solid-waste-line.jpg', 'center'],
+      'MARKET ASSESSMENT AND VALUE CHAIN ANALYSIS': ['/ico/Services/value-chain-pack.jpg', 'center 40%'],
+      'DEVELOPMENT OF TOOLKIT': ['/ico/Services/toolkit.jpg', 'center'],
+      'AGRICULTURAL SECTOR ASSESSMENT': ['/ico/locations/Yemen/Picture10.jpg', 'center 62%'],
+      'INSTITUTIONAL DEVELOPMENT': ['/ico/locations/Nepal/Picture2.jpg', 'center 32%']
+    }
+      ;[...servicesGrid.children].forEach((card) => {
         card.classList.add('service-offer-card')
         if (card.querySelector('.service-media')) return
         const title = card.querySelector('h2')?.textContent.replace(/\s+/g, ' ').trim() || 'Professional service'
+        const image = serviceImages[title.toUpperCase()]
+        if (!image) return
         const media = document.createElement('div')
         media.className = 'service-media'
         media.setAttribute('role', 'img')
         media.setAttribute('aria-label', title)
-        media.style.backgroundImage = `url("${serviceImages[index % serviceImages.length]}")`
+        media.style.backgroundImage = `url("${image[0]}")`
+        media.style.backgroundPosition = image[1]
         card.prepend(media)
       })
   }
@@ -892,28 +901,35 @@ function enhanceProjects() {
   container.closest('section')?.classList.add('projects-content')
 
   const projectImages = {
-    Nepal: ['/ico/locations/Nepal/Picture1.jpg', '/ico/locations/Nepal/Picture2.jpg'],
-    Yemen: ['/ico/locations/Yemen/Picture1.jpg', '/ico/locations/Yemen/Picture3.jpg', '/new_world_map2.png'],
-    India: ['/ico/locations/India/Picture1.jpg', '/ico/locations/India/Picture2.jpg', '/ico/locations/India/Picture3.png'],
-    Afghanistan: ['/ico/locations/Afghanistan/Picture1.png', '/ico/locations/Afghanistan/Picture3.png', '/ico/locations/Afghanistan/Picture5.png'],
-    Myanmar: ['/new_world_map2.png'],
-    Others: ['/new_world_map2.png']
+    'strengthening fmsop for immunization programmes': ['/ico/locations/Nepal/Picture2.jpg', 'center 28%'],
+    'third-party monitoring for unhcr infrastructure': ['/ico/Services/monitoring.jpg', 'center'],
+    'watershed management activities': ['/ico/Services/water-suppy.jpg', 'center 58%'],
+    'study for food and nutrition security- economic analysis': ['/ico/locations/Yemen/Picture10.jpg', 'center 62%'],
+    'sustainability and climate resilience assessment': ['/ico/locations/India/Picture1.jpg', 'center 45%'],
+    'quality infrastructure diagnostic and planning toolkit': ['/ico/Services/toolkit.jpg', 'center'],
+    'enhancing climate-resilient infrastructure design approaches': ['/ico/locations/Yemen/Picture11.jpg', 'center'],
+    'solid waste management': ['/ico/Services/solid-waste-line.jpg', 'center'],
+    'planning for future climate-resilient': ['/ico/locations/Yemen/Picture1.jpg', 'center 30%'],
+    'disaster risk management training for afghanistan government': ['/ico/locations/India/Picture2.jpg', 'center 40%'],
+    'bringing back business': ['/ico/locations/Yemen/Picture6.png', 'center 42%'],
+    'remote management in fragile states (kfw)': ['/ico/locations/Yemen/Picture1.jpg', 'center 30%']
   }
-  const imageCounters = {}
   const locationCounts = {}
 
   container.querySelectorAll('.project-item').forEach((card) => {
     const location = card.getAttribute('data-location') || 'Global'
     locationCounts[location] = (locationCounts[location] || 0) + 1
     if (card.querySelector('.project-chip')) return
-    const images = projectImages[location] || ['/new_world_map.png']
-    const imageIndex = imageCounters[location] || 0
-    imageCounters[location] = imageIndex + 1
+    const title = card.querySelector('h3')?.textContent.replace(/\s+/g, ' ').trim().toLowerCase() || ''
+    const image = projectImages[title]
     const media = document.createElement('div')
     media.className = 'project-media'
     media.setAttribute('role', 'img')
-    media.setAttribute('aria-label', `${location} project`)
-    media.style.backgroundImage = `url("${images[imageIndex % images.length]}")`
+    media.setAttribute('aria-label', card.querySelector('h3')?.textContent.replace(/\s+/g, ' ').trim() || `${location} project`)
+    if (image) {
+      media.style.backgroundImage = `url("${image[0]}")`
+      media.style.backgroundPosition = image[1]
+    }
     card.prepend(media)
     const chip = document.createElement('span')
     chip.className = 'project-chip'
