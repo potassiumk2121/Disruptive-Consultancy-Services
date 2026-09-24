@@ -756,10 +756,10 @@ var simplemaps_worldmap_mapdata = {
 		},
 		"MM":{
 			name: "Myanmar",
-			description: "default",
-			color: "default",
-			hover_color: "default",
-			url: "default"
+			description: "Myanmar",
+			color: "#1a4d6e",
+			hover_color: "#2d6d8f",
+			url: "/projects/locations/myanmar"
 		},
 		"ME":{
 			name: "Montenegro",
@@ -1601,6 +1601,14 @@ var simplemaps_worldmap_mapdata = {
 			lng: '84.10',
 			color: '#d4af37',
 			url: '/projects/locations/nepal'
+		},
+		Myanmar: {
+			name: 'Myanmar',
+			description: 'Myanmar',
+			lat: '21.91',
+			lng: '95.96',
+			color: '#d4af37',
+			url: '/projects/locations/myanmar'
 		},
 		Germany: { 
 			name: 'Germany',

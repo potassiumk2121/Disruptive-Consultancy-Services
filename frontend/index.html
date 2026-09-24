@@ -750,28 +750,48 @@
         background: #ffffff;
         margin: 0.35rem 0 0.75rem;
         padding: 4.15rem 2rem 3.25rem;
+        overflow: hidden;
       }
 
       .partner-row {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        display: flex;
+        flex-wrap: nowrap;
         gap: 1.25rem;
         max-width: 1200px;
         margin: 0 auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0.15rem 0.15rem 0.85rem;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: #c9a24d transparent;
+      }
+
+      .partner-row::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .partner-row::-webkit-scrollbar-thumb {
+        background: #c9a24d;
+        border-radius: 999px;
       }
 
       .partner-card {
         display: flex;
+        flex: 0 0 calc((100% - 6.25rem) / 6);
+        min-width: 148px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 1.35rem;
+        padding: 1.35rem 1rem;
         background: #ffffff;
         border: 1px solid #e5e7eb;
         border-radius: 16px;
         box-shadow: 0 8px 24px rgba(15, 23, 42, 0.045);
         transition: all 0.3s ease;
         text-decoration: none;
+        scroll-snap-align: start;
       }
 
       .partner-card:hover {
@@ -1352,7 +1372,7 @@
             <article>
               <div class="partners-section">
                 <div class="partner-row">
-                  <a href="/projects" class="partner-card">
+                  <a href="https://www.worldbank.org/" class="partner-card" target="_blank" rel="noopener noreferrer">
                     <div
                       class="partner-logo"
                       style="
@@ -1361,33 +1381,47 @@
                     ></div>
                     <div class="partner-name">The World Bank</div>
                   </a>
-                  <a href="/projects" class="partner-card">
+                  <a href="https://yatharthfoundation.com/" class="partner-card" target="_blank" rel="noopener noreferrer">
                     <div
                       class="partner-logo"
                       style="background-image: url(/ico/Partners/yatharth.png)"
                     ></div>
                     <div class="partner-name">Yatharth Foundation</div>
                   </a>
-                  <a href="/projects" class="partner-card">
+                  <a href="https://www.uhrc.in/" class="partner-card" target="_blank" rel="noopener noreferrer">
                     <div
                       class="partner-logo"
                       style="background-image: url(/ico/Partners/UHRC.jpg)"
                     ></div>
                     <div class="partner-name">UHRC</div>
                   </a>
-                  <a href="/projects" class="partner-card">
+                  <a href="https://www.kfw.de/" class="partner-card" target="_blank" rel="noopener noreferrer">
                     <div
                       class="partner-logo"
                       style="background-image: url(/ico/Partners/KFW.png)"
                     ></div>
                     <div class="partner-name">KFW</div>
                   </a>
-                  <a href="/projects" class="partner-card">
+                  <a href="https://www.usaid.gov/" class="partner-card" target="_blank" rel="noopener noreferrer">
                     <div
                       class="partner-logo"
                       style="background-image: url(/ico/Partners/USAID.png)"
                     ></div>
                     <div class="partner-name">USAID</div>
+                  </a>
+                  <a href="https://www.unhcr.org/" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div
+                      class="partner-logo"
+                      style="background-image: url(/ico/Partners/UNHCR.png); background-color: #ffffff;"
+                    ></div>
+                    <div class="partner-name">UNHCR</div>
+                  </a>
+                  <a href="https://www.unicef.org/" class="partner-card" target="_blank" rel="noopener noreferrer">
+                    <div
+                      class="partner-logo"
+                      style="background-image: url(/ico/Partners/UNICEF.svg); background-color: #ffffff;"
+                    ></div>
+                    <div class="partner-name">UNICEF</div>
                   </a>
                 </div>
               </div>

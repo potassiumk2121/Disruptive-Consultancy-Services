@@ -896,6 +896,7 @@ function enhanceProjects() {
     Yemen: ['/ico/locations/Yemen/Picture1.jpg', '/ico/locations/Yemen/Picture3.jpg', '/new_world_map2.png'],
     India: ['/ico/locations/India/Picture1.jpg', '/ico/locations/India/Picture2.jpg', '/ico/locations/India/Picture3.png'],
     Afghanistan: ['/ico/locations/Afghanistan/Picture1.png', '/ico/locations/Afghanistan/Picture3.png', '/ico/locations/Afghanistan/Picture5.png'],
+    Myanmar: ['/new_world_map2.png'],
     Others: ['/new_world_map2.png']
   }
   const imageCounters = {}
@@ -1262,6 +1263,7 @@ function replaceSiteFooter() {
         <h4>Regions</h4>
         <a href="/projects/locations/yemen">Yemen</a>
         <a href="/projects/locations/afghanistan">Afghanistan</a>
+        <a href="/projects/locations/myanmar">Myanmar</a>
         <a href="/locations">All locations</a>
         <a href="mailto:${DCS_EMAIL}">${DCS_EMAIL}</a>
       </div>
